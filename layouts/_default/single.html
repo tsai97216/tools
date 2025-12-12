@@ -1,29 +1,34 @@
 {{ partial "header.html" . }}
-
 {{ partial "content_header.html" . }}
 
 <body class="page-body boxed-container">
+
     <main role="main" class="flex-shrink-0">
     <div class="container">
-        <h1 class="mt-5">{{ .Title }}</h1>
+        <h1 class="mt-5" style="margin: 15px 15px 15px 0px;">{{ .Title }}</h1>
+        
         <div class="content">
-            {{ .Content | markdownify | safeHTML }}
+            {{ .Content }}
         </div>
     </div>
     </main>
 
     <style>
-        .content{font-size:14px;}
-	.content a{color:#007bff;}
-	.content a:hover{color:#f1404b;}
-	.content h1,.content h2,.content h3,.content h4{margin: 15px 15px 15px 0px;}
-	.content p{line-height:1.5;margin:15px 0;}
-	.big-header-banner .page-header{background:gray;}
-	.main-content{margin-left:0px;}
-	.page-header{left:0px;}
-        img{max-width:100%;}
+        .content { font-size: 14px; line-height: 1.6; }
+        /* 連結顏色：平時藍色，滑鼠懸停變紅色 */
+        .content a { color: #007bff; text-decoration: none; }
+        .content a:hover { color: #f1404b; text-decoration: underline; }
+        /* 標題與段落間距 */
+        .content h1, .content h2, .content h3 { margin-top: 25px; margin-bottom: 15px; }
+        .content p { margin: 15px 0; }
+        /* 圖片自適應：這會配合我們之前改的 render-image.html */
+        .content img { max-width: 100%; height: auto; display: block; }
+        
+        /* 針對 WebStack 的特定修正 */
+        .big-header-banner .page-header { background: gray; }
+        .main-content { margin-left: 0px; }
+        .page-header { left: 0px; }
     </style>
 
 {{ partial "content_footer.html" . }}
-
 {{ partial "footer.html" . }}
