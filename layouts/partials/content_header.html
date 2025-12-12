@@ -21,83 +21,74 @@
                                     <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
                                 </svg>
                             </label>
-
                         </div>
 
                         <ul class="navbar-nav site-menu" style="margin-right: 16px;">
-                        {{ range .Site.Data.headers }}
-			<li {{ if .list }}class="menu-item-has-children"{{ end }}>
-				<a href="{{ .link }}">
+                            {{ range .Site.Data.headers }}
+                            <li {{ if .list }}class="menu-item-has-children" {{ end }}>
+                                <a href="{{ .link }}">
                                     <i class="{{ .icon }} fa-lg mr-2"></i>
                                     <span>{{ .item }}</span>
                                 </a>
-				<ul class="sub-menu">
-				{{ range .list }}
-				    <li><a href="{{ .url }}">{{ .name }}</a></li>
-				{{ end }}
-				</ul>
-			    </li>
-			{{ end }}
-			</ul>
+                                <ul class="sub-menu">
+                                    {{ range .list }}
+                                    <li><a href="{{ .url }}">{{ .name }}</a></li>
+                                    {{ end }}
+                                </ul>
+                            </li>
+                            {{ end }}
+                        </ul>
 
-                        {{ if not (eq $.Site.Params.qweather.key "") }}
-                        <div class="rounded-circle weather">
-                            <div id="he-plugin-simple" style="display: contents;"></div>
-                            <script>WIDGET = {
-                                    CONFIG: {
-                                        "modules": "01234",
-                                        "background": 5,
-                                        "tmpColor": "E4C600",
-                                        "tmpSize": 14,
-                                        "cityColor": "E4C600",
-                                        "citySize": 14,
-                                        "aqiColor": "#E4C600",
-                                        "aqiSize": 14,
-                                        "weatherIconSize": 24,
-                                        "alertIconSize": 18,
-                                        "padding": "10px 10px 10px 10px",
-                                        "shadow": "1",
-                                        "language": "auto",
-                                        "borderRadius": 5,
-                                        "fixed": "false",
-                                        "vertical": "middle",
-                                        "horizontal": "left",
-                                        "key": "{{ $.Site.Params.qweather.key }}"
-                                    }
-                                }
+                        <div class="weather d-none d-md-block" style="margin-right: 15px; width: 200px;">
+                            <a class="weatherwidget-io" href="https://forecast7.com/zh-tw/25d03121d57/taipei-city/" 
+                               data-label_1="台北" 
+                               data-label_2="天氣" 
+                               data-font="微軟正黑體 (Microsoft JhengHei)" 
+                               data-theme="dark" >TAIPEI WEATHER</a>
+                            <script>
+                            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
                             </script>
-                            <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
                         </div>
-                        {{ end }}
+                        
                     </div>
 
                     <ul class="nav navbar-menu text-xs order-1 order-md-2">
-                        <!-- 一言 -->
-                        {{ with .Site.Params.yiyan }}
+                        
                         <li class="nav-item mr-3 mr-lg-0 d-none d-lg-block">
+                            <div id="hitokoto" style="color: #98a6ad; font-size: 13px;">
+                                <span id="hitokoto_text">載入中...</span>
+                            </div>
                             <script>
-                                fetch('https://v1.hitokoto.cn')
-                                    .then(response => response.json())
-                                    .then(data => {
-                                    const hitokoto = document.getElementById('hitokoto_text')
-                                    hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-                                    hitokoto.innerText = data.hitokoto
-                                    })
-                                    .catch(console.error)
-                            </script>                           
-                            <div id="hitokoto"><a href="#" target="_blank" id="hitokoto_text">疏影横斜水清浅，暗香浮动月黄昏。</a></div>
+                                (function(){
+                                    // 您可以在這裡修改或新增喜歡的句子
+                                    var quotes = [
+                                        "疏影橫斜水清淺，暗香浮動月黃昏。",
+                                        "簡單就是美。",
+                                        "保持飢渴，保持愚蠢。",
+                                        "生活原本沉悶，但跑起來就有風。",
+                                        "Code is Poetry.",
+                                        "學而不思則罔，思而不學則殆。",
+                                        "即使是再小的帆也能遠航。",
+										"寫程式是把咖啡變成代碼的過程。",
+                                        "簡單就是美。",
+										"保持飢渴，保持愚蠢。",
+										"今天又是美好的一天！",
+										"Debug 是一種即使你即將崩潰，也要告訴自己「這很不合理」的藝術。",
+										"知識就是力量。",
+										"有些事現在不做，一輩子都不會做了。"
+                                    ];
+                                    var text = quotes[Math.floor(Math.random() * quotes.length)];
+                                    document.getElementById('hitokoto_text').innerText = text;
+                                })();
+                            </script>
                         </li>
-                        {{ end }}
-                        <!-- 一言 end -->
-                        <!--li class="nav-search ml-3 ml-md-4">
-                            <a href="javascript:" data-toggle="modal" data-target="#search-modal"><i
-                                    class="iconfont icon-search icon-2x"></i></a>
-                        </li-->
+
                         <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4">
                             <a href="javascript:" id="sidebar-switch" data-toggle="modal"
                                 data-target="#sidebar"><i class="iconfont icon-classification icon-2x"></i></a>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </div>
