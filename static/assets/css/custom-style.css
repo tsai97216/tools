@@ -156,3 +156,31 @@ footer.main-footer .footer-text { text-align: center; }
     align-items: center;
     height: 100%;
 }
+/* ==============================
+   8. 強制修復：背景圖片與文字顏色
+   ============================== */
+
+/* 強制載入首頁背景圖 (確保路徑對應 static/assets/images/bg-dna.jpg) */
+#search-bg {
+    background-image: url('/assets/images/bg-dna.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* 萬一圖片還是讀不到，先把文字改成深灰色，確保你看得到字 */
+.big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a,
+.big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item),
+.header-big:not(.no-bg) .big-title .h1 {
+    /* 如果背景圖成功載入，這行會被上面的文字陰影保護，依然看得清 */
+    /* 如果背景圖失敗，這行會讓字變深色，讓你看得見 */
+    color: #333 !important; 
+    text-shadow: 1px 1px 0 #fff; /* 加個白邊，確保在任何背景都能閱讀 */
+}
+
+/* 針對有背景圖時，把文字改回白色 (如果圖片載入成功，這裡會讓字變白) */
+#search-bg[style*="url"] .page-header .navbar-nav>li>a,
+#search-bg[style*="url"] .big-title .h1 {
+    color: #fff !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
