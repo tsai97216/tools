@@ -39,11 +39,15 @@
                             {{ end }}
                         </ul>
 
-                        <div class="weather d-none d-md-block" style="margin-right: 15px; width: 200px;">
-                           <a class="weatherwidget-io" href="https://forecast7.com/zh-tw/25d03121d57/taipei-city/" data-label_1="TAIPEI" data-label_2="WEATHER" data-font="微軟正黑體 (Microsoft JhengHei)" data-mode="Current" data-days="3" data-theme="dark" >TAIPEI WEATHER</a>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
+                        <div class="weather d-none d-md-block" style="margin-right: 10px; width: 140px;">
+                            <a class="weatherwidget-io" href="https://forecast7.com/zh-tw/25d03121d57/taipei-city/" 
+                               data-label_1="台北" 
+                               data-font="微軟正黑體 (Microsoft JhengHei)" 
+                               data-mode="Current" 
+                               data-theme="dark" >台北</a>
+                            <script>
+                            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                            </script>
                         </div>
                         
                     </div>
@@ -56,7 +60,6 @@
                             </div>
                             <script>
                                 (function(){
-                                    // 您可以在這裡修改或新增喜歡的句子
                                     var quotes = [
                                         "疏影橫斜水清淺，暗香浮動月黃昏。",
                                         "簡單就是美。",
@@ -64,14 +67,7 @@
                                         "生活原本沉悶，但跑起來就有風。",
                                         "Code is Poetry.",
                                         "學而不思則罔，思而不學則殆。",
-                                        "即使是再小的帆也能遠航。",
-										"寫程式是把咖啡變成代碼的過程。",
-                                        "簡單就是美。",
-										"保持飢渴，保持愚蠢。",
-										"今天又是美好的一天！",
-										"Debug 是一種即使你即將崩潰，也要告訴自己「這很不合理」的藝術。",
-										"知識就是力量。",
-										"有些事現在不做，一輩子都不會做了。"
+                                        "即使是再小的帆也能遠航。"
                                     ];
                                     var text = quotes[Math.floor(Math.random() * quotes.length)];
                                     document.getElementById('hitokoto_text').innerText = text;
