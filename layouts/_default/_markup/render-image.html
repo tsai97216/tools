@@ -1,7 +1,19 @@
-{{if .Page.Site.Params.fancybox }}
-<div class="post-img-view">
-<a data-fancybox="gallery" href="{{ .Destination | safeURL }}">
-<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
-</a>
-</div>
+{{ if .Page.Site.Params.fancybox }}
+    <div class="post-img-view">
+        <a data-fancybox="gallery" href="{{ .Destination | safeURL }}">
+            <img src="{{ .Destination | safeURL }}" 
+                 alt="{{ .Text }}" 
+                 {{ with .Title}} title="{{ . }}"{{ end }} 
+                 style="max-width: 100%; height: auto;" />
+        </a>
+        {{ with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}
+    </div>
+{{ else }}
+    <figure>
+        <img src="{{ .Destination | safeURL }}" 
+             alt="{{ .Text }}" 
+             {{ with .Title}} title="{{ . }}"{{ end }} 
+             style="max-width: 100%; height: auto;" />
+        {{ with .Title }}<figcaption>{{ . }}</figcaption>{{ end }}
+    </figure>
 {{ end }}
