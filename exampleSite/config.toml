@@ -1,25 +1,25 @@
 baseURL               = "https://tsai97216.github.io/tools/"
-languageCode          = "zh-CN"
-title                 = "Tsai 的工具箱"      # 我幫你改了標題，你可以自己再改
-# theme               = "WebStack-Hugo"     # ⚠️ 關鍵！這一行必須加 # 註解掉，否則會報錯！
+languageCode          = "zh-TW"             
+title                 = "Tsai 的工具箱"
+# theme               = "WebStack-Hugo"     # ⚠️ 這一行務必保留註解狀態(#)，不要打開
 preserveTaxonomyNames = true
 disablePathToLower    = true
 hasCJKLanguage        = true
 publishDir            = "public"
 
 [params]
-    author            = "tsai97216"         # 改成你的名字
+    author            = "tsai97216"
     description       = "我的個人資源導航站"
-    upload            = ""                  # 清空，避免訪客點到原作者的連結
-    about             = ""                  # 清空
-    repository        = "https://github.com/tsai97216/tools"  # 改成你自己的倉庫連結
+    upload            = ""                  
+    about             = ""                  
+    repository        = "https://github.com/tsai97216/tools"
     enablePreLoad     = true
-    textPreLoad       = "正在載入..."        # 簡化載入文字
-    expandSidebar     = true                # 建議改成 true，電腦版預設展開側邊欄比較好看
+    textPreLoad       = "正在載入..."        
+    expandSidebar     = true
     logosPath         = "assets/images/logos"
     defaultLogo       = "assets/images/logos/default.webp"
     nightMode         = true
-    yiyan             = true             
+    yiyan             = true
     fancybox          = true
 
 [params.seo]    
@@ -45,6 +45,4 @@ publishDir            = "public"
     unsafe = true
 
 [params.footer]
-    # 修改了版權宣告，變成你的名字
     copyright = '&copy; 2025 Tsai97216 | Powered by GitHub Pages'
-    
