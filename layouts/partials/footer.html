@@ -10,7 +10,7 @@
         </a>
         
         <a href="mailto:tsai97216@gmail.com" class="btn rounded-circle kefu m-1" data-toggle="tooltip" data-placement="left" title="聯絡我">
-            <i class="mode-ico iconfont icon-mail"></i>
+            <i class="fa fa-envelope"></i>
         </a>
 
         {{ if $.Site.Params.nightMode }} 
@@ -31,7 +31,9 @@
     </div>
 </footer>
 
-</div></div><div class="modal fade search-modal" id="search-modal">
+</div></div>
+
+<div class="modal fade search-modal" id="search-modal">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
@@ -54,7 +56,7 @@
 
 <script type='text/javascript' id='popper-js-extra'>
 /* <![CDATA[ */
-// 主題核心參數設定 (已移除百度連結，並將熱搜詞改為 Google)
+// 主題核心參數設定
 var theme = {
     "ajaxurl":"",
     "addico":"", 
@@ -153,6 +155,7 @@ var theme = {
 </script>
 
 <script>
+// 夜間模式邏輯
 (function(){
     if(document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === ''){
         // 自動模式：22:00 - 06:00 為夜間
@@ -184,7 +187,7 @@ function switchNightMode(){
     var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
     
     if(night == '0'){
-        // 切換為夜間 (使用深色背景圖)
+        // 切換為夜間
         $("#search-bg").css("background-image", "url({{ $.Site.Params.images.searchImageD }})");
         document.body.classList.remove('io-grey-mode');
         document.body.classList.add('io-black-mode');
@@ -194,7 +197,7 @@ function switchNightMode(){
         $(".mode-ico").removeClass("icon-night");
         $(".mode-ico").addClass("icon-light");
     }else{
-        // 切換為日間 (使用淺色背景圖)
+        // 切換為日間
         $("#search-bg").css("background-image", "url({{ $.Site.Params.images.searchImageL }})")
         document.body.classList.remove('io-black-mode');
         document.body.classList.add('io-grey-mode');
