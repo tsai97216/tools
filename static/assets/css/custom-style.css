@@ -184,3 +184,26 @@ footer.main-footer .footer-text { text-align: center; }
     color: #fff !important;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
+/* ==============================
+   9. 強制修復：背景與 Logo 覆蓋
+   ============================== */
+
+/* 強制背景圖顯示 (無論日夜模式) */
+body, .page-container, .io-grey-mode, .io-black-mode {
+    /* 請確保 bg-dna.jpg 真的在 static/assets/images/ 裡面 */
+    background-image: url('/tools/assets/images/bg-dna.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important; /* 讓背景固定不動，看起來更高級 */
+    background-repeat: no-repeat !important;
+}
+
+/* 讓原本的深色背景變半透明，這樣才看得到底圖 */
+.main-content, .page-container, body.io-black-mode {
+    background-color: rgba(30, 30, 30, 0.8) !important; /* 80% 透明度的黑色 */
+}
+
+/* 強制將左上角 Logo 區域背景透明化 */
+.sidebar-logo {
+    background: transparent !important;
+}
