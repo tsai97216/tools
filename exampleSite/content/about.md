@@ -1,33 +1,33 @@
 ---
-title: "关于网站"
+title: "關於網站"
 date: 2020-07-28T19:27:08+08:00
 draft: false
 ---
 
-#### 这是 Hugo 版 WebStack 主题
+#### 這是 Hugo 版 WebStack 主題
 
-本项目是基于**纯静态**的网址导航网站 [webstack.cc](https://github.com/WebStackPage/WebStackPage.github.io) 制作的 [Hugo](https://gohugo.io/) 主题，其中部分代码参考了以下几个开源项目：<br/><br/>
+本專案是基於**純靜態**的網址導航網站 [webstack.cc](https://github.com/WebStackPage/WebStackPage.github.io) 製作的 [Hugo](https://gohugo.io/) 主題，其中部分代碼參考了以下幾個開源專案：<br/><br/>
 
 - [https://github.com/liutongxu/liutongxu.github.io](https://github.com/liutongxu/liutongxu.github.io)
 - [https://github.com/iplaycode/webstack-hugo](https://github.com/iplaycode/webstack-hugo)
 
 <br/>
 
-主题安装后，将 exampleSite 目录下的文件复制到 hugo 站点根目录，根据需要把 config.toml 的一些信息改成自己的，导航的网址信息可通过 data 目录下 webstack.yml 修改。
+主題安裝後，將 exampleSite 目錄下的文件複製到 hugo 站點根目錄，根據需要把 config.toml 的一些資訊改成自己的，導航的網址資訊可透過 data 目錄下 webstack.yml 修改。
 
-这是一个开源的公益项目，你可以拿来制作自己的网址导航，也可以做与导航无关的网站。
+這是一個開源的公益專案，您可以拿來製作自己的網址導航，也可以做與導航無關的網站。
 
-WebStack 有非常多的魔改版本，这是其中一个。如果你对本主题进行了一些个性化调整，欢迎来本项目中 issue 分享一下！
+WebStack 有非常多的魔改版本，這是其中一個。如果您對本主題進行了一些個性化調整，歡迎來本專案中 issue 分享一下！
 
 <br/>
 
-#### 主题开源地址
+#### 主題開源地址
 
 [https://github.com/shenweiyan/webstack-hugo](https://github.com/shenweiyan/webstack-hugo)
 
 <br/>
 
-#### 主题演示地址
+#### 主題演示地址
 
 - [https://nav.bioitee.com](https://nav.bioitee.com)
 - [https://shenweiyan.github.io/webstack-hugo](https://shenweiyan.github.io/webstack-hugo)
