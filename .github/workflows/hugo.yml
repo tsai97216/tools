@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 監聽 main 分支的變動
+      - main
 
 jobs:
   deploy:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true  # 下載主題模組
+          submodules: true
           fetch-depth: 0
 
       - name: Setup Hugo
@@ -23,13 +23,13 @@ jobs:
           extended: true
 
       - name: Build Site
-        run: hugo --minify
-        # 這裡我移除了 cp exampleSite 指令，這樣你修改的 config.toml 才會生效！
-        # 也移除了寫死的 URL，讓它去讀你自己設定檔裡的網址。
+        run: |
+          cp -r exampleSite/* .   # <--- 關鍵修改：先把設定檔從子資料夾拿出來
+          hugo --minify           # 然後再開始建置網站
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # 自動使用 GitHub 提供的權限，不需要你自己設密碼
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
