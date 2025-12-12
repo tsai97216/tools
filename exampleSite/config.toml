@@ -1,6 +1,6 @@
 baseURL               = "https://tsai97216.github.io/tools/"
 languageCode          = "zh-TW"             
-title                 = "Tsai 的工具箱"
+title                 = "Chi 的工具箱"
 # theme               = "WebStack-Hugo"     
 preserveTaxonomyNames = true
 disablePathToLower    = true
