@@ -1,42 +1,41 @@
 baseURL               = "https://tsai97216.github.io/tools/"
 languageCode          = "zh-CN"
-title                 = "WebStack-Hugo 网址导航"
-theme                 = "WebStack-Hugo"
+title                 = "Tsai 的工具箱"      # 我幫你改了標題，你可以自己再改
+# theme               = "WebStack-Hugo"     # ⚠️ 關鍵！這一行必須加 # 註解掉，否則會報錯！
 preserveTaxonomyNames = true
 disablePathToLower    = true
 hasCJKLanguage        = true
-publishDir            = "public"				# 站点静态文件保存目录
-
+publishDir            = "public"
 
 [params]
-    author        = "shenweiyan"
-    description   = "Webstack-Hugo 网址导航 | Hugo 主题 BY Bio IT 爱好者"
-    upload        = "https://www.yuque.com/forms/share/1a1fee15-f7a9-4ee6-9dd4-b0ba9fef1871"      # 左侧导航栏的"网站提交"
-    about         = "https://github.com/shenweiyan/Knowledge-Garden/discussions/10"	          # 左侧导航栏的"关于导航"页面(./about)
-    repository    = "https://github.com/shenweiyan/WebStack-Hugo"  
-    enablePreLoad = true					# 网站完全打开前预加载动画
-    textPreLoad   = "Hugo 网址导航主题"				# 预加载的动画文字, 只有当enablePreLoad=true时生效
-    expandSidebar = false					# 默认展开左侧边导航栏
-    logosPath     = "assets/images/logos"			# 网站每个导航地址logo存放地址
-    defaultLogo   = "assets/images/logos/default.webp"		# logo图片资源不存在或者错误时, 默认显示的logo; 该参数如为空,将会一直加载对应的logo,直至成功
-    nightMode     = false					# 默认站点为深色(夜间)模式
-    yiyan         = true                         		# 默认启用一言服务
-    fancybox      = true                                        # 使用 Fancybox 实现图片灯箱/放大功能
+    author            = "tsai97216"         # 改成你的名字
+    description       = "我的個人資源導航站"
+    upload            = ""                  # 清空，避免訪客點到原作者的連結
+    about             = ""                  # 清空
+    repository        = "https://github.com/tsai97216/tools"  # 改成你自己的倉庫連結
+    enablePreLoad     = true
+    textPreLoad       = "正在載入..."        # 簡化載入文字
+    expandSidebar     = true                # 建議改成 true，電腦版預設展開側邊欄比較好看
+    logosPath         = "assets/images/logos"
+    defaultLogo       = "assets/images/logos/default.webp"
+    nightMode         = true
+    yiyan             = true             
+    fancybox          = true
 
 [params.seo]    
-    baiduhmid       = 'efccc04cb44fc49faddac5876180b369'	# 百度统计 hm.src 的 ID
-    baiduSiteVer    = 'codeva-cCAOSG8MBO'			# 百度HTML标签验证(baidu-site-verification)
-    tj51laid        = ''                        		# 51.LA 网站统计
-    tj51lack        = ''
-    GoogleAdsClient = ''					# Google AdSense 
+    baiduhmid         = ''
+    baiduSiteVer      = ''
+    tj51laid          = ''
+    tj51lack          = ''
+    GoogleAdsClient   = ''
 
 [params.qweather]
-    key = "085791e805a24491b43b06cf58ab31e7"
+    key = ""
 
 [params.images]
     favicon           = "assets/images/bi-favicon.png"
-    searchImageL      = "assets/images/bg-dna.jpg"		# 搜索部分浅色背景图
-    searchImageD      = "assets/images/bg-dna.jpg"		# 搜索部分深色背景图
+    searchImageL      = "assets/images/bg-dna.jpg"
+    searchImageD      = "assets/images/bg-dna.jpg"
     logoExpandLight   = "assets/images/bi-expand-dark.png"
     logoExpandDark    = "assets/images/bi-expand-light.png"
     logoCollapseLight = "assets/images/bi.png"
@@ -46,7 +45,6 @@ publishDir            = "public"				# 站点静态文件保存目录
     unsafe = true
 
 [params.footer]
-    copyright = '本站内容源自互联网，如有内容侵犯了你的权益，请联系删除相关内容，联系邮箱：shen@weiyan.cc <br/>&copy; 2021 - {year} By [WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo) | [Bio IT 爱好者](https://github.com/bioitee/) | [粤ICP备16023717号](http://beian.miit.gov.cn/)<br/>'
-
-
+    # 修改了版權宣告，變成你的名字
+    copyright = '&copy; 2025 Tsai97216 | Powered by GitHub Pages'
     
