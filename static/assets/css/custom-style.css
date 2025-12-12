@@ -1,6 +1,8 @@
 /* ==============================
-   1. 全局字體與基礎設定
+   Chi 的工具箱 - 客製化樣式 (custom-style.css)
    ============================== */
+
+/* 1. 全局字體與基礎設定 */
 body, html {
     font-size: 14px;
     /* 強制使用微軟正黑體，讓繁體中文在 Windows 上更平滑 */
@@ -13,6 +15,7 @@ body, html {
 /* ==============================
    2. 配色主題：科技藍 (替換原本的紅色)
    ============================== */
+
 /* 頂部導航連結 Hover 顏色 */
 .big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a:hover,
 .big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item):hover {
@@ -37,6 +40,7 @@ footer.main-footer .footer-text a:hover { color: #0056b3; } /* 深藍色 */
 /* ==============================
    3. 頂部導航欄與搜尋框優化
    ============================== */
+
 /* 頂部導航透明背景，字體白色 */
 .big-header-banner .page-header {
     color: #ffffff;
@@ -79,6 +83,7 @@ footer.main-footer .footer-text a:hover { color: #0056b3; } /* 深藍色 */
 /* ==============================
    4. 側邊欄優化
    ============================== */
+
 /* 懸浮子選單寬度調整 */
 .sidebar-popup.sidebar-menu-inner > div > ul > li.sidebar-item>ul {
     position: absolute; top: 0px; left: 10px; width: 90px; z-index: 99;
@@ -95,6 +100,7 @@ footer.main-footer .footer-text a:hover { color: #0056b3; } /* 深藍色 */
 /* ==============================
    5. 卡片與佈局樣式
    ============================== */
+
 /* Logo 圓角 (讓它稍微圓一點，比較現代) */
 .url-card .url-body .url-img > img {
     border-radius: 50%; /* 50% 變圓形，20% 變圓角矩形，您可以自己改 */
