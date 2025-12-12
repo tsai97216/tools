@@ -1,7 +1,7 @@
 baseURL               = "https://tsai97216.github.io/tools/"
 languageCode          = "zh-TW"             
 title                 = "Tsai 的工具箱"
-# theme               = "WebStack-Hugo"     # ⚠️ 這一行務必保留註解狀態(#)，不要打開
+# theme               = "WebStack-Hugo"     
 preserveTaxonomyNames = true
 disablePathToLower    = true
 hasCJKLanguage        = true
