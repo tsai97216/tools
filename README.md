@@ -1,90 +1,56 @@
+---
+title: "關於本站"
+date: 2025-01-01T00:00:00+08:00
+draft: false
+---
+
 > [!NOTE]
-> **2025年05月17日：更多新功能，请参考：<https://github.com/PagesX> 项目！**
+> **此為基於 WebStack-Hugo 的客製化繁體中文版本。**
 
+## 一個基於 Hugo 的靜態響應式網址導航主題
 
-## 一个基于 Hugo 的静态响应式网址导航主题 
+本專案是基於**純靜態**的網址導航網站 [webstack.cc](https://github.com/WebStackPage/WebStackPage.github.io) 製作的 [Hugo](https://gohugo.io/) 主題，是一個基於 Hugo 的靜態響應式網址導航主題。<br/>
 
-本项目是基于**纯静态**的网址导航网站 [webstack.cc](https://github.com/WebStackPage/WebStackPage.github.io) 制作的 [Hugo](https://gohugo.io/) 主题，是一个基于 Hugo 的静态响应式网址导航主题。<br/>
+### 主題開源地址（原作者）
 
-### 主题开源地址
-
-[**GitHub**](https://github.com/shenweiyan/WebStack-Hugo) | [**Gitee**](https://gitee.com/shenweiyan/WebStack-Hugo) | [**GitCode**](https://gitcode.com/shenweiyan/WebStack-Hugo)
-
-### 主题演示地址
-
-<https://webstack-demo.weiyan.cc/>
+[**GitHub**](https://github.com/shenweiyan/WebStack-Hugo) | [**Gitee**](https://gitee.com/shenweiyan/WebStack-Hugo)
 
 ### 特色功能
 
-这是 Hugo 版 WebStack 主题。可以借助下面的平台直接托管部署，无需服务器。
-- [Webify](https://webify.cloudbase.net/) | [Netlify](https://app.netlify.com/) | [Cloudflare Pages](https://pages.cloudflare.com) | [Vercel](https://vercel.com) | [Github Pages](https://pages.github.com/)
+這是 Hugo 版 WebStack 主題。可以借助下面的平台直接託管部署，無需伺服器。
+- [Cloudflare Pages](https://pages.cloudflare.com) | [Vercel](https://vercel.com) | [Github Pages](https://pages.github.com/) | [Netlify](https://app.netlify.com/)
 
-总体说一下特点：
+**本站客製化特點：**
 
-- 采用了一直以来最喜欢的 Hugo 部署方式，方便高效。
-- 主要的配置信息都集成到了 `config.toml`，一键完成各种自定义的配置。
-- 导航的各个信息都集成在 `data/webstack.yml` 文件中，方便后续增删改动。
-```
-- taxonomy: 科研办公
-  icon: fas fa-flask fa-lg
+- **完全繁體中文化**：介面與用語皆調整為台灣習慣用法。
+- **去中國化依賴**：移除了百度統計、百度搜尋 API、和風天氣等中國服務。
+- **本地化搜尋**：整合 Google 搜尋、YouTube、維基百科、巴哈姆特等台灣常用服務。
+- **極簡天氣與語錄**：改用 Open-Meteo 免費天氣 API 與本地隨機語錄腳本，速度更快且無追蹤。
+- **自適應設計**：完美支援手機、平板與電腦，並支援自動/手動夜間模式。
+- **配置簡單**：主要的配置資訊都整合到了 `config.toml`，導航資訊整合在 `data/webstack.yml` 文件中，方便後續增刪改動。
+
+**配置範例 (`data/webstack.yml`)：**
+```yaml
+- taxonomy: 常用工具
+  icon: fas fa-tools fa-lg
   list:
-    - term: 生物信息
+    - term: 開發工具
       links:
-        - title: NCBI
-          logo: ncbi.jpg
-          url: https://www.ncbi.nlm.nih.gov/
-          description: National Center for Biotechnology Information.
-        - title: Bioconda
-          logo: bioconda.jpg
-          url: https://anaconda.org/bioconda/
-          description: "Bioconda :: Anaconda.org."
-    - term: 云服务器
+        - title: GitHub
+          logo: github.png
+          url: [https://github.com/](https://github.com/)
+          description: 全球最大的代碼託管平台。
+        - title: ChatGPT
+          logo: openai.png
+          url: [https://chat.openai.com/](https://chat.openai.com/)
+          description: OpenAI 人工智慧聊天機器人。
+    - term: 雲端服務
       links:
-        - title: 阿里云
-          logo: 阿里云.jpg
-          url: https://www.aliyun.com/
-          description: 上云就上阿里云。
-        - title: 腾讯云
-          logo: 腾讯云.jpg
-          url: https://cloud.tencent.com/
-          description: 产业智变，云启未来。
-```
-- 做了手机电脑自适应以及夜间模式。
-- 增加了搜索功能，以及下拉的热词选项（基于百度 API）。
-- 增加了一言、和风天气的 API。
-
-### 使用说明
-
-这是一个开源的公益项目，你可以拿来制作自己的网址导航，也可以做与导航无关的网站。
-
-WebStack 有非常多的魔改版本，这是其中一个。如果你对本主题进行了一些个性化调整，欢迎在本项目留下你的 [分享](https://github.com/shenweiyan/WebStack-Hugo/issues/10)！
-
-
-### 安装说明
-
-关于 Windows/Linux 下详细的安装与使用说明，请参考文档《WebStack-Hugo | 一个静态响应式导航主题》。
-
-- [链接1](https://weiyan.cc/tech/discussions-10/) | [链接2](https://github.com/shenweiyan/Digital-Garden/discussions/10)
-
-### 感谢
-
-本主题的部分代码参考了以下几个开源项目，特此感谢。
-
-- [WebStackPage/WebStackPage.github.io](https://github.com/WebStackPage/WebStackPage.github.io)
-- [liutongxu/liutongxu.github.io](https://github.com/liutongxu/liutongxu.github.io)
-- [iplaycode/webstack-hugo](https://github.com/iplaycode/webstack-hugo)
-
-感谢以下所有朋友对本主题所做出的贡献。  
-- [@yuanj82](https://github.com/yuanj82)        
-- [@yanbeiyinhanghang](https://github.com/yinhanghang)     
-- [@jetsung](https://github.com/jetsung)
-
-### 赞赏
-
-如果你觉得本项目对你有所帮助，欢迎请作者喝杯热咖啡 >.<
-
-![donate-wecaht-aliapy](https://kg.weiyan.cc/0000/img/donate.webp)
-
-### Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=shenweiyan/WebStack-Hugo&type=Date)](https://star-history.com/#shenweiyan/WebStack-Hugo&Date)
+        - title: Google Cloud
+          logo: gcp.png
+          url: [https://cloud.google.com/](https://cloud.google.com/)
+          description: Google 雲端平台。
+        - title: AWS
+          logo: aws.png
+          url: [https://aws.amazon.com/tw/](https://aws.amazon.com/tw/)
+          description: Amazon Web Services。
