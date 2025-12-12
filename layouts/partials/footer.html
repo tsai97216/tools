@@ -1,11 +1,82 @@
+<footer class="main-footer footer-type-1 text-xs">
+    <div id="footer-tools" class="d-flex flex-column">
+        <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+            <i class="iconfont icon-to-up"></i>
+        </a>
+        
+        <a href="javascript:" data-toggle="modal" data-target="#search-modal" class="btn rounded-circle m-1"
+            rel="search" one-link-mark="yes">
+            <i class="iconfont icon-search"></i>
+        </a>
+        
+        <a href="mailto:tsai97216@gmail.com" class="btn rounded-circle kefu m-1" data-toggle="tooltip" data-placement="left" title="聯絡我">
+            <i class="mode-ico iconfont icon-mail"></i>
+        </a>
+
+        {{ if $.Site.Params.nightMode }} 
+        <a href="javascript:" onclick="window.location.href='javascript:switchNightMode()'" class="btn rounded-circle switch-dark-mode m-1" id="yejian"
+            data-toggle="tooltip" data-placement="left" title="切換為日間模式">
+            <i class="mode-ico iconfont icon-light"></i>
+        </a>
+        {{ else }}
+        <a href="javascript:" onclick="window.location.href='javascript:switchNightMode()'" class="btn rounded-circle switch-dark-mode m-1" id="yejian"
+            data-toggle="tooltip" data-placement="left" title="切換為夜間模式">
+            <i class="mode-ico iconfont icon-night"></i>
+        </a>
+        {{ end }}
+    </div>
+
+    <div class="footer-inner">
+        <div class="footer-text">{{ replace $.Site.Params.footer.copyright "{year}" now.Year | markdownify }}</div>
+    </div>
+</footer>
+
+</div></div><div class="modal fade search-modal" id="search-modal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="https://www.google.com/search" method="get" target="_blank" class="d-flex">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Google 搜尋..." style="box-shadow: none; border: 1px solid #ced4da;">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit"><i class="iconfont icon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type='text/javascript' src='{{ absURL "assets/js/jquery.ui.touch-punch.min-0.2.2.js" }}' id='jqueryui-touch-js'></script>
 <script type='text/javascript' src='{{ absURL "assets/js/clipboard.min-5.6.2.js" }}' id='clipboard-js'></script>
 <script type='text/javascript' src='{{ absURL "assets/js/tooltip-extend.js" }}' id='iplaycode-nav-js'></script>
+
 <script type='text/javascript' id='popper-js-extra'>
 /* <![CDATA[ */
-var theme = {"ajaxurl":"","addico":"https:\/\/nav.baidu.cn\/wp-content\/themes\/onenav\/images\/add.png","order":"asc","formpostion":"top","defaultclass":"io-grey-mode","isCustomize":"1","icourl":"","icopng":".png","urlformat":"1","customizemax":"10","newWindow":"0","lazyload":"1","minNav":"1","loading":"1","hotWords":"baidu","classColumns":" col-sm-6 col-md-4 col-xl-5a col-xxl-6a ","apikey":"TWpBeU1UVTNOekk1TWpVMEIvZ1M2bFVIQllUMmxsV1dZelkxQTVPVzB3UW04eldGQmxhM3BNWW14bVNtWk4="};
+// 主題核心參數設定 (已移除百度連結，並將熱搜詞改為 Google)
+var theme = {
+    "ajaxurl":"",
+    "addico":"", 
+    "order":"asc",
+    "formpostion":"top",
+    "defaultclass":"io-grey-mode",
+    "isCustomize":"1",
+    "icourl":"",
+    "icopng":".png",
+    "urlformat":"1",
+    "customizemax":"10",
+    "newWindow":"0",
+    "lazyload":"1",
+    "minNav":"1",
+    "loading":"1",
+    "hotWords":"google", 
+    "classColumns":" col-sm-6 col-md-4 col-xl-5a col-xxl-6a ",
+    "apikey":""
+};
 /* ]]> */
 </script>
+
 <script type='text/javascript' src='{{ absURL "assets/js/popper.min.js" }}' id='popper-js'></script>
 <script type='text/javascript' src='{{ absURL "assets/js/bootstrap.min-4.3.1.js" }}' id='bootstrap-js'></script>
 <script type='text/javascript' src='{{ absURL "assets/js/theia-sticky-sidebar-1.5.0.js" }}' id='sidebar-js'></script>
@@ -16,6 +87,7 @@ var theme = {"ajaxurl":"","addico":"https:\/\/nav.baidu.cn\/wp-content\/themes\/
 {{ else }}
 <script type='text/javascript' src='{{ absURL "assets/js/app-mini.js" }}' id='appmini-js'></script>
 {{ end }}
+
 <script type="text/javascript">
     $(document).ready(function(){
         var siteWelcome = $('#loading');
@@ -25,8 +97,10 @@ var theme = {"ajaxurl":"","addico":"https:\/\/nav.baidu.cn\/wp-content\/themes\/
         }, 600);
     });
 </script>
+
 <script>        
     $(document).ready(function(){
+        // 處理網址錨點跳轉
         setTimeout(function () {
             if ($('a.smooth[href="' + window.location.hash + '"]')[0]) {
                 $('a.smooth[href="' + window.location.hash + '"]').click();
@@ -39,10 +113,14 @@ var theme = {"ajaxurl":"","addico":"https:\/\/nav.baidu.cn\/wp-content\/themes\/
                 });
             }
         }, 300);
+
+        // 點擊事件處理
         $(document).on('click','a.smooth',function(ev) {
+            // 如果側邊欄是開啟狀態，點擊後自動收起
             if($('#sidebar').hasClass('show') && !$(this).hasClass('change-href')){
                 $('#sidebar').modal('toggle');
             }
+            // 平滑捲動效果
             if($(this).attr("href").substr(0, 1) == "#"){
                 $("html, body").animate({
                     scrollTop: $($(this).attr("href")).offset().top - 90
@@ -51,15 +129,18 @@ var theme = {"ajaxurl":"","addico":"https:\/\/nav.baidu.cn\/wp-content\/themes\/
                     easing: "swing"
                 });
             }
+            // 點擊搜尋按鈕自動聚焦輸入框
             if($(this).hasClass('go-search-btn')){
                 $('#search-text').focus();
             }
+            // 處理 Tab 切換
             if(!$(this).hasClass('change-href')){
                 var menu =  $("a"+$(this).attr("href"));
                 menu.click();
                 toTarget(menu.parent().parent(),true,true);
             }
         });
+
         $(document).on('click','a.tab-noajax',function(ev) {
             var url = $(this).data('link');
             if(url)
@@ -72,18 +153,18 @@ var theme = {"ajaxurl":"","addico":"https:\/\/nav.baidu.cn\/wp-content\/themes\/
 </script>
 
 <script>
-//夜间(日间)模式
 (function(){
     if(document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === ''){
+        // 自動模式：22:00 - 06:00 為夜間
         if(new Date().getHours() > 22 || new Date().getHours() < 6){
             document.body.classList.remove('io-black-mode');
             document.body.classList.add('io-grey-mode');
             document.cookie = "night=1;path=/";
-            console.log('夜间模式开启');
+            console.log('夜間模式開啟');
         }else{
             document.body.classList.remove('night');
             document.cookie = "night=0;path=/";
-            console.log('夜间模式关闭');
+            console.log('夜間模式關閉');
         }
     }else{
         var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
@@ -94,26 +175,32 @@ var theme = {"ajaxurl":"","addico":"https:\/\/nav.baidu.cn\/wp-content\/themes\/
         }
     }
 })();
-//夜间(日间)模式切换
-$("#search-bg").css("background-image", "url({{ $.Site.Params.images.searchImageL }})");   //默认浅色背景
+
+// 設定預設背景圖
+$("#search-bg").css("background-image", "url({{ $.Site.Params.images.searchImageL }})");
+
+// 切換模式函數
 function switchNightMode(){
     var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+    
     if(night == '0'){
-	$("#search-bg").css("background-image", "url({{ $.Site.Params.images.searchImageL }})");
+        // 切換為夜間 (使用深色背景圖)
+        $("#search-bg").css("background-image", "url({{ $.Site.Params.images.searchImageD }})");
         document.body.classList.remove('io-grey-mode');
         document.body.classList.add('io-black-mode');
         document.cookie = "night=1;path=/"
-        console.log(' ');
-        $(".switch-dark-mode").attr("data-original-title","日间模式");
+        console.log('切換為夜間模式');
+        $(".switch-dark-mode").attr("data-original-title","日間模式");
         $(".mode-ico").removeClass("icon-night");
         $(".mode-ico").addClass("icon-light");
     }else{
-	$("#search-bg").css("background-image", "url({{ $.Site.Params.images.searchImageD }})")
+        // 切換為日間 (使用淺色背景圖)
+        $("#search-bg").css("background-image", "url({{ $.Site.Params.images.searchImageL }})")
         document.body.classList.remove('io-black-mode');
         document.body.classList.add('io-grey-mode');
         document.cookie = "night=0;path=/"
-        console.log(' ');
-        $(".switch-dark-mode").attr("data-original-title","夜间模式");
+        console.log('切換為日間模式');
+        $(".switch-dark-mode").attr("data-original-title","夜間模式");
         $(".mode-ico").removeClass("icon-light");
         $(".mode-ico").addClass("icon-night");
     }
