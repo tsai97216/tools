@@ -37,14 +37,140 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
-                <form action="https://www.google.com/search" method="get" target="_blank" class="d-flex">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Google 搜尋..." style="box-shadow: none; border: 1px solid #ced4da;">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit"><i class="iconfont icon-search"></i></button>
+                <div id="search" class="s-search mx-auto my-4">
+                    <div id="search-list" class="hide-type-list">
+                        
+                        <div class="s-type">
+                            <span></span>
+                            <div class="s-type-list">
+                                <label for="m_type-google"   data-id="group-a">常用</label>
+                                <label for="m_type-google1"  data-id="group-b">搜尋</label>
+                                <label for="m_type-github"   data-id="group-c">工具</label>
+                                <label for="m_type-youtube"  data-id="group-e">影音</label>
+                                <label for="m_type-shopee"   data-id="group-f">購物</label>
+                            </div>
+                        </div>
+
+                        <div class="search-group group-a"><span class="type-text text-muted">常用</span>
+                            <ul class="search-type">
+                                <li><input checked="checked" hidden="" type="radio" name="type2" 
+                                        id="m_type-google" value="https://www.google.com/search?q=" data-placeholder="Google 搜尋">
+                                    <label for="m_type-google"><span class="text-muted">Google</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" 
+                                        id="m_type-youtube-a" value="https://www.youtube.com/results?search_query=" data-placeholder="YouTube 搜尋">
+                                    <label for="m_type-youtube-a"><span class="text-muted">YouTube</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" 
+                                        id="m_type-wiki" value="https://zh.wikipedia.org/wiki/" data-placeholder="維基百科">
+                                    <label for="m_type-wiki"><span class="text-muted">維基</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" 
+                                        id="m_type-gamer" value="https://acg.gamer.com.tw/search.php?kw=" data-placeholder="巴哈姆特 ACG">
+                                    <label for="m_type-gamer"><span class="text-muted">巴哈姆特</span></label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="search-group group-b"><span class="type-text text-muted">搜尋</span>
+                            <ul class="search-type">
+                                <li><input hidden="" type="radio" name="type2" id="m_type-google1"
+                                        value="https://www.google.com/search?q=" data-placeholder="Google 搜尋">
+                                    <label for="m_type-google1"><span class="text-muted">Google</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-bing"
+                                        value="https://cn.bing.com/search?q=" data-placeholder="Microsoft Bing">
+                                    <label for="m_type-bing"><span class="text-muted">Bing</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-yahoo"
+                                        value="https://tw.search.yahoo.com/search?p=" data-placeholder="Yahoo 奇摩搜尋">
+                                    <label for="m_type-yahoo"><span class="text-muted">Yahoo</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-duck"
+                                        value="https://duckduckgo.com/?q=" data-placeholder="DuckDuckGo 隱私搜尋">
+                                    <label for="m_type-duck"><span class="text-muted">DuckGo</span></label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="search-group group-c"><span class="type-text text-muted">工具</span>
+                            <ul class="search-type">
+                                <li><input hidden="" type="radio" name="type2" id="m_type-github"
+                                        value="https://github.com/search?q=" data-placeholder="GitHub 專案/代碼">
+                                    <label for="m_type-github"><span class="text-muted">GitHub</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-translate"
+                                        value="https://translate.google.com/?sl=auto&tl=zh-TW&text=" data-placeholder="Google 翻譯">
+                                    <label for="m_type-translate"><span class="text-muted">翻譯</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-stackoverflow"
+                                        value="https://stackoverflow.com/search?q=" data-placeholder="StackOverflow 問題">
+                                    <label for="m_type-stackoverflow"><span class="text-muted">StackOver</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-maps"
+                                        value="https://www.google.com/maps/search/" data-placeholder="Google 地圖">
+                                    <label for="m_type-maps"><span class="text-muted">地圖</span></label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="search-group group-e"><span class="type-text text-muted">影音</span>
+                            <ul class="search-type">
+                                <li><input hidden="" type="radio" name="type2" id="m_type-youtube"
+                                        value="https://www.youtube.com/results?search_query=" data-placeholder="YouTube 搜尋">
+                                    <label for="m_type-youtube"><span class="text-muted">YouTube</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-netflix"
+                                        value="https://www.netflix.com/search?q=" data-placeholder="Netflix 搜尋">
+                                    <label for="m_type-netflix"><span class="text-muted">Netflix</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-twitch"
+                                        value="https://www.twitch.tv/search?term=" data-placeholder="Twitch 直播">
+                                    <label for="m_type-twitch"><span class="text-muted">Twitch</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-bilibili"
+                                        value="https://search.bilibili.com/all?keyword=" data-placeholder="Bilibili 搜尋">
+                                    <label for="m_type-bilibili"><span class="text-muted">Bilibili</span></label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="search-group group-f"><span class="type-text text-muted">購物</span>
+                            <ul class="search-type">
+                                <li><input hidden="" type="radio" name="type2" id="m_type-shopee"
+                                        value="https://shopee.tw/search?keyword=" data-placeholder="蝦皮購物">
+                                    <label for="m_type-shopee"><span class="text-muted">蝦皮</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-momo"
+                                        value="https://m.momoshop.com.tw/search.momo?searchKeyword=" data-placeholder="Momo 購物">
+                                    <label for="m_type-momo"><span class="text-muted">Momo</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-pchome"
+                                        value="https://ecshweb.pchome.com.tw/search/v3.3/?q=" data-placeholder="PChome 24h">
+                                    <label for="m_type-pchome"><span class="text-muted">PChome</span></label>
+                                </li>
+                                <li><input hidden="" type="radio" name="type2" id="m_type-amazon"
+                                        value="https://www.amazon.com/s?k=" data-placeholder="Amazon US">
+                                    <label for="m_type-amazon"><span class="text-muted">Amazon</span></label>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </form>
+
+                    <form action="https://www.google.com/search?q=" method="get" target="_blank" class="super-search-fm">
+                        <input type="text" id="m_search-text" class="form-control smart-tips search-key" zhannei=""
+                                autocomplete="off" placeholder="輸入關鍵字搜尋" style="outline:0">
+                        <button type="submit"><i class="iconfont icon-search"></i></button>
+                    </form>
+                    
+                    <div class="card search-smart-tips" style="display: none">
+                        <ul></ul>
+                    </div>
+                </div>
+
+            </div>
+            <div style="position: absolute;bottom: -40px;width: 100%;text-align: center;">
+                <a href="javascript:" data-dismiss="modal"><i class="iconfont icon-close-circle icon-2x" style="color: #fff;"></i></a>
             </div>
         </div>
     </div>
