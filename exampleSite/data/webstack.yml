@@ -101,6 +101,12 @@
           logo: default.webp
           url: https://www.4gamers.com.tw/news/tag/%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB
           description: 台灣遊戲媒體整理的限免情報。
+    - term: 雲端遊戲
+      links:
+        - title: CloudMoon
+          logo: default.webp
+          url: https://cloudmoon.com/
+          description: 聚光燈雲遊戲，手機輕鬆玩 3A 大作。
     - term: 遊戲社群
       links:
         - title: APK.tw
@@ -143,14 +149,26 @@
   list:
     - term: 線上工具
       links:
+        - title: Alist
+          logo: default.webp
+          url: http://localhost:5244/
+          description: 聚合多種網盤的檔案列表服務 (本機)。
         - title: Google 翻譯
           logo: default.webp
           url: https://translate.google.com.tw/
           description: 多國語言線上翻譯。
+        - title: Cobalt
+          logo: default.webp
+          url: https://cobalt.tools/
+          description: 無廣告、隱私友善的多平台影音下載工具。
         - title: Reurl
           logo: default.webp
           url: https://reurl.cc/main/tw
           description: 台灣常用的短網址產生器。
+        - title: Canva
+          logo: default.webp
+          url: https://www.canva.com/zh_tw/
+          description: 簡單好用的線上平面設計與繪圖工具。
         - title: Convertio
           logo: default.webp
           url: https://convertio.co/zh/
