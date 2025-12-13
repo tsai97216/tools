@@ -21,7 +21,7 @@
                         {{ else }}
                             {{ if .is_copy }}
                                 {{ if .copy_content }}
-                                    <a href="javascript:void(0);" onclick="copyRaw('{{ .copy_content | b64enc }}')" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="點擊複製腳本">
+                                    <a href="javascript:void(0);" onclick="copyRaw('{{ .copy_content | base64Encode }}')" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="點擊複製腳本">
                                 {{ else }}
                                     <a href="javascript:void(0);" onclick="copyToClipboard('{{ .url }}')" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="點擊複製網址">
                                 {{ end }}
@@ -55,7 +55,7 @@
 
                         {{ if .is_copy }}
                              <a href="javascript:void(0);" 
-                                onclick="{{ if .copy_content }}copyRaw('{{ .copy_content | b64enc }}'){{ else }}copyToClipboard('{{ .url }}'){{ end }}" 
+                                onclick="{{ if .copy_content }}copyRaw('{{ .copy_content | base64Encode }}'){{ else }}copyToClipboard('{{ .url }}'){{ end }}" 
                                 class="togo text-center text-muted is-views" data-id="0"
                                 data-toggle="tooltip" data-placement="right" title="複製" rel="nofollow">
                             <i class="iconfont icon-copy"></i>
@@ -94,7 +94,7 @@
                         {{ else }}
                             {{ if .is_copy }}
                                 {{ if .copy_content }}
-                                    <a href="javascript:void(0);" onclick="copyRaw('{{ .copy_content | b64enc }}')" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="點擊複製腳本">
+                                    <a href="javascript:void(0);" onclick="copyRaw('{{ .copy_content | base64Encode }}')" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="點擊複製腳本">
                                 {{ else }}
                                     <a href="javascript:void(0);" onclick="copyToClipboard('{{ .url }}')" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="點擊複製網址">
                                 {{ end }}
@@ -125,7 +125,7 @@
 
                         {{ if .is_copy }}
                              <a href="javascript:void(0);" 
-                                onclick="{{ if .copy_content }}copyRaw('{{ .copy_content | b64enc }}'){{ else }}copyToClipboard('{{ .url }}'){{ end }}" 
+                                onclick="{{ if .copy_content }}copyRaw('{{ .copy_content | base64Encode }}'){{ else }}copyToClipboard('{{ .url }}'){{ end }}" 
                                 class="togo text-center text-muted is-views" data-id="0"
                                 data-toggle="tooltip" data-placement="right" title="複製" rel="nofollow">
                             <i class="iconfont icon-copy"></i>
