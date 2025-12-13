@@ -29,10 +29,14 @@
       logo: default.webp
       url: https://chat.deepseek.com/
       description: 深度求索，強大的開源編碼與推理模型。
-    - title: Grok (X)
+    - title: Perplexity
       logo: default.webp
-      url: https://x.com/i/grok
-      description: xAI 開發，整合於 X (Twitter) 的即時 AI。
+      url: https://www.perplexity.ai/
+      description: 結合即時搜尋引擎的 AI 智慧問答。
+    - title: Grok
+      logo: default.webp
+      url: https://grok.com/
+      description: xAI 開發的 AI 助手。
 
 - taxonomy: 社群通訊
   icon: fas fa-comments
@@ -53,22 +57,58 @@
       logo: default.webp
       url: https://www.threads.net/
       description: Meta 推出的文字對話社群。
+    - title: X (Twitter)
+      logo: default.webp
+      url: https://x.com/
+      description: 全球即時資訊與社群平台。
+    - title: Reddit
+      logo: default.webp
+      url: https://www.reddit.com/
+      description: 國外熱門綜合討論區與社群。
 
 - taxonomy: 遊戲娛樂
   icon: fas fa-gamepad
   list:
+    - term: 米遊專區
+      links:
+        - title: HoYoLAB
+          logo: default.webp
+          url: https://www.hoyolab.com/
+          description: 米哈遊官方遊戲社群 (原神、崩鐵、絕區零)。
+        - title: 玉衡杯數據庫
+          logo: default.webp
+          url: https://homdgcat.wiki/
+          description: 妮可少女維護的深度遊戲數據庫 (HomDGCat)。
+        - title: Hakush.in
+          logo: default.webp
+          url: https://hakush.in/
+          description: 知名遊戲解包與數據網 (Hakushin)。
     - term: 遊戲福利與資訊
       links:
         - title: IsThereAnyDeal
           logo: default.webp
           url: https://isthereanydeal.com/giveaways/
           description: 查詢遊戲歷史低價與免費贈送資訊。
+        - title: SteamDB
+          logo: default.webp
+          url: https://steamdb.info/
+          description: Steam 遊戲數據庫，查特價與歷史低價。
         - title: 4Gamers 限時免費
           logo: default.webp
           url: https://www.4gamers.com.tw/news/tag/%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB
           description: 台灣遊戲媒體整理的限免情報。
+    - term: 遊戲社群
+      links:
+        - title: NGA 玩家社區
+          logo: default.webp
+          url: https://bbs.nga.cn/
+          description: 知名綜合遊戲精英玩家論壇。
     - term: 影音動漫
       links:
+        - title: Netflix
+          logo: default.webp
+          url: https://www.netflix.com/tw/
+          description: 全球知名影視串流平台。
         - title: Bilibili
           logo: default.webp
           url: https://www.bilibili.com/
@@ -81,14 +121,14 @@
           logo: default.webp
           url: https://anime1.me/
           description: 簡潔的免費動畫線上看網站。
+        - title: Pixiv
+          logo: default.webp
+          url: https://www.pixiv.net/
+          description: 全球最大插畫與漫畫投稿社群。
         - title: Spotify
           logo: default.webp
           url: https://open.spotify.com/
           description: 線上音樂串流平台。
-        - title: 蒼之彼方的四重奏
-          logo: default.webp
-          url: http://aokana.sprite.net/
-          description: 官方網站 (日文)。
 
 - taxonomy: 實用工具
   icon: fas fa-archive
@@ -99,6 +139,10 @@
           logo: default.webp
           url: https://translate.google.com.tw/
           description: 多國語言線上翻譯。
+        - title: Reurl
+          logo: default.webp
+          url: https://reurl.cc/main/tw
+          description: 台灣常用的短網址產生器。
         - title: Convertio
           logo: default.webp
           url: https://convertio.co/zh/
@@ -111,3 +155,7 @@
           logo: default.webp
           url: https://www.ilovepdf.com/zh-tw
           description: 線上 PDF 處理工具 (合併、拆分、壓縮)。
+        - title: VirusTotal
+          logo: default.webp
+          url: https://www.virustotal.com/gui/home/upload
+          description: 線上病毒掃描，檢查檔案或網址是否安全。
