@@ -5,10 +5,6 @@
       logo: github.png
       url: https://github.com/
       description: 全球最大的代碼託管平台，尋找好用的開源專案。
-    - title: 劉明野的工具箱
-      logo: default.webp
-      url: https://tools.liumingye.cn/
-      description: 強大的聚合搜尋與工具站。
     - title: 巴哈姆特
       logo: default.webp
       url: https://www.gamer.com.tw/
@@ -17,14 +13,64 @@
       logo: default.webp
       url: https://www.youtube.com/
       description: 全球最大影片網站。
+    - title: 劉明野的工具箱
+      logo: default.webp
+      url: https://tools.liumingye.cn/
+      description: 強大的聚合搜尋與工具站。
+
+- taxonomy: 人工智慧 (AI)
+  icon: fas fa-robot
+  links:
     - title: ChatGPT
       logo: default.webp
       url: https://chat.openai.com/
-      description: AI 智慧助手。
+      description: OpenAI 開發的 AI 聊天機器人。
+    - title: Gemini
+      logo: default.webp
+      url: https://gemini.google.com/
+      description: Google 最強大的多模態 AI 模型。
+    - title: DeepSeek
+      logo: default.webp
+      url: https://chat.deepseek.com/
+      description: 深度求索，強大的開源編碼與推理模型。
+    - title: Grok (X)
+      logo: default.webp
+      url: https://x.com/i/grok
+      description: xAI 開發，整合於 X (Twitter) 的即時 AI。
+
+- taxonomy: 社群通訊
+  icon: fas fa-comments
+  links:
+    - title: Facebook
+      logo: default.webp
+      url: https://www.facebook.com/
+      description: 全球最大的社群網站。
+    - title: Messenger
+      logo: default.webp
+      url: https://www.messenger.com/
+      description: Facebook 即時通訊網頁版。
+    - title: Instagram
+      logo: default.webp
+      url: https://www.instagram.com/
+      description: 分享照片與生活的社群平台。
+    - title: Threads
+      logo: default.webp
+      url: https://www.threads.net/
+      description: Meta 推出的文字對話社群。
 
 - taxonomy: 遊戲娛樂
   icon: fas fa-gamepad
   list:
+    - term: 遊戲福利與資訊
+      links:
+        - title: IsThereAnyDeal
+          logo: default.webp
+          url: https://isthereanydeal.com/giveaways/
+          description: 查詢遊戲歷史低價與免費贈送資訊。
+        - title: 4Gamers 限時免費
+          logo: default.webp
+          url: https://www.4gamers.com.tw/news/tag/%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB
+          description: 台灣遊戲媒體整理的限免情報。
     - term: 熱門手遊
       links:
         - title: 原神
@@ -45,6 +91,10 @@
           description: 庫洛遊戲開放世界動作RPG。
     - term: 影音動漫
       links:
+        - title: Bilibili
+          logo: default.webp
+          url: https://www.bilibili.com/
+          description: 嗶哩嗶哩，最大的二次元影音彈幕網。
         - title: 巴哈姆特動畫瘋
           logo: default.webp
           url: https://ani.gamer.com.tw/
