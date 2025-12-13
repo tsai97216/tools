@@ -216,3 +216,36 @@ body, .page-container, .io-grey-mode, .io-black-mode {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+/* ==============================
+   9. 核彈級隱藏捲軸 (針對搜尋區塊)
+   ============================== */
+
+/* 針對所有搜尋相關的容器，強制隱藏捲軸 */
+.s-type-list, 
+.s-type,
+.s-search,
+.header-big,
+.search-group,
+.search-type {
+    /* Firefox */
+    scrollbar-width: none !important;
+    
+    /* IE and Edge */
+    -ms-overflow-style: none !important; 
+    
+    /* 確保不顯示 */
+    overflow: hidden !important; 
+}
+
+/* 針對 Chrome, Safari, Edge (Webkit核心) */
+.s-type-list::-webkit-scrollbar, 
+.s-type::-webkit-scrollbar,
+.s-search::-webkit-scrollbar,
+.header-big::-webkit-scrollbar,
+.search-group::-webkit-scrollbar,
+.search-type::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+}
