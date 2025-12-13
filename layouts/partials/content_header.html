@@ -38,60 +38,56 @@
                             </li>
                             {{ end }}
                         </ul>
-
-                        <div id="mini-weather" class="d-none d-md-flex align-items-center" style="margin-right: 15px; font-size: 13px; color: #ffffff; cursor: default; opacity: 0.8;">
-                            <span id="w-icon" style="margin-right: 5px;">☁️</span>
-                            <span id="w-temp">--°C</span>
-                            
-                            <script>
-                                (function() {
-                                    // 台北市經緯度
-                                    var url = "https://api.open-meteo.com/v1/forecast?latitude=25.0330&longitude=121.5654&current_weather=true";
-                                    fetch(url)
-                                    .then(response => response.json())
-                                    .then(data => {
-                                        var temp = Math.round(data.current_weather.temperature);
-                                        var code = data.current_weather.weathercode;
-                                        var icon = "☁️"; 
-                                        if (code === 0) icon = "☀️"; 
-                                        else if (code >= 1 && code <= 3) icon = "⛅";
-                                        else if (code >= 45 && code <= 48) icon = "🌫️";
-                                        else if (code >= 51 && code <= 67) icon = "🌧️";
-                                        else if (code >= 71 && code <= 86) icon = "❄️";
-                                        else if (code >= 95) icon = "⛈️";
-
-                                        document.getElementById('w-icon').innerText = icon;
-                                        document.getElementById('w-temp').innerText = temp + "°C";
-                                        document.getElementById('mini-weather').title = "台北天氣";
-                                    })
-                                    .catch(err => {
-                                        console.log("Weather error", err);
-                                        document.getElementById('mini-weather').style.display = 'none';
-                                    });
-                                })();
-                            </script>
-                        </div>
-
-                        <div id="mini-clock" class="d-none d-md-flex align-items-center" style="margin-right: 15px; font-size: 13px; color: #ffffff; cursor: default; opacity: 0.8;">
-                            <span style="margin-right: 5px;">🕒</span>
-                            <span id="clock-text">--:--</span>
-                            <script>
-                                function updateClock() {
-                                    var now = new Date();
-                                    var hours = String(now.getHours()).padStart(2, '0');
-                                    var minutes = String(now.getMinutes()).padStart(2, '0');
-                                    // var seconds = String(now.getSeconds()).padStart(2, '0'); // 如果想顯示秒數，把這行取消註解
-                                    document.getElementById('clock-text').innerText = hours + ":" + minutes;
-                                }
-                                updateClock(); // 立即執行一次
-                                setInterval(updateClock, 1000); // 每秒更新
-                            </script>
-                        </div>
-                        
                     </div>
 
                     <ul class="nav navbar-menu text-xs order-1 order-md-2">
                         
+                        <li class="nav-item d-none d-md-flex align-items-center mr-3">
+                            <div id="mini-weather" style="font-size: 13px; color: #ffffff; cursor: default; opacity: 0.8;">
+                                <span id="w-icon" style="margin-right: 5px;">☁️</span>
+                                <span id="w-temp">--°C</span>
+                                <script>
+                                    (function() {
+                                        var url = "https://api.open-meteo.com/v1/forecast?latitude=25.0330&longitude=121.5654&current_weather=true";
+                                        fetch(url)
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            var temp = Math.round(data.current_weather.temperature);
+                                            var code = data.current_weather.weathercode;
+                                            var icon = "☁️"; 
+                                            if (code === 0) icon = "☀️"; 
+                                            else if (code >= 1 && code <= 3) icon = "⛅";
+                                            else if (code >= 45 && code <= 48) icon = "🌫️";
+                                            else if (code >= 51 && code <= 67) icon = "🌧️";
+                                            else if (code >= 71 && code <= 86) icon = "❄️";
+                                            else if (code >= 95) icon = "⛈️";
+                                            document.getElementById('w-icon').innerText = icon;
+                                            document.getElementById('w-temp').innerText = temp + "°C";
+                                            document.getElementById('mini-weather').title = "台北天氣";
+                                        })
+                                        .catch(err => { console.log("Weather error", err); document.getElementById('mini-weather').style.display = 'none'; });
+                                    })();
+                                </script>
+                            </div>
+                        </li>
+
+                        <li class="nav-item d-none d-md-flex align-items-center mr-3">
+                            <div id="mini-clock" style="font-size: 13px; color: #ffffff; cursor: default; opacity: 0.8;">
+                                <span style="margin-right: 5px;">🕒</span>
+                                <span id="clock-text">--:--</span>
+                                <script>
+                                    function updateClock() {
+                                        var now = new Date();
+                                        var hours = String(now.getHours()).padStart(2, '0');
+                                        var minutes = String(now.getMinutes()).padStart(2, '0');
+                                        document.getElementById('clock-text').innerText = hours + ":" + minutes;
+                                    }
+                                    updateClock();
+                                    setInterval(updateClock, 1000);
+                                </script>
+                            </div>
+                        </li>
+
                         <li class="nav-item mr-3 mr-lg-0 d-none d-lg-block">
                             <div id="hitokoto" style="color: #ffffff; font-size: 13px; opacity: 0.8;">
                                 <span id="hitokoto_text">載入中...</span>
