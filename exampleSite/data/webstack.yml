@@ -5,10 +5,6 @@
       logo: github.png
       url: https://github.com/
       description: 全球最大的代碼託管平台，尋找好用的開源專案。
-    - title: 巴哈姆特
-      logo: default.webp
-      url: https://www.gamer.com.tw/
-      description: 華人最大電玩動漫社群。
     - title: YouTube
       logo: default.webp
       url: https://www.youtube.com/
@@ -17,6 +13,10 @@
       logo: default.webp
       url: https://tools.liumingye.cn/
       description: 強大的聚合搜尋與工具站。
+    - title: 巴哈姆特
+      logo: default.webp
+      url: https://www.gamer.com.tw/
+      description: 華人最大電玩動漫社群。
 
 - taxonomy: 人工智慧 (AI)
   icon: fas fa-robot
@@ -139,6 +139,10 @@
           logo: default.webp
           url: https://www.reddit.com/r/jailbreak/
           description: 國外越獄討論區。
+        - title: APKMirror
+          logo: default.webp
+          url: https://www.apkmirror.com/
+          description: 安全的 Android APK 下載站。
 
 - taxonomy: 實用工具
   icon: fas fa-archive
@@ -149,10 +153,6 @@
           logo: default.webp
           url: https://translate.google.com.tw/
           description: 多國語言線上翻譯。
-        - title: Remove.bg
-          logo: default.webp
-          url: https://www.remove.bg/zh
-          description: 圖片線上去背工具。
         - title: Convertio
           logo: default.webp
           url: https://convertio.co/zh/
