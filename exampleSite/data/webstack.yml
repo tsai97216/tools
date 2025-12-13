@@ -4,7 +4,7 @@
     - title: GitHub
       logo: github.png
       url: https://github.com/
-      description: 全球最大的代碼託管平台，尋找好用的開源專案。
+      description: 全球最大的代碼託管平台。
     - title: YouTube
       logo: default.webp
       url: https://www.youtube.com/
@@ -13,10 +13,6 @@
       logo: default.webp
       url: https://tools.liumingye.cn/
       description: 強大的聚合搜尋與工具站。
-    - title: 巴哈姆特
-      logo: default.webp
-      url: https://www.gamer.com.tw/
-      description: 華人最大電玩動漫社群。
 
 - taxonomy: 人工智慧 (AI)
   icon: fas fa-robot
@@ -71,24 +67,6 @@
           logo: default.webp
           url: https://www.4gamers.com.tw/news/tag/%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB
           description: 台灣遊戲媒體整理的限免情報。
-    - term: 熱門手遊
-      links:
-        - title: 原神
-          logo: default.webp
-          url: https://genshin.hoyoverse.com/zh-tw/
-          description: 米哈遊開放世界冒險遊戲。
-        - title: 崩壞：星穹鐵道
-          logo: default.webp
-          url: https://hsr.hoyoverse.com/zh-tw/
-          description: 銀河冒險策略遊戲。
-        - title: 絕區零
-          logo: default.webp
-          url: https://zenless.hoyoverse.com/zh-tw/
-          description: 米哈遊全新動作遊戲。
-        - title: 鳴潮
-          logo: default.webp
-          url: https://wutheringwaves.kurogames.com/zh-tw/
-          description: 庫洛遊戲開放世界動作RPG。
     - term: 影音動漫
       links:
         - title: Bilibili
@@ -108,42 +86,6 @@
           url: http://aokana.sprite.net/
           description: 官方網站 (日文)。
 
-- taxonomy: 技術折騰
-  icon: fas fa-tools
-  list: 
-    - term: 刷機與越獄
-      links:
-        - title: XDA Developers
-          logo: default.webp
-          url: https://www.xda-developers.com/
-          description: 全球最大手機刷機與開發論壇。
-        - title: Magisk (GitHub)
-          logo: github.png
-          url: https://github.com/topjohnwu/Magisk
-          description: Android Root 神器。
-        - title: Nugget (iOS)
-          logo: default.webp
-          url: https://github.com/leminlimez/Nugget
-          description: iOS 客製化工具。
-        - title: Cheat Engine
-          logo: default.webp
-          url: https://www.cheatengine.org/
-          description: 遊戲記憶體修改工具。
-    - term: 實用資源
-      links:
-        - title: 52破解
-          logo: default.webp
-          url: https://www.52pojie.cn/
-          description: 軟體安全與逆向工程論壇。
-        - title: Reddit (Jailbreak)
-          logo: default.webp
-          url: https://www.reddit.com/r/jailbreak/
-          description: 國外越獄討論區。
-        - title: APKMirror
-          logo: default.webp
-          url: https://www.apkmirror.com/
-          description: 安全的 Android APK 下載站。
-
 - taxonomy: 實用工具
   icon: fas fa-archive
   list:
@@ -153,6 +95,10 @@
           logo: default.webp
           url: https://translate.google.com.tw/
           description: 多國語言線上翻譯。
+        - title: Remove.bg
+          logo: default.webp
+          url: https://www.remove.bg/zh
+          description: 圖片線上去背工具。
         - title: Convertio
           logo: default.webp
           url: https://convertio.co/zh/
