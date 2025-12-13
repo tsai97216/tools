@@ -77,6 +77,10 @@
           logo: default.webp
           url: https://ani.gamer.com.tw/
           description: 正版高畫質動畫線上看。
+        - title: Anime1
+          logo: default.webp
+          url: https://anime1.me/
+          description: 簡潔的免費動畫線上看網站。
         - title: Spotify
           logo: default.webp
           url: https://open.spotify.com/
@@ -95,11 +99,15 @@
           logo: default.webp
           url: https://translate.google.com.tw/
           description: 多國語言線上翻譯。
-        - title: Remove.bg
-          logo: default.webp
-          url: https://www.remove.bg/zh
-          description: 圖片線上去背工具。
         - title: Convertio
           logo: default.webp
           url: https://convertio.co/zh/
           description: 線上檔案格式轉換。
+        - title: iLoveIMG
+          logo: default.webp
+          url: https://www.iloveimg.com/zh-tw
+          description: 線上圖片編輯工具 (壓縮、裁剪、轉換)。
+        - title: iLovePDF
+          logo: default.webp
+          url: https://www.ilovepdf.com/zh-tw
+          description: 線上 PDF 處理工具 (合併、拆分、壓縮)。
