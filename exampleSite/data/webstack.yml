@@ -9,10 +9,6 @@
       logo: default.webp
       url: https://www.youtube.com/
       description: 全球最大影片網站。
-    - title: 劉明野的工具箱
-      logo: default.webp
-      url: https://tools.liumingye.cn/
-      description: 強大的聚合搜尋與工具站。
 
 - taxonomy: 人工智慧 (AI)
   icon: fas fa-robot
@@ -89,6 +85,10 @@
           description: 知名遊戲解包與數據網 (Hakushin)。
     - term: 遊戲福利與資訊
       links:
+        - title: Prydwen
+          logo: default.webp
+          url: https://www.prydwen.gg/
+          description: 權威的星鐵、絕區零、鳴潮強度排行與攻略網。
         - title: IsThereAnyDeal
           logo: default.webp
           url: https://isthereanydeal.com/giveaways/
