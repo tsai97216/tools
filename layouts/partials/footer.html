@@ -337,6 +337,19 @@ function switchNightMode(){
 </script>
 
 <script>
+    // 1. 新增：處理 Base64 編碼內容的複製函式
+    function copyRaw(base64Content) {
+        try {
+            // 使用 atob 解碼 base64，並處理中文亂碼
+            var rawText = decodeURIComponent(escape(window.atob(base64Content)));
+            copyToClipboard(rawText);
+        } catch (e) {
+            console.error("解碼失敗:", e);
+            alert("❌ 內容解析失敗，請檢查代碼格式");
+        }
+    }
+
+    // 2. 原本的複製功能
     function copyToClipboard(text) {
         // 優先使用現代 API
         if (navigator.clipboard && navigator.clipboard.writeText) {
