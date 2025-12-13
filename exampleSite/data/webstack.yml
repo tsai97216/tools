@@ -75,6 +75,10 @@
           logo: default.webp
           url: https://www.hoyolab.com/
           description: 米哈遊官方遊戲社群 (原神、崩鐵、絕區零)。
+        - title: Prydwen
+          logo: default.webp
+          url: https://www.prydwen.gg/
+          description: 權威的星鐵、絕區零、鳴潮強度排行與攻略網。
         - title: 玉衡杯數據庫
           logo: default.webp
           url: https://homdgcat.wiki/
@@ -85,10 +89,10 @@
           description: 知名遊戲解包與數據網 (Hakushin)。
     - term: 遊戲福利與資訊
       links:
-        - title: Prydwen
+        - title: Bwiki (遊戲百科)
           logo: default.webp
-          url: https://www.prydwen.gg/
-          description: 權威的星鐵、絕區零、鳴潮強度排行與攻略網。
+          url: https://wiki.biligame.com/
+          description: Bilibili 官方遊戲百科，米哈遊遊戲資料最全。
         - title: IsThereAnyDeal
           logo: default.webp
           url: https://isthereanydeal.com/giveaways/
@@ -117,6 +121,10 @@
           logo: default.webp
           url: https://bbs.nga.cn/
           description: 知名綜合遊戲精英玩家論壇。
+        - title: Komica
+          logo: default.webp
+          url: https://w.komica.org/
+          description: K島，台灣高人氣的 ACG 匿名討論板。
     - term: 影音動漫
       links:
         - title: Netflix
@@ -135,6 +143,10 @@
           logo: default.webp
           url: https://anime1.me/
           description: 簡潔的免費動畫線上看網站。
+        - title: 拷貝漫畫
+          logo: default.webp
+          url: https://www.copymanga.tv/
+          description: 資源豐富、更新快速的線上漢化漫畫網。
         - title: Pixiv
           logo: default.webp
           url: https://www.pixiv.net/
@@ -169,6 +181,14 @@
           logo: default.webp
           url: https://www.canva.com/zh_tw/
           description: 簡單好用的線上平面設計與繪圖工具。
+        - title: 果核剝殼
+          logo: default.webp
+          url: https://www.gdaily.org/
+          description: 台灣優質軟體分享站，介面乾淨無廣告。
+        - title: 阿榮福利味
+          logo: default.webp
+          url: https://www.azofreeware.com/
+          description: 台灣老牌免費軟體與免安裝軟體下載站。
         - title: Convertio
           logo: default.webp
           url: https://convertio.co/zh/
@@ -198,126 +218,5 @@
           url: javascript:void(0);
           description: 點擊按鈕複製 Discord 自動解任務腳本 (F12 Console 使用)。
           is_copy: true
-          copy_content: |
-            delete window.$;let wpRequire = webpackChunkdiscord_app.push([[Symbol()], {}, r => r]);webpackChunkdiscord_app.pop();let ApplicationStreamingStore = Object.values(wpRequire.c).find(x => x?.exports?.Z?.__proto__?.getStreamerActiveStreamMetadata).exports.Z;let RunningGameStore = Object.values(wpRequire.c).find(x => x?.exports?.ZP?.getRunningGames).exports.ZP;let QuestsStore = Object.values(wpRequire.c).find(x => x?.exports?.Z?.__proto__?.getQuest).exports.Z;let ChannelStore = Object.values(wpRequire.c).find(x => x?.exports?.Z?.__proto__?.getAllThreadsForParent).exports.Z;let GuildChannelStore = Object.values(wpRequire.c).find(x => x?.exports?.ZP?.getSFWDefaultChannel).exports.ZP;let FluxDispatcher = Object.values(wpRequire.c).find(x => x?.exports?.Z?.__proto__?.flushWaitQueue).exports.Z;let api = Object.values(wpRequire.c).find(x => x?.exports?.tn?.get).exports.tn;let quest = [...QuestsStore.quests.values()].find(x => x.id !== "1412491570820812933" && x.userStatus?.enrolledAt && !x.userStatus?.completedAt && new Date(x.config.expiresAt).getTime() > Date.now())
-            let isApp = typeof DiscordNative !== "undefined"
-            if(!quest) {
-                console.log("You don't have any uncompleted quests!")} else {
-                const pid = Math.floor(Math.random() * 30000) + 1000
-                const applicationId = quest.config.application.id
-                const applicationName = quest.config.application.name
-                const questName = quest.config.messages.questName
-                const taskConfig = quest.config.taskConfig ?? quest.config.taskConfigV2
-                const taskName = ["WATCH_VIDEO", "PLAY_ON_DESKTOP", "STREAM_ON_DESKTOP", "PLAY_ACTIVITY", "WATCH_VIDEO_ON_MOBILE"].find(x => taskConfig.tasks[x] != null)
-                const secondsNeeded = taskConfig.tasks[taskName].target
-                let secondsDone = quest.userStatus?.progress?.[taskName]?.value ?? 0
-                if(taskName === "WATCH_VIDEO" || taskName === "WATCH_VIDEO_ON_MOBILE") {
-                    const maxFuture = 10, speed = 7, interval = 1
-                    const enrolledAt = new Date(quest.userStatus.enrolledAt).getTime()
-                    let completed = false
-                    let fn = async () => {          
-                        while(true) {
-                            const maxAllowed = Math.floor((Date.now() - enrolledAt)/1000) + maxFuture
-                            const diff = maxAllowed - secondsDone
-                            const timestamp = secondsDone + speed
-                            if(diff >= speed) {
-                                const res = await api.post({url: `/quests/${quest.id}/video-progress`, body: {timestamp: Math.min(secondsNeeded, timestamp + Math.random())}})
-                                completed = res.body.completed_at != null
-                                secondsDone = Math.min(secondsNeeded, timestamp)
-                            }
-                            if(timestamp >= secondsNeeded) {
-                                break
-                            }
-                            await new Promise(resolve => setTimeout(resolve, interval * 1000))
-                        }
-                        if(!completed) {
-                            await api.post({url: `/quests/${quest.id}/video-progress`, body: {timestamp: secondsNeeded}})
-                        }
-                        console.log("Quest completed!")
-                    }
-                    fn()
-                    console.log(`Spoofing video for ${questName}.`)
-                } else if(taskName === "PLAY_ON_DESKTOP") {
-                    if(!isApp) {
-                        console.log("This no longer works in browser for non-video quests. Use the discord desktop app to complete the", questName, "quest!")
-                    } else {
-                        api.get({url: `/applications/public?application_ids=${applicationId}`}).then(res => {
-                            const appData = res.body[0]
-                            const exeName = appData.executables.find(x => x.os === "win32").name.replace(">","")
-                            const fakeGame = {
-                                cmdLine: `C:\\Program Files\\${appData.name}\\${exeName}`,
-                                exeName,
-                                exePath: `c:/program files/${appData.name.toLowerCase()}/${exeName}`,
-                                hidden: false,
-                                isLauncher: false,
-                                id: applicationId,
-                                name: appData.name,
-                                pid: pid,
-                                pidPath: [pid],
-                                processName: appData.name,
-                                start: Date.now(),
-                            }
-                            const realGames = RunningGameStore.getRunningGames()
-                            const fakeGames = [fakeGame]
-                            const realGetRunningGames = RunningGameStore.getRunningGames
-                            const realGetGameForPID = RunningGameStore.getGameForPID
-                            RunningGameStore.getRunningGames = () => fakeGames
-                            RunningGameStore.getGameForPID = (pid) => fakeGames.find(x => x.pid === pid)
-                            FluxDispatcher.dispatch({type: "RUNNING_GAMES_CHANGE", removed: realGames, added: [fakeGame], games: fakeGames})
-                            let fn = data => {
-                                let progress = quest.config.configVersion === 1 ? data.userStatus.streamProgressSeconds : Math.floor(data.userStatus.progress.PLAY_ON_DESKTOP.value)
-                                console.log(`Quest progress: ${progress}/${secondsNeeded}`)
-                                if(progress >= secondsNeeded) {
-                                    console.log("Quest completed!")
-                                    RunningGameStore.getRunningGames = realGetRunningGames
-                                    RunningGameStore.getGameForPID = realGetGameForPID
-                                    FluxDispatcher.dispatch({type: "RUNNING_GAMES_CHANGE", removed: [fakeGame], added: [], games: []})
-                                    FluxDispatcher.unsubscribe("QUESTS_SEND_HEARTBEAT_SUCCESS", fn)
-                                }
-                            }
-                            FluxDispatcher.subscribe("QUESTS_SEND_HEARTBEAT_SUCCESS", fn)
-                            console.log(`Spoofed your game to ${applicationName}. Wait for ${Math.ceil((secondsNeeded - secondsDone) / 60)} more minutes.`)
-                        })
-                    }
-                } else if(taskName === "STREAM_ON_DESKTOP") {
-                    if(!isApp) {
-                        console.log("This no longer works in browser for non-video quests. Use the discord desktop app to complete the", questName, "quest!")
-                    } else {
-                        let realFunc = ApplicationStreamingStore.getStreamerActiveStreamMetadata
-                        ApplicationStreamingStore.getStreamerActiveStreamMetadata = () => ({
-                            id: applicationId,
-                            pid,
-                            sourceName: null
-                        })
-                        let fn = data => {
-                            let progress = quest.config.configVersion === 1 ? data.userStatus.streamProgressSeconds : Math.floor(data.userStatus.progress.STREAM_ON_DESKTOP.value)
-                            console.log(`Quest progress: ${progress}/${secondsNeeded}`)
-                            if(progress >= secondsNeeded) {
-                                console.log("Quest completed!")
-                                ApplicationStreamingStore.getStreamerActiveStreamMetadata = realFunc
-                                FluxDispatcher.unsubscribe("QUESTS_SEND_HEARTBEAT_SUCCESS", fn)
-                            }
-                        }
-                        FluxDispatcher.subscribe("QUESTS_SEND_HEARTBEAT_SUCCESS", fn)
-                        console.log(`Spoofed your stream to ${applicationName}. Stream any window in vc for ${Math.ceil((secondsNeeded - secondsDone) / 60)} more minutes.`)
-                        console.log("Remember that you need at least 1 other person to be in the vc!")
-                    }
-                } else if(taskName === "PLAY_ACTIVITY") {
-                    const channelId = ChannelStore.getSortedPrivateChannels()[0]?.id ?? Object.values(GuildChannelStore.getAllGuilds()).find(x => x != null && x.VOCAL.length > 0).VOCAL[0].channel.id
-                    const streamKey = `call:${channelId}:1`
-                    let fn = async () => {
-                        console.log("Completing quest", questName, "-", quest.config.messages.questName)
-                        while(true) {
-                            const res = await api.post({url: `/quests/${quest.id}/heartbeat`, body: {stream_key: streamKey, terminal: false}})
-                            const progress = res.body.progress.PLAY_ACTIVITY.value
-                            console.log(`Quest progress: ${progress}/${secondsNeeded}`)
-                            await new Promise(resolve => setTimeout(resolve, 20 * 1000))
-                            if(progress >= secondsNeeded) {
-                                await api.post({url: `/quests/${quest.id}/heartbeat`, body: {stream_key: streamKey, terminal: true}})
-                                break
-                            }
-                        }
-                        console.log("Quest completed!")
-                    }
-                    fn()
-                }}
+          copy_content: >-
+            delete window.$;let wpRequire=webpackChunkdiscord_app.push([[Symbol()],{},r=>r]);webpackChunkdiscord_app.pop();let ApplicationStreamingStore=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.getStreamerActiveStreamMetadata).exports.Z,RunningGameStore=Object.values(wpRequire.c).find(x=>x?.exports?.ZP?.getRunningGames).exports.ZP,QuestsStore=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.getQuest).exports.Z,ChannelStore=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.getAllThreadsForParent).exports.Z,GuildChannelStore=Object.values(wpRequire.c).find(x=>x?.exports?.ZP?.getSFWDefaultChannel).exports.ZP,FluxDispatcher=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.flushWaitQueue).exports.Z,api=Object.values(wpRequire.c).find(x=>x?.exports?.tn?.get).exports.tn,quest=[...QuestsStore.quests.values()].find(x=>x.id!=="1412491570820812933"&&x.userStatus?.enrolledAt&&!x.userStatus?.completedAt&&new Date(x.config.expiresAt).getTime()>Date.now()),isApp="undefined"!=typeof DiscordNative;if(quest){const e=Math.floor(3e4*Math.random())+1e3,t=quest.config.application.id,o=quest.config.application.name,n=quest.config.messages.questName,s=quest.config.taskConfig??quest.config.taskConfigV2,a=["WATCH_VIDEO","PLAY_ON_DESKTOP","STREAM_ON_DESKTOP","PLAY_ACTIVITY","WATCH_VIDEO_ON_MOBILE"].find(e=>null!=s.tasks[e]),r=s.tasks[a].target;let i=quest.userStatus?.progress?.[a]?.value??0;if("WATCH_VIDEO"===a||"WATCH_VIDEO_ON_MOBILE"===a){const t=new Date(quest.userStatus.enrolledAt).getTime();let o=!1;!async function(){for(;;){const n=Math.floor((Date.now()-t)/1e3)+10,s=n-i,a=i+7;if(s>=7){const t=await api.post({url:`/quests/${quest.id}/video-progress`,body:{timestamp:Math.min(r,a+Math.random())}});o=null!=t.body.completed_at,i=Math.min(r,a)}if(a>=r)break;await new Promise(e=>setTimeout(e,1e3))}o||await api.post({url:`/quests/${quest.id}/video-progress`,body:{timestamp:r}}),console.log("Quest completed!")}(),console.log(`Spoofing video for ${n}.`)}else if("PLAY_ON_DESKTOP"===a)isApp?api.get({url:`/applications/public?application_ids=${t}`}).then(s=>{const a=s.body[0],c=a.executables.find(e=>"win32"===e.os).name.replace(">",""),l={cmdLine:`C:\\Program Files\\${a.name}\\${c}`,exeName:c,exePath:`c:/program files/${a.name.toLowerCase()}/${c}`,hidden:!1,isLauncher:!1,id:t,name:a.name,pid:e,pidPath:[e],processName:a.name,start:Date.now()},u=RunningGameStore.getRunningGames(),d=[l],p=RunningGameStore.getRunningGames,m=RunningGameStore.getGameForPID;RunningGameStore.getRunningGames=()=>d,RunningGameStore.getGameForPID=t=>d.find(e=>e.pid===t),FluxDispatcher.dispatch({type:"RUNNING_GAMES_CHANGE",removed:u,added:[l],games:d});let g=e=>{let t=1===quest.config.configVersion?e.userStatus.streamProgressSeconds:Math.floor(e.userStatus.progress.PLAY_ON_DESKTOP.value);console.log(`Quest progress: ${t}/${r}`),t>=r&&(console.log("Quest completed!"),RunningGameStore.getRunningGames=p,RunningGameStore.getGameForPID=m,FluxDispatcher.dispatch({type:"RUNNING_GAMES_CHANGE",removed:[l],added:[],games:[]}),FluxDispatcher.unsubscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",g))};FluxDispatcher.subscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",g),console.log(`Spoofed your game to ${o}. Wait for ${Math.ceil((r-i)/60)} more minutes.`)}):console.log("This no longer works in browser for non-video quests. Use the discord desktop app to complete the",n,"quest!");else if("STREAM_ON_DESKTOP"===a)isApp?(()=>{let s=ApplicationStreamingStore.getStreamerActiveStreamMetadata;ApplicationStreamingStore.getStreamerActiveStreamMetadata=()=>({id:t,pid:e,sourceName:null});let a=e=>{let t=1===quest.config.configVersion?e.userStatus.streamProgressSeconds:Math.floor(e.userStatus.progress.STREAM_ON_DESKTOP.value);console.log(`Quest progress: ${t}/${r}`),t>=r&&(console.log("Quest completed!"),ApplicationStreamingStore.getStreamerActiveStreamMetadata=s,FluxDispatcher.unsubscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",a))};FluxDispatcher.subscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",a),console.log(`Spoofed your stream to ${o}. Stream any window in vc for ${Math.ceil((r-i)/60)} more minutes.`),console.log("Remember that you need at least 1 other person to be in the vc!")})():console.log("This no longer works in browser for non-video quests. Use the discord desktop app to complete the",n,"quest!");else if("PLAY_ACTIVITY"===a){const e=ChannelStore.getSortedPrivateChannels()[0]?.id??Object.values(GuildChannelStore.getAllGuilds()).find(e=>null!=e&&e.VOCAL.length>0).VOCAL[0].channel.id,t=`call:${e}:1`;!async function(){console.log("Completing quest",n,"-",quest.config.messages.questName);for(;;){const e=await api.post({url:`/quests/${quest.id}/heartbeat`,body:{stream_key:t,terminal:!1}}),o=e.body.progress.PLAY_ACTIVITY.value;if(console.log(`Quest progress: ${o}/${r}`),await new Promise(e=>setTimeout(e,2e4)),o>=r){await api.post({url:`/quests/${quest.id}/heartbeat`,body:{stream_key:t,terminal:!0}});break}}console.log("Quest completed!")}()}}else console.log("You don't have any uncompleted quests!");
