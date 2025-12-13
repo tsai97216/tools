@@ -19,8 +19,16 @@
                             <a href="javascript:" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true" 
                                title="<img src='{{ if findRE "^http" .qrcode }}{{ .qrcode }}{{ else }}{{ $.Site.Params.logosPath }}/{{ .qrcode }}{{ end }}' width='128'>">
                         {{ else }}
-                            <a href="{{ .url }}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="{{ .description }}">
-                        {{ end }}
+                            {{ if .is_copy }}
+                                {{ if .copy_content }}
+                                    <a href="javascript:void(0);" onclick='copyToClipboard({{ .copy_content | jsonify }})' class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="點擊複製腳本">
+                                {{ else }}
+                                    <a href="javascript:void(0);" onclick='copyToClipboard("{{ .url }}")' class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="點擊複製網址">
+                                {{ end }}
+                            {{ else }}
+                                <a href="{{ .url }}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="{{ .description }}">
+                            {{ end }}
+                            {{ end }}
 
                             <div class="card-body">
                                 <div class="url-content d-flex align-items-center">
@@ -45,10 +53,16 @@
                             </div>
                         </a>
 
+                        {{ if .is_copy }}
+                             <a href="javascript:void(0);" onclick='copyToClipboard({{ if .copy_content }}{{ .copy_content | jsonify }}{{ else }}"{{ .url }}"{{ end }})' class="togo text-center text-muted is-views" data-id="0"
+                            data-toggle="tooltip" data-placement="right" title="複製" rel="nofollow">
+                            <i class="iconfont icon-copy"></i> </a>
+                        {{ else }}
                         <a href="{{ .url }}" target="_blank" class="togo text-center text-muted is-views" data-id="0"
                             data-toggle="tooltip" data-placement="right" title="直達" rel="nofollow">
                             <i class="iconfont icon-goto"></i>
                         </a>
+                        {{ end }}
 
                     </div>
                 </div>
@@ -75,8 +89,16 @@
                             <a href="javascript:" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true" 
                                title="<img src='{{ if findRE "^http" .qrcode }}{{ .qrcode }}{{ else }}{{ $.Site.Params.logosPath }}/{{ .qrcode }}{{ end }}' width='128'>">
                         {{ else }}
-                            <a href="{{ .url }}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="{{ .description }}">
-                        {{ end }}
+                            {{ if .is_copy }}
+                                {{ if .copy_content }}
+                                    <a href="javascript:void(0);" onclick='copyToClipboard({{ .copy_content | jsonify }})' class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="點擊複製腳本">
+                                {{ else }}
+                                    <a href="javascript:void(0);" onclick='copyToClipboard("{{ .url }}")' class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="點擊複製網址">
+                                {{ end }}
+                            {{ else }}
+                                <a href="{{ .url }}" target="_blank" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="{{ .description }}">
+                            {{ end }}
+                            {{ end }}
 
                             <div class="card-body">
                                 <div class="url-content d-flex align-items-center">
@@ -98,10 +120,17 @@
                             </div>
                         </a>
 
+                        {{ if .is_copy }}
+                             <a href="javascript:void(0);" onclick='copyToClipboard({{ if .copy_content }}{{ .copy_content | jsonify }}{{ else }}"{{ .url }}"{{ end }})' class="togo text-center text-muted is-views" data-id="0"
+                            data-toggle="tooltip" data-placement="right" title="複製" rel="nofollow">
+                            <i class="iconfont icon-copy"></i>
+                        </a>
+                        {{ else }}
                         <a href="{{ .url }}" target="_blank" class="togo text-center text-muted is-views" data-id="0"
                             data-toggle="tooltip" data-placement="right" title="直達" rel="nofollow">
                             <i class="iconfont icon-goto"></i>
                         </a>
+                        {{ end }}
 
                     </div>
                 </div>
