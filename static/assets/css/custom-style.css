@@ -149,11 +149,6 @@ body, .page-container, .io-grey-mode, .io-black-mode {
    7. 搜尋框上方 Tab 優化 (去除動畫 + 改為光條)
    ============================== */
 
-/* 1. 移除所有慢吞吞的過渡動畫 (讓切換變瞬間、俐落) */
-.header-big .s-type-list label,
-.header-big .search-type input:checked+label:before {
-    transition: none !important;
-}
 
 /* 2. 修改指標樣式：把「三角形」改成「賽博發光底線」 */
 .header-big .search-type input:checked+label:before {
