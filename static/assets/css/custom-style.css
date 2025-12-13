@@ -181,3 +181,24 @@ body, .page-container, .io-grey-mode, .io-black-mode {
     color: var(--main-color) !important;
     text-shadow: 0 0 15px var(--main-color);
 }
+/* ==============================
+   8. 強制凍結背景 (禁止移動/呼吸特效)
+   ============================== */
+
+/* 針對搜尋框的大背景區塊 */
+#search-bg, 
+.header-big,
+.big-header-banner {
+    /* 1. 殺掉所有 CSS 動畫 */
+    animation: none !important;
+    -webkit-animation: none !important;
+    transition: none !important;
+
+    /* 2. 確保背景位置鎖死 */
+    background-attachment: fixed !important; /* 讓背景像釘在牆上一樣，滾動網頁也不會動 */
+    background-position: center center !important;
+    background-size: cover !important;
+    
+    /* 3. 禁止任何變形縮放 */
+    transform: none !important;
+}
