@@ -202,3 +202,17 @@ body, .page-container, .io-grey-mode, .io-black-mode {
     /* 3. 禁止任何變形縮放 */
     transform: none !important;
 }
+/* ==============================
+   9. 隱藏搜尋分類的捲軸
+   ============================== */
+
+/* 隱藏 Chrome, Safari, Edge 的捲軸 */
+.s-type-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* 隱藏 Firefox 的捲軸 */
+.s-type-list {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
