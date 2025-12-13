@@ -159,7 +159,7 @@
 
                     <form action="https://www.google.com/search?q=" method="get" target="_blank" class="super-search-fm">
                         <input type="text" id="m_search-text" class="form-control smart-tips search-key" zhannei=""
-                                autocomplete="off" placeholder="輸入關鍵字搜尋" style="outline:0">
+                               autocomplete="off" placeholder="輸入關鍵字搜尋" style="outline:0">
                         <button type="submit"><i class="iconfont icon-search"></i></button>
                     </form>
                     
@@ -335,5 +335,47 @@ function switchNightMode(){
     }
 }
 </script>
+
+<script>
+    function copyToClipboard(text) {
+        // 優先使用現代 API
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ 複製成功！內容已存入剪貼簿。');
+            }).catch(err => {
+                console.error('複製失敗:', err);
+                fallbackCopy(text);
+            });
+        } else {
+            // 舊版瀏覽器兼容
+            fallbackCopy(text);
+        }
+    }
+
+    function fallbackCopy(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        
+        // 避免在手機上拉起鍵盤或捲動到底部
+        textArea.style.position = "fixed"; 
+        textArea.style.left = "-9999px";
+        textArea.style.top = "0";
+        
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            document.execCommand('copy');
+            alert('✅ 複製成功！');
+        } catch (err) {
+            console.error('Fallback: 複製失敗', err);
+            alert('❌ 複製失敗，請手動選取複製。');
+        }
+        
+        document.body.removeChild(textArea);
+    }
+</script>
+
 </body>
 </html>
