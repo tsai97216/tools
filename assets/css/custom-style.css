@@ -1,89 +1,27 @@
 /* ==============================
-   Chi 的工具箱 - 客製化樣式 (custom-style.css)
+   Chi 的工具箱 - 整合版樣式 (custom-style.css)
    ============================== */
 
-/* 1. 全局字體與基礎設定 */
+/* ▼▼▼ 主題顏色變數 (改這裡，全站變色) ▼▼▼ */
+:root {
+    --main-color: #007bff; /* 科技藍 */
+}
+
+/* ==============================
+   1. 全局字體與基礎設定
+   ============================== */
 body, html {
     font-size: 14px;
-    /* 強制使用微軟正黑體，讓繁體中文在 Windows 上更平滑 */
+    /* 強制使用微軟正黑體，優化繁體中文顯示 */
     font-family: "Microsoft JhengHei", "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-/* 隱藏左側導航的捲軸 (美觀) */
+/* 隱藏左側導航的捲軸 */
 .sidebar-menu.flex-fill::-webkit-scrollbar { display: none; }
 
 /* ==============================
-   2. 配色主題：科技藍 (替換原本的紅色)
+   2. 側邊欄 (Sidebar) 優化
    ============================== */
-
-/* 頂部導航連結 Hover 顏色 */
-.big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a:hover,
-.big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item):hover {
-    color: #007bff !important; /* 原本是紅色 #dc3545 */
-}
-
-/* 頁尾連結顏色 */
-footer.main-footer .footer-text a { color: #007bff; }
-footer.main-footer .footer-text a:hover { color: #0056b3; } /* 深藍色 */
-
-/* 關於頁面連結 */
-.panel .panel-body a { color: #007bff; }
-.panel .panel-body a:hover { color: #0056b3; }
-
-/* 搜尋熱詞選中顏色 */
-.search-hot-text ul li.current,
-.search-hot-text ul li:hover {
-    background: #f1f1f1;
-    color: #007bff; /* 原本是 #2196f3 */
-}
-
-/* ==============================
-   3. 頂部導航欄與搜尋框優化
-   ============================== */
-
-/* 頂部導航透明背景，字體白色 */
-.big-header-banner .page-header {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0); /* 完全透明 */
-    box-shadow: none;
-    transition: color .3s, background-color .3s;
-}
-
-.big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a,
-.big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item) {
-    color: #ffffff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* 增加陰影，防止背景太亮時看不清文字 */
-}
-
-/* 迷你選單按鈕顏色 */
-.big-header-banner:not(.header-bg) .header-mini-btn path { stroke: #ffffff; }
-.big-header-banner:not(.header-bg) .header-mini-btn label:hover path { stroke: #ffffff; }
-
-/* 搜尋欄字體顏色 */
-.header-big #search-text { color: #6C757D; }
-.io-black-mode .header-big #search-text { color: #fff; }
-
-/* 搜尋按鈕圖示 */
-#search button i { color: #6C757D; font-size: 18px; }
-
-/* 搜尋 Tab 三角形指標顏色 */
-.header-big .search-type input:checked+label:before {
-    border-color: #ffffff transparent transparent;
-}
-
-/* 首頁大標題與分類文字顏色 */
-.header-big:not(.no-bg) .s-type-list { color: #20c997; }
-.header-big:not(.no-bg) .text-muted,
-.header-big:not(.no-bg) .search-type .menu-item a,
-.header-big:not(.no-bg) .big-title .h1 {
-    color: #ffffff !important;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* 增加陰影，提升閱讀性 */
-}
-
-/* ==============================
-   4. 側邊欄優化
-   ============================== */
-
 /* 懸浮子選單寬度調整 */
 .sidebar-popup.sidebar-menu-inner > div > ul > li.sidebar-item>ul {
     position: absolute; top: 0px; left: 10px; width: 90px; z-index: 99;
@@ -94,40 +32,79 @@ footer.main-footer .footer-text a:hover { color: #0056b3; } /* 深藍色 */
 /* 二級導航縮排 */
 .sidebar-menu-inner ul li ul li a { margin-left: 30px; }
 
-/* 二級導航圖示 */
+/* 二級導航圖示修正 */
 .navbar-collapse ul li.menu-item-has-children:after { content: '\e612'; }
 
-/* ==============================
-   5. 卡片與佈局樣式
-   ============================== */
-
-/* Logo 圓角 (讓它稍微圓一點，比較現代) */
-.url-card .url-body .url-img > img {
-    border-radius: 50%; /* 50% 變圓形，20% 變圓角矩形，您可以自己改 */
-    transition: transform 0.3s;
+/* [新增] 側邊欄選中狀態改為藍色 (原本是紅色) */
+.sidebar-menu-inner ul li.sidebar-item > a.active, 
+.sidebar-menu-inner ul li.sidebar-item.active > a {
+    color: var(--main-color) !important;
+    border-left-color: var(--main-color) !important;
+    background: linear-gradient(to right, rgba(0, 123, 255, 0.1), transparent) !important;
 }
 
-/* 滑鼠移過去 Logo 轉圈圈特效 */
-.url-card:hover .url-img > img {
-    transform: rotate(360deg);
-}
-
-/* 背景網格 (日間模式) */
-.io-grey-mode .page-container .grid-bg {
-    background-image: linear-gradient(rgba(50, 0, 0, 0.05) 1px, transparent 0), linear-gradient(90deg, rgba(50, 0, 0, 0.05) 1px, transparent 0); 
-    background-size: 15px 15px;
-    background-color: #d8d8d8;
-}
+/* [新增] 載入動畫顏色 */
+.loader { color: var(--main-color) !important; }
+.loader::before, .loader::after { background: var(--main-color) !important; }
 
 /* ==============================
-   6. 搜尋熱詞與其他雜項
+   3. 頂部導航 (Header) & 搜尋框
    ============================== */
+/* 頂部背景透明化 + 文字陰影 (防背景太亮) */
+.big-header-banner .page-header {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0) !important;
+    box-shadow: none;
+    transition: color .3s, background-color .3s;
+}
+
+/* 連結文字顏色與陰影 */
+.big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a,
+.big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item) {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+/* [修改] Hover 顏色改為藍色 */
+.big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a:hover,
+.big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item):hover {
+    color: var(--main-color) !important;
+}
+
+/* 迷你選單按鈕 */
+.big-header-banner:not(.header-bg) .header-mini-btn path { stroke: #ffffff; }
+.big-header-banner:not(.header-bg) .header-mini-btn label:hover path { stroke: #ffffff; }
+
+/* 搜尋框樣式 */
+.header-big #search-text { color: #6C757D; }
+.io-black-mode .header-big #search-text { color: #fff; }
+#search button i { color: #6C757D; font-size: 18px; }
+
+/* 搜尋 Tab 三角形 */
+.header-big .search-type input:checked+label:before {
+    border-color: #ffffff transparent transparent;
+}
+
+/* 首頁大標題與分類 */
+.header-big:not(.no-bg) .s-type-list { color: #20c997; }
+.header-big:not(.no-bg) .text-muted,
+.header-big:not(.no-bg) .search-type .menu-item a,
+.header-big:not(.no-bg) .big-title .h1 {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+/* 主頁 header 底部距離 */
 .post-top { padding-bottom: 50px; }
 
+/* 搜尋背景動畫移除 (因為我們用了自定義背景) */
 .header-big.css-color {
     background-size: unset; background-position: unset; animation: unset;
 }
 
+/* ==============================
+   4. 搜尋熱詞 (Hot Text)
+   ============================== */
 .search-hot-text {
     position: absolute; z-index: 100; width: 100%;
     border-radius: 0 0 10px 10px;
@@ -141,69 +118,66 @@ footer.main-footer .footer-text a:hover { color: #0056b3; } /* 深藍色 */
     color: #777; cursor: pointer;
 }
 .io-black-mode .search-hot-text ul li { color: #fff; }  
+
+/* [修改] 熱詞選中改為藍色 */
+.search-hot-text ul li.current,
+.search-hot-text ul li:hover {
+    background: #f1f1f1;
+    color: var(--main-color) !important;
+    cursor: pointer;
+}
 .search-hot-text ul li span {
     display: inline-block; width: 20px; height: 20px;
     font-size: 12px; line-height: 20px; text-align: center;
     background: #e5e5e5; margin-right: 10px; border-radius: 10px; color: #999;
 }
+
+/* ==============================
+   5. 頁尾與連結 (Footer)
+   ============================== */
 footer.main-footer .footer-text { text-align: center; }
 
+/* [修改] 連結改為藍色，Hover 加深 */
+footer.main-footer .footer-text a { color: var(--main-color); }
+footer.main-footer .footer-text a:hover { color: #0056b3; }
+
+/* About 頁面 */
+.panel .panel-body a { color: var(--main-color); }
+.panel .panel-body a:hover { color: #0056b3; }
+
 /* ==============================
-   7. 新增：天氣與語錄的對齊修正
+   6. 卡片樣式 (Cards)
    ============================== */
-#mini-weather, #hitokoto {
-    display: flex;
-    align-items: center;
-    height: 100%;
+/* [修改] Logo 改為圓形 (50%) 並加入旋轉特效 */
+.url-card .url-img > img {
+    border-radius: 50% !important;
+    transition: transform 0.3s;
 }
+.url-card:hover .url-img > img {
+    transform: rotate(360deg);
+}
+
 /* ==============================
-   8. 強制修復：背景圖片與文字顏色
+   7. 強制背景修復 (Fix Background)
    ============================== */
-
-/* 強制載入首頁背景圖 (確保路徑對應 static/assets/images/bg-dna.jpg) */
-#search-bg {
-    background-image: url('/assets/images/bg-dna.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-/* 萬一圖片還是讀不到，先把文字改成深灰色，確保你看得到字 */
-.big-header-banner:not(.header-bg) .page-header .navbar-nav>li>a,
-.big-header-banner:not(.header-bg) .navbar-menu a:not(.dropdown-item),
-.header-big:not(.no-bg) .big-title .h1 {
-    /* 如果背景圖成功載入，這行會被上面的文字陰影保護，依然看得清 */
-    /* 如果背景圖失敗，這行會讓字變深色，讓你看得見 */
-    color: #333 !important; 
-    text-shadow: 1px 1px 0 #fff; /* 加個白邊，確保在任何背景都能閱讀 */
-}
-
-/* 針對有背景圖時，把文字改回白色 (如果圖片載入成功，這裡會讓字變白) */
-#search-bg[style*="url"] .page-header .navbar-nav>li>a,
-#search-bg[style*="url"] .big-title .h1 {
-    color: #fff !important;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-}
-/* ==============================
-   9. 強制修復：背景與 Logo 覆蓋
-   ============================== */
-
-/* 強制背景圖顯示 (無論日夜模式) */
+/* 強制覆蓋所有模式的背景，顯示 DNA 圖片 */
 body, .page-container, .io-grey-mode, .io-black-mode {
-    /* 請確保 bg-dna.jpg 真的在 static/assets/images/ 裡面 */
     background-image: url('/tools/assets/images/bg-dna.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
-    background-attachment: fixed !important; /* 讓背景固定不動，看起來更高級 */
+    background-attachment: fixed !important;
     background-repeat: no-repeat !important;
 }
 
-/* 讓原本的深色背景變半透明，這樣才看得到底圖 */
+/* 讓原本的黑色背景變半透明，以便顯示底圖 */
 .main-content, .page-container, body.io-black-mode {
-    background-color: rgba(30, 30, 30, 0.8) !important; /* 80% 透明度的黑色 */
+    background-color: rgba(30, 30, 30, 0.85) !important;
 }
 
-/* 強制將左上角 Logo 區域背景透明化 */
-.sidebar-logo {
-    background: transparent !important;
+/* 側邊欄 Logo 區域透明 */
+.sidebar-logo { background: transparent !important; }
+
+/* 天氣與語錄對齊修正 */
+#mini-weather, #hitokoto {
+    display: flex; align-items: center; height: 100%;
 }
