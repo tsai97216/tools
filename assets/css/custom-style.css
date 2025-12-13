@@ -145,3 +145,44 @@ body, .page-container, .io-grey-mode, .io-black-mode {
 
 /* 天氣與語錄對齊 */
 #mini-weather, #hitokoto { display: flex; align-items: center; height: 100%; }
+/* ==============================
+   7. 搜尋框上方 Tab 優化 (去除動畫 + 改為光條)
+   ============================== */
+
+/* 1. 移除所有慢吞吞的過渡動畫 (讓切換變瞬間、俐落) */
+.header-big .s-type-list label,
+.header-big .search-type input:checked+label:before {
+    transition: none !important;
+}
+
+/* 2. 修改指標樣式：把「三角形」改成「賽博發光底線」 */
+.header-big .search-type input:checked+label:before {
+    content: '' !important;
+    border: none !important;       /* 移除原本的三角形邊框 */
+    
+    /* 設定為發光線條 */
+    width: 100% !important;        /* 寬度跟文字一樣寬 */
+    height: 3px !important;        /* 線條厚度 */
+    background: var(--main-color) !important; /* 使用我們的主題螢光色 */
+    box-shadow: 0 0 10px var(--main-color), 0 0 5px #fff !important; /* 強烈發光 */
+    
+    /* 重新定位到文字下方 */
+    top: auto !important;          /* 取消原本的頂部定位 */
+    bottom: -8px !important;       /* 放在文字下方 8px 處 */
+    left: 0 !important;
+    margin-left: 0 !important;     /* 取消原本的置中偏移 */
+    border-radius: 2px;            /* 稍微圓角 */
+}
+
+/* 3. 未選中的文字樣式 (讓它稍微暗一點，對比更強) */
+.header-big .s-type-list label {
+    opacity: 0.6;
+    margin: 0 15px; /* 增加一點間距 */
+}
+
+/* 4. 選中的文字樣式 (全亮) */
+.header-big .search-type input:checked+label {
+    opacity: 1;
+    color: var(--main-color) !important;
+    text-shadow: 0 0 15px var(--main-color);
+}
