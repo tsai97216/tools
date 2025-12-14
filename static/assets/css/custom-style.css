@@ -249,3 +249,38 @@ body, .page-container, .io-grey-mode, .io-black-mode {
     height: 0 !important;
     background: transparent !important;
 }
+/* ==============================
+   修正卡片 Logo 大小與形狀
+   ============================== */
+
+.url-card .url-body .url-img {
+    /* 確保容器本身固定大小 */
+    width: 65px !important;
+    height: 65px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.url-card .url-body .url-img > img {
+    /* 1. 強制固定寬高 (解決圖片忽大忽小) */
+    width: 50px !important;
+    height: 50px !important;
+    
+    /* 2. 保持比例 (避免圖片被壓扁或拉長) */
+    object-fit: contain !important; 
+    
+    /* 3. 圓形與特效 */
+    border-radius: 50% !important;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    
+    /* 4. (選用) 加個微微的背景色，避免黑色 Logo 在黑底消失 */
+    /* background: rgba(255, 255, 255, 0.1); */ 
+    /* padding: 5px; */ /* 如果圖片貼邊太醜，可以打開這行 */
+}
+
+/* 滑鼠移過去的特效 (賽博風) */
+.url-card:hover .url-img > img {
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 0 15px var(--main-color); /* 發光 */
+}
