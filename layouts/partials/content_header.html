@@ -74,13 +74,24 @@
                         <li class="nav-item d-none d-md-flex align-items-center mr-3">
                             <div id="mini-clock" style="font-size: 13px; color: #ffffff; cursor: default; opacity: 0.8;">
                                 <span style="margin-right: 5px;">🕒</span>
-                                <span id="clock-text">--:--</span>
+                                <span id="clock-text">--/-- (週-) --:--</span>
                                 <script>
                                     function updateClock() {
                                         var now = new Date();
+                                        // 取得月、日、時、分 (並補零)
+                                        var month = String(now.getMonth() + 1).padStart(2, '0');
+                                        var day = String(now.getDate()).padStart(2, '0');
                                         var hours = String(now.getHours()).padStart(2, '0');
                                         var minutes = String(now.getMinutes()).padStart(2, '0');
-                                        document.getElementById('clock-text').innerText = hours + ":" + minutes;
+                                        
+                                        // 處理星期
+                                        var weekDays = ['日', '一', '二', '三', '四', '五', '六'];
+                                        var weekDay = weekDays[now.getDay()];
+
+                                        // 組合字串：MM/DD (週X) HH:MM
+                                        var finalTime = month + "/" + day + " (週" + weekDay + ") " + hours + ":" + minutes;
+                                        
+                                        document.getElementById('clock-text').innerText = finalTime;
                                     }
                                     updateClock();
                                     setInterval(updateClock, 1000);
