@@ -285,25 +285,46 @@ body, .page-container, .io-grey-mode, .io-black-mode {
     box-shadow: 0 0 15px var(--main-color); /* 發光 */
 }
 /* ==============================
-   賽博龐克滑鼠游標設定
+   Windows 風格 - 本地游標檔案套用
    ============================== */
 
-/* 1. 預設游標：改成「十字準心」，製造精密操作感 */
+/* 1. 預設狀態 (普通箭頭) */
 body, html {
-    cursor: crosshair !important;
+    cursor: url('/assets/cursors/normal.cur'), auto !important;
 }
 
-/* 2. 連結與按鈕：滑鼠移上去時變回「手指」，但也可以改成其他 */
-a, button, .btn, .url-card, .nav-item {
-    cursor: pointer !important; 
+/* 2. 連結與可點擊元素 (手指) */
+a, button, .btn, .url-card, .nav-item, [role="button"], input[type="submit"], .page-link {
+    cursor: url('/assets/cursors/link.cur'), pointer !important;
 }
 
-/* 3. 文字輸入框：改成「文字編輯 (工字型)」 */
-input, textarea {
-    cursor: text !important;
+/* 3. 文字輸入框 (I 型游標) */
+input[type="text"], textarea, .form-control {
+    cursor: url('/assets/cursors/text.cur'), text !important;
 }
 
-/* 4. 禁止點擊的元素 */
-.disabled {
-    cursor: not-allowed !important;
+/* 4. 精準選擇 / 截圖框 (十字) - 如果您想用在特定區域 */
+.crosshair-area {
+    cursor: url('/assets/cursors/cross.cur'), crosshair !important;
+}
+
+/* 5. 移動 / 拖曳 (十字箭頭) */
+.draggable {
+    cursor: url('/assets/cursors/move.cur'), move !important;
+}
+
+/* 6. 讀取中 / 忙碌 (轉圈圈) 
+   注意：網頁瀏覽器通常不支援播放 .ani 動畫，會顯示第一幀靜止圖 */
+.loading, .wait {
+    cursor: url('/assets/cursors/working.ani'), progress !important;
+}
+
+/* 7. 禁止 / 無法使用 */
+.disabled, :disabled {
+    cursor: url('/assets/cursors/unavailable.cur'), not-allowed !important;
+}
+
+/* 8. 強制覆蓋 Hugo 主題可能殘留的設定 */
+i, span, div, img {
+    /* 讓一般元素繼承 body 的 normal.cur，除非它是連結 */
 }
