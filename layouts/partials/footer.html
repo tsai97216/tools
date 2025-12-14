@@ -281,8 +281,9 @@ var theme = {
 </script>
 
 <script>
-// 夜間模式邏輯
+// 夜間模式邏輯 (含強制繁體修正)
 (function(){
+    // 1. 讀取 Cookie 設定模式
     if(document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === ''){
         // 自動模式：22:00 - 06:00 為夜間
         if(new Date().getHours() > 22 || new Date().getHours() < 6){
@@ -303,12 +304,23 @@ var theme = {
             document.body.classList.add('night');
         }
     }
+
+    // 2. 【關鍵修正】強制在載入時修正 Tooltip 文字 (延遲執行以覆蓋主題預設值)
+    setTimeout(function(){
+        if(document.body.classList.contains('io-black-mode')) {
+            // 如果是夜間模式，按鈕提示應該是「切換為日間模式」
+            $(".switch-dark-mode").attr("data-original-title", "日間模式");
+        } else {
+            // 如果是日間模式，按鈕提示應該是「切換為夜間模式」
+            $(".switch-dark-mode").attr("data-original-title", "夜間模式");
+        }
+    }, 100); 
 })();
 
 // 設定預設背景圖
 $("#search-bg").css("background-image", "url({{ $.Site.Params.images.searchImageL }})");
 
-// 切換模式函數
+// 切換模式函數 (含點擊時繁體修正)
 function switchNightMode(){
     var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
     
@@ -319,7 +331,9 @@ function switchNightMode(){
         document.body.classList.add('io-black-mode');
         document.cookie = "night=1;path=/"
         console.log('切換為夜間模式');
-        $(".switch-dark-mode").attr("data-original-title","日間模式");
+        
+        // 設定繁體文字
+        $(".switch-dark-mode").attr("data-original-title", "日間模式");
         $(".mode-ico").removeClass("icon-night");
         $(".mode-ico").addClass("icon-light");
     }else{
@@ -329,7 +343,9 @@ function switchNightMode(){
         document.body.classList.add('io-grey-mode');
         document.cookie = "night=0;path=/"
         console.log('切換為日間模式');
-        $(".switch-dark-mode").attr("data-original-title","夜間模式");
+        
+        // 設定繁體文字
+        $(".switch-dark-mode").attr("data-original-title", "夜間模式");
         $(".mode-ico").removeClass("icon-light");
         $(".mode-ico").addClass("icon-night");
     }
@@ -389,6 +405,7 @@ function switchNightMode(){
         document.body.removeChild(textArea);
     }
 </script>
+
 <script>
 (function() {
     var canvas = document.createElement('canvas');
