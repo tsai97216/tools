@@ -400,7 +400,7 @@ function switchNightMode(){
     canvas.style.height = '100%';
     canvas.style.pointerEvents = 'none';
     canvas.style.zIndex = '99999';
-    // 使用 screen 混合模式，讓彩色光效疊加後更亮
+    // 使用 screen 混合模式，讓多層線條疊加後產生高亮白光
     canvas.style.mixBlendMode = 'screen';
     document.body.appendChild(canvas);
 
@@ -408,11 +408,10 @@ function switchNightMode(){
     var trail = [];
     
     // ==========================================
-    // 參數設定區 (已調整更長)
+    // 參數設定
     // ==========================================
-    var maxTrail = 120;    // 【殘留更久】: 數字越大，拖尾越長 (50 -> 120)
-    var jitterAmount = 10; // 抖動幅度
-    var hueSpeed = 3;      // 顏色變化速度 (稍微調快一點點，讓長拖尾顏色更豐富)
+    var maxTrail = 100;    // 拖尾長度 (為了效能與美感，多股線條建議設在 100 左右)
+    var hueSpeed = 2;      // 顏色變換速度 (恢復正常，重點在線條)
     // ==========================================
 
     var currentHue = 0; 
@@ -431,55 +430,71 @@ function switchNightMode(){
         }
     });
 
-    function drawLightning(points, color, lineWidth, glow) {
+    // 繪製單條閃電的函式 (加入 offset 參數來控制偏移)
+    function drawStrand(points, color, width, glow, jitterBase, timeOffset) {
         if (points.length < 2) return;
 
         ctx.beginPath();
         ctx.lineJoin = 'miter'; 
         ctx.lineCap = 'butt';   
         
-        // 起點
-        var startX = points[0].x + (Math.random() - 0.5) * jitterAmount;
-        var startY = points[0].y + (Math.random() - 0.5) * jitterAmount;
-        ctx.moveTo(startX, startY);
+        // 移動到起點
+        ctx.moveTo(points[0].x, points[0].y);
 
         for (var i = 1; i < points.length; i++) {
-            // 越靠近尾端抖動越大
+            // 越靠近尾端 (i 小)，抖動越劇烈
+            // 越靠近滑鼠 (i 大)，線條越穩定
             var stability = i / points.length; 
-            var currentJitter = jitterAmount * (1 - stability) * 1.5;
             
-            var px = points[i].x + (Math.random() - 0.5) * currentJitter;
-            var py = points[i].y + (Math.random() - 0.5) * currentJitter;
+            // 基礎抖動 (Random Noise)
+            var noiseX = (Math.random() - 0.5) * jitterBase * (1 - stability);
+            var noiseY = (Math.random() - 0.5) * jitterBase * (1 - stability);
+            
+            // 波浪偏移 (Sine Wave) - 讓線條有「纏繞」的感覺
+            // 使用 i 和 timeOffset 來製造流動感
+            var wave = Math.sin(i * 0.2 + timeOffset) * (jitterBase * 0.5);
+
+            var px = points[i].x + noiseX + wave;
+            var py = points[i].y + noiseY + wave;
+            
             ctx.lineTo(px, py);
         }
 
         ctx.strokeStyle = color;
-        ctx.lineWidth = lineWidth;
+        ctx.lineWidth = width;
         ctx.shadowBlur = glow;
         ctx.shadowColor = color;
         ctx.stroke();
     }
 
+    var time = 0; // 用來控制波浪動畫
+
     function animate() {
         // 清除畫面
         ctx.clearRect(0, 0, width, height);
 
-        // 更新顏色
         currentHue += hueSpeed;
         if (currentHue > 360) currentHue = 0;
+        time += 0.1; // 時間流動
 
-        var mainColor = 'hsl(' + currentHue + ', 100%, 50%)'; 
-        var coreColor = 'hsl(' + currentHue + ', 100%, 80%)'; 
+        // 定義三種顏色
+        var mainColor = 'hsl(' + currentHue + ', 100%, 50%)';       // 主色
+        var subColor = 'hsl(' + (currentHue + 30) + ', 100%, 60%)'; // 輔助色 (偏移30度)
+        var coreColor = '#ffffff';                                  // 核心白
 
         if (trail.length > 1) {
-            // 1. 外層光暈 (彩色，3px)
-            drawLightning(trail, mainColor, 3, 15);
             
-            // 2. 中層核心 (亮彩，1px)
-            drawLightning(trail, coreColor, 1, 8);
-            
-            // 3. 內層極光 (純白，0.5px)
-            drawLightning(trail, '#ffffff', 0.5, 4);
+            // --- 第 1 層：外圍狂暴電弧 (最寬、最抖、輔助色) ---
+            // 負責製造「豐富的雜訊感」
+            drawStrand(trail, subColor, 4, 20, 25, time);
+
+            // --- 第 2 層：主能量流 (中等寬度、中等抖動、主色) ---
+            // 負責顯示主要路徑，帶有波浪感
+            drawStrand(trail, mainColor, 2, 10, 10, time * 1.5);
+
+            // --- 第 3 層：核心極光 (極細、極穩、純白) ---
+            // 負責「銳利度」，像雷射一樣切開畫面
+            drawStrand(trail, coreColor, 0.5, 5, 3, 0);
 
             // 自動縮短路徑
             trail.shift();
