@@ -74,23 +74,21 @@
                         <li class="nav-item d-none d-md-flex align-items-center mr-3">
                             <div id="mini-clock" style="font-size: 13px; color: #ffffff; cursor: default; opacity: 0.8;">
                                 <span style="margin-right: 5px;">🕒</span>
-                                <span id="clock-text">YYYY/MM/DD (Day) --:--</span>
+                                <span id="clock-text">YYYY/MM/DD Day --:--</span>
                                 <script>
                                     function updateClock() {
                                         var now = new Date();
-                                        // 取得年、月、日、時、分
                                         var year = now.getFullYear();
                                         var month = String(now.getMonth() + 1).padStart(2, '0');
                                         var day = String(now.getDate()).padStart(2, '0');
                                         var hours = String(now.getHours()).padStart(2, '0');
                                         var minutes = String(now.getMinutes()).padStart(2, '0');
                                         
-                                        // 處理英文星期
                                         var weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
                                         var weekDay = weekDays[now.getDay()];
 
-                                        // 格式範例：2025/12/14 (Sun) 19:15
-                                        var finalTime = year + "/" + month + "/" + day + " (" + weekDay + ") " + hours + ":" + minutes;
+                                        // 修改這裡：去除了括號，只留空格
+                                        var finalTime = year + "/" + month + "/" + day + " " + weekDay + " " + hours + ":" + minutes;
                                         
                                         document.getElementById('clock-text').innerText = finalTime;
                                     }
