@@ -284,3 +284,26 @@ body, .page-container, .io-grey-mode, .io-black-mode {
     transform: rotate(360deg) scale(1.1);
     box-shadow: 0 0 15px var(--main-color); /* 發光 */
 }
+/* ==============================
+   賽博龐克滑鼠游標設定
+   ============================== */
+
+/* 1. 預設游標：改成「十字準心」，製造精密操作感 */
+body, html {
+    cursor: crosshair !important;
+}
+
+/* 2. 連結與按鈕：滑鼠移上去時變回「手指」，但也可以改成其他 */
+a, button, .btn, .url-card, .nav-item {
+    cursor: pointer !important; 
+}
+
+/* 3. 文字輸入框：改成「文字編輯 (工字型)」 */
+input, textarea {
+    cursor: text !important;
+}
+
+/* 4. 禁止點擊的元素 */
+.disabled {
+    cursor: not-allowed !important;
+}
