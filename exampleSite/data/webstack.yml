@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2025 最終完整版 (含漫畫櫃)
+# Chi 的工具箱 - 2025 最終修訂版 (修復巴哈圖示分流)
 # ====================================================
 
 - taxonomy: 核心中樞
@@ -22,7 +22,7 @@
       url: https://chat.openai.com/
       description: 每日必用的 AI 助手。
     - title: 巴哈姆特
-      logo: gamer.png
+      logo: bahamut.png
       url: https://www.gamer.com.tw/
       description: 華人最大電玩動漫社群。
 
@@ -124,7 +124,7 @@
     - term: 動漫二次元
       links:
         - title: 巴哈姆特動畫瘋
-          logo: gamer.png
+          logo: animemad.png
           url: https://ani.gamer.com.tw/
           description: 台灣正版高畫質動畫線上看。
         - title: 漫畫櫃
