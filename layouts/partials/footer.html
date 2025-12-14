@@ -389,7 +389,6 @@ function switchNightMode(){
         document.body.removeChild(textArea);
     }
 </script>
-
 <script>
 (function() {
     var canvas = document.createElement('canvas');
@@ -401,16 +400,22 @@ function switchNightMode(){
     canvas.style.height = '100%';
     canvas.style.pointerEvents = 'none';
     canvas.style.zIndex = '99999';
-    // 使用 screen 混合模式，讓光效疊加後更亮、更刺眼
+    // 使用 screen 混合模式，讓彩色光效疊加後更亮
     canvas.style.mixBlendMode = 'screen';
     document.body.appendChild(canvas);
 
     var width, height;
-    var trail = []; // 儲存滑鼠路徑點
+    var trail = [];
     
-    // 設定：拖尾長度與風格
-    var maxTrail = 20; // 拖尾保留的節點數 (數字越大拖尾越長)
-    var jitterAmount = 15; // 抖動幅度 (數字越大越狂暴)
+    // ==========================================
+    // 參數設定區 (您可以自己微調這裡)
+    // ==========================================
+    var maxTrail = 50;     // 【殘留久一些】: 數字越大，拖尾越長 (原本 20 -> 現在 50)
+    var jitterAmount = 10; // 抖動幅度: 數字越大越狂暴，越小越平滑
+    var hueSpeed = 2;      // 【顏色變化速度】: 數字越大變色越快
+    // ==========================================
+
+    var currentHue = 0; // 初始顏色色相
 
     function resize() {
         width = canvas.width = window.innerWidth;
@@ -419,61 +424,67 @@ function switchNightMode(){
     window.addEventListener('resize', resize);
     resize();
 
-    // 監聽滑鼠移動，記錄路徑
     window.addEventListener('mousemove', function(e) {
-        // 加入新點到路徑頭部
         trail.push({ x: e.clientX, y: e.clientY });
-        // 限制路徑長度，移除過舊的點
         if (trail.length > maxTrail) {
             trail.shift();
         }
     });
 
-    function drawLightning(points, color, width, glow) {
+    function drawLightning(points, color, lineWidth, glow) {
         if (points.length < 2) return;
 
         ctx.beginPath();
-        ctx.lineJoin = 'miter'; // 關鍵！讓轉折處呈現尖角，而非圓角
-        ctx.lineCap = 'butt';   // 線段末端平切，增加銳利感
+        ctx.lineJoin = 'miter'; 
+        ctx.lineCap = 'butt';   
         
-        // 移動到第一個點 (加入隨機抖動)
         var startX = points[0].x + (Math.random() - 0.5) * jitterAmount;
         var startY = points[0].y + (Math.random() - 0.5) * jitterAmount;
         ctx.moveTo(startX, startY);
 
         for (var i = 1; i < points.length; i++) {
-            // 每個點都加入隨機抖動，製造電流感
-            // 越靠近尾端的點，抖動可以設得越大，製造崩解感
-            var jitter = (Math.random() - 0.5) * jitterAmount;
-            var px = points[i].x + jitter;
-            var py = points[i].y + jitter;
+            // 越靠近尾端(i小)抖動越大，越靠近滑鼠(i大)越穩定
+            var stability = i / points.length; 
+            var currentJitter = jitterAmount * (1 - stability) * 1.5;
+            
+            var px = points[i].x + (Math.random() - 0.5) * currentJitter;
+            var py = points[i].y + (Math.random() - 0.5) * currentJitter;
             ctx.lineTo(px, py);
         }
 
         ctx.strokeStyle = color;
-        ctx.lineWidth = width;
+        ctx.lineWidth = lineWidth;
         ctx.shadowBlur = glow;
         ctx.shadowColor = color;
         ctx.stroke();
     }
 
     function animate() {
-        // 清除畫面 (使用透明黑覆蓋，不留殘影，保持銳利)
+        // 清除畫面
         ctx.clearRect(0, 0, width, height);
 
-        if (trail.length > 1) {
-            // 為了製造層次感，我們畫三層不同粗細和顏色的線
-            
-            // 1. 外層光暈 (藍色，最粗，抖動最大)
-            drawLightning(trail, '#00f3ff', 8, 20);
-            
-            // 2. 中層核心 (青色，稍細)
-            drawLightning(trail, '#00ffff', 4, 10);
-            
-            // 3. 內層極光 (白色，最細，最銳利)
-            drawLightning(trail, '#ffffff', 2, 5);
+        // 更新顏色 (Hue 0~360 循環)
+        currentHue += hueSpeed;
+        if (currentHue > 360) currentHue = 0;
 
-            // 自動縮短路徑 (當滑鼠停止時，拖尾會像能量耗盡一樣縮短消失)
+        // 產生動態顏色字串 (HSL模式)
+        // 50% 亮度是標準霓虹色，90% 亮度是接近白色的核心光
+        var mainColor = 'hsl(' + currentHue + ', 100%, 50%)'; 
+        var coreColor = 'hsl(' + currentHue + ', 100%, 80%)'; 
+
+        if (trail.length > 1) {
+            // 【細一些】: 這裡調整了線條寬度
+            
+            // 1. 外層光暈 (彩色，寬度 3px -> 變細了)
+            drawLightning(trail, mainColor, 3, 15);
+            
+            // 2. 中層核心 (亮彩，寬度 1px -> 極細)
+            drawLightning(trail, coreColor, 1, 8);
+            
+            // 3. 內層極光 (純白，寬度 0.5px -> 雷射感)
+            drawLightning(trail, '#ffffff', 0.5, 4);
+
+            // 自動縮短路徑
             trail.shift();
         }
         
