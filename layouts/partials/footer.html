@@ -402,9 +402,11 @@ function switchNightMode(){
     canvas.style.height = '100%';
     canvas.style.pointerEvents = 'none';
     canvas.style.zIndex = '99999';
+    // 使用 screen 混合模式，讓光效疊加更強烈
+    canvas.style.mixBlendMode = 'screen';
     document.body.appendChild(canvas);
 
-    var sparks = [];
+    var glitches = [];
     var width, height;
 
     // 2. 調整視窗大小
@@ -415,56 +417,66 @@ function switchNightMode(){
     window.addEventListener('resize', resize);
     resize();
 
-    // 3. 火花物件 (核心修改：這次是「線條」)
-    function Spark(x, y) {
+    // 3. 故障物件 (Glitch Object)
+    function Glitch(x, y) {
         this.x = x;
         this.y = y;
-        // 隨機角度
-        this.angle = Math.random() * Math.PI * 2;
-        // 初始長度 (隨機 5~15px 的短線條)
-        this.length = Math.random() * 10 + 5;
-        // 消失速度 (數字越大消失越快，越銳利)
-        this.decay = Math.random() * 0.5 + 0.5;
-        // 顏色：高亮度的賽博藍白光，看起來更刺眼銳利
-        this.color = 'hsla(185, 100%, 85%, 1)';
-        // 線條寬度
-        this.lineWidth = Math.random() * 1.5 + 0.5;
+        // 隨機大小的數點或方塊
+        this.size = Math.random() * 6 + 2;
+        // 生命週期極短 (只有 10-20 幀)，製造瞬間感
+        this.life = Math.random() * 10 + 10; 
+        // 隨機決定是畫「方塊」還是「十字線」
+        this.type = Math.random() > 0.5 ? 'square' : 'cross';
+        // 顏色：高亮度的青色與白色閃爍
+        this.baseColor = Math.random() > 0.5 ? '#00f3ff' : '#ffffff';
     }
 
-    Spark.prototype.update = function() {
-        // 線條長度迅速縮短
-        this.length -= this.decay;
-    };
-
-    Spark.prototype.draw = function() {
-        // 計算線條終點
-        var endX = this.x + Math.cos(this.angle) * this.length;
-        var endY = this.y + Math.sin(this.angle) * this.length;
-
-        ctx.beginPath();
-        ctx.moveTo(this.x, this.y);
-        ctx.lineTo(endX, endY);
-        ctx.strokeStyle = this.color;
-        ctx.lineWidth = this.lineWidth;
-        // 加入一點點發光效果，增加電子感
-        ctx.shadowBlur = 5;
+    Glitch.prototype.draw = function() {
+        // 【關鍵】高頻閃爍效果：隨機改變透明度，製造不穩定的銳利感
+        var flicker = Math.random() > 0.3 ? 1 : 0.2;
+        ctx.globalAlpha = flicker;
+        
+        // 強烈的霓虹發光效果
+        ctx.shadowBlur = 10;
         ctx.shadowColor = '#00f3ff';
-        ctx.stroke();
-        ctx.shadowBlur = 0; // Reset shadow
+        ctx.fillStyle = this.baseColor;
+        ctx.strokeStyle = this.baseColor;
+
+        // 【關鍵】產生隨機的位移抖動 (Jitter)，看起來更像故障
+        var jitterX = (Math.random() - 0.5) * 4;
+        var jitterY = (Math.random() - 0.5) * 4;
+        var drawX = this.x + jitterX;
+        var drawY = this.y + jitterY;
+
+        if (this.type === 'square') {
+            // 繪製銳利方塊
+            ctx.fillRect(drawX - this.size/2, drawY - this.size/2, this.size, this.size);
+        } else {
+            // 繪製銳利十字瞄準線
+            ctx.beginPath();
+            ctx.lineWidth = 1.5;
+            ctx.moveTo(drawX - this.size, drawY);
+            ctx.lineTo(drawX + this.size, drawY);
+            ctx.moveTo(drawX, drawY - this.size);
+            ctx.lineTo(drawX, drawY + this.size);
+            ctx.stroke();
+        }
+        
+        // 重置陰影和透明度，避免影響下一個繪製
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
     };
 
     // 4. 監聽滑鼠移動
     var lastX = 0, lastY = 0;
     window.addEventListener('mousemove', function(e) {
-        // 計算滑鼠移動距離，移動越快，爆發越多火花
+        // 根據移動速度決定產生數量
         var dist = Math.hypot(e.clientX - lastX, e.clientY - lastY);
-        var count = Math.min(5, Math.floor(dist / 2)); // 限制最大數量避免卡頓
+        var count = Math.min(3, Math.floor(dist / 5)); 
 
         for (var i = 0; i < count; i++) {
-            // 在滑鼠周圍隨機位置產生火花
-            var offsetX = (Math.random() - 0.5) * 10;
-            var offsetY = (Math.random() - 0.5) * 10;
-            sparks.push(new Spark(e.clientX + offsetX, e.clientY + offsetY));
+            // 在滑鼠路徑上隨機撒下故障點
+            glitches.push(new Glitch(e.clientX, e.clientY));
         }
         lastX = e.clientX;
         lastY = e.clientY;
@@ -472,17 +484,17 @@ function switchNightMode(){
 
     // 5. 動畫迴圈
     function animate() {
-        // 【關鍵】完全清除畫布，不留任何殘影，達到最銳利的效果
+        // 【關鍵】完全清除畫面，確保沒有任何殘影拖泥帶水
         ctx.clearRect(0, 0, width, height);
         
-        for (var i = 0; i < sparks.length; i++) {
-            sparks[i].update();
+        for (var i = 0; i < glitches.length; i++) {
+            glitches[i].draw();
+            // 生命週期遞減
+            glitches[i].life--;
             
-            if (sparks[i].length > 0) {
-                sparks[i].draw();
-            } else {
-                // 長度歸零就移除
-                sparks.splice(i, 1);
+            // 生命結束瞬間移除
+            if (glitches[i].life <= 0) {
+                glitches.splice(i, 1);
                 i--;
             }
         }
