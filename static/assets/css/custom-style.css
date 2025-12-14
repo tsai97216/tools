@@ -299,8 +299,18 @@ a, button, .btn, .url-card, .nav-item, [role="button"], input[type="submit"], .p
     cursor: url('../cursors/link.cur'), pointer !important;
 }
 
-/* 3. 文字輸入框 (I 型游標) */
-input[type="text"], textarea, .form-control {
+/* 3. 【全方位覆蓋】文字輸入與所有可能的文字標籤 */
+input[type="text"], textarea, .form-control,
+p, h1, h2, h3, h4, h5, h6,                 /* 文章與標題 */
+span, label, li, ol, ul,                   /* 列表與標籤 */
+code, pre, blockquote,                     /* 代碼與引用 */
+strong, b, em, i, small, u, s, mark,       /* 粗體、斜體等格式 */
+sub, sup, time, address,                   /* 上下標與時間 */
+table, tr, td, th, thead, tbody, tfoot,    /* 表格內容 */
+dt, dd, dl, figcaption, legend,            /* 定義列表與圖說 */
+.text-muted, .text-xs, .footer-text,       /* 主題特定的文字 class */
+.search-key                                /* 搜尋關鍵字 */
+{
     cursor: url('../cursors/text.cur'), text !important;
 }
 
