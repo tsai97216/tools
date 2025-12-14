@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2025 最新完整版 (新增 123Apps & AudioConvert)
+# Chi 的工具箱 - 2025 最終完整版 (含漫畫櫃)
 # ====================================================
 
 - taxonomy: 核心中樞
@@ -127,6 +127,10 @@
           logo: gamer.png
           url: https://ani.gamer.com.tw/
           description: 台灣正版高畫質動畫線上看。
+        - title: 漫畫櫃
+          logo: manhuagui.png
+          url: https://tw.manhuagui.com/
+          description: 免費豐富的線上漫畫閱讀網站。
         - title: Bilibili
           logo: bilibili.png
           url: https://www.bilibili.com/
