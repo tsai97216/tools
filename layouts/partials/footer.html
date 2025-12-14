@@ -408,14 +408,14 @@ function switchNightMode(){
     var trail = [];
     
     // ==========================================
-    // 參數設定區 (您可以自己微調這裡)
+    // 參數設定區 (已調整更長)
     // ==========================================
-    var maxTrail = 50;     // 【殘留久一些】: 數字越大，拖尾越長 (原本 20 -> 現在 50)
-    var jitterAmount = 10; // 抖動幅度: 數字越大越狂暴，越小越平滑
-    var hueSpeed = 2;      // 【顏色變化速度】: 數字越大變色越快
+    var maxTrail = 120;    // 【殘留更久】: 數字越大，拖尾越長 (50 -> 120)
+    var jitterAmount = 10; // 抖動幅度
+    var hueSpeed = 3;      // 顏色變化速度 (稍微調快一點點，讓長拖尾顏色更豐富)
     // ==========================================
 
-    var currentHue = 0; // 初始顏色色相
+    var currentHue = 0; 
 
     function resize() {
         width = canvas.width = window.innerWidth;
@@ -438,12 +438,13 @@ function switchNightMode(){
         ctx.lineJoin = 'miter'; 
         ctx.lineCap = 'butt';   
         
+        // 起點
         var startX = points[0].x + (Math.random() - 0.5) * jitterAmount;
         var startY = points[0].y + (Math.random() - 0.5) * jitterAmount;
         ctx.moveTo(startX, startY);
 
         for (var i = 1; i < points.length; i++) {
-            // 越靠近尾端(i小)抖動越大，越靠近滑鼠(i大)越穩定
+            // 越靠近尾端抖動越大
             var stability = i / points.length; 
             var currentJitter = jitterAmount * (1 - stability) * 1.5;
             
@@ -463,25 +464,21 @@ function switchNightMode(){
         // 清除畫面
         ctx.clearRect(0, 0, width, height);
 
-        // 更新顏色 (Hue 0~360 循環)
+        // 更新顏色
         currentHue += hueSpeed;
         if (currentHue > 360) currentHue = 0;
 
-        // 產生動態顏色字串 (HSL模式)
-        // 50% 亮度是標準霓虹色，90% 亮度是接近白色的核心光
         var mainColor = 'hsl(' + currentHue + ', 100%, 50%)'; 
         var coreColor = 'hsl(' + currentHue + ', 100%, 80%)'; 
 
         if (trail.length > 1) {
-            // 【細一些】: 這裡調整了線條寬度
-            
-            // 1. 外層光暈 (彩色，寬度 3px -> 變細了)
+            // 1. 外層光暈 (彩色，3px)
             drawLightning(trail, mainColor, 3, 15);
             
-            // 2. 中層核心 (亮彩，寬度 1px -> 極細)
+            // 2. 中層核心 (亮彩，1px)
             drawLightning(trail, coreColor, 1, 8);
             
-            // 3. 內層極光 (純白，寬度 0.5px -> 雷射感)
+            // 3. 內層極光 (純白，0.5px)
             drawLightning(trail, '#ffffff', 0.5, 4);
 
             // 自動縮短路徑
