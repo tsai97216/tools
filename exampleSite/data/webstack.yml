@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 完整導航配置 (已移除指定項目)
+# Chi 的工具箱 - 完整導航配置 (圖示已全數補完)
 # ====================================================
 
 - taxonomy: 常用推薦
@@ -30,23 +30,23 @@
       url: https://chat.openai.com/
       description: OpenAI 開發的 AI 聊天機器人。
     - title: Claude
-      logo: default.webp
+      logo: claude.png
       url: https://claude.ai/
       description: Anthropic 開發的 AI 助手，擅長長文分析與 Coding。
     - title: Gemini
-      logo: default.webp
+      logo: gemini.png
       url: https://gemini.google.com/
       description: Google 最強大的多模態 AI 模型。
     - title: DeepSeek
-      logo: default.webp
+      logo: deepseek.png
       url: https://chat.deepseek.com/
       description: 深度求索，強大的開源編碼與推理模型。
     - title: Perplexity
-      logo: default.webp
+      logo: perplexity.png
       url: https://www.perplexity.ai/
       description: 結合即時搜尋引擎的 AI 智慧問答。
     - title: Grok
-      logo: default.webp
+      logo: grok.png
       url: https://grok.com/
       description: xAI 開發的 AI 助手。
 
@@ -54,19 +54,19 @@
   icon: fas fa-comments
   links:
     - title: Facebook
-      logo: default.webp
+      logo: facebook.png
       url: https://www.facebook.com/
       description: 全球最大的社群網站。
     - title: Messenger
-      logo: default.webp
+      logo: messenger.png
       url: https://www.messenger.com/
       description: Facebook 即時通訊網頁版。
     - title: Instagram
-      logo: default.webp
+      logo: instagram.png
       url: https://www.instagram.com/
       description: 分享照片與生活的社群平台。
     - title: Threads
-      logo: default.webp
+      logo: threads.png
       url: https://www.threads.net/
       description: Meta 推出的文字對話社群。
     - title: X (Twitter)
@@ -88,59 +88,59 @@
     - term: 米遊專區
       links:
         - title: HoYoLAB
-          logo: default.webp
+          logo: hoyolab.png
           url: https://www.hoyolab.com/
           description: 米哈遊官方遊戲社群 (原神、崩鐵、絕區零)。
         - title: Prydwen
-          logo: default.webp
+          logo: prydwen.png
           url: https://www.prydwen.gg/
           description: 權威的星鐵、絕區零、鳴潮強度排行與攻略網。
         - title: 玉衡杯數據庫
-          logo: default.webp
+          logo: homdgcat.png
           url: https://homdgcat.wiki/
           description: 妮可少女維護的深度遊戲數據庫 (HomDGCat)。
         - title: Hakush.in
-          logo: default.webp
+          logo: hakushin.png
           url: https://hakush.in/
           description: 知名遊戲解包與數據網 (Hakushin)。
     - term: 遊戲福利與資訊
       links:
         - title: Bwiki (遊戲百科)
-          logo: default.webp
+          logo: bwiki.png
           url: https://wiki.biligame.com/
           description: Bilibili 官方遊戲百科，米哈遊遊戲資料最全。
         - title: IsThereAnyDeal
-          logo: default.webp
+          logo: isthereanydeal.png
           url: https://isthereanydeal.com/giveaways/
           description: 查詢遊戲歷史低價與免費贈送資訊。
         - title: SteamDB
-          logo: default.webp
+          logo: steamdb.png
           url: https://steamdb.info/
           description: Steam 遊戲數據庫，查特價與歷史低價。
         - title: 4Gamers 限時免費
-          logo: default.webp
+          logo: 4gamers.png
           url: https://www.4gamers.com.tw/news/tag/%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB
           description: 台灣遊戲媒體整理的限免情報。
     - term: 雲端遊戲
       links:
         - title: CloudMoon
-          logo: default.webp
+          logo: cloudmoon.png
           url: https://cloudmoon.com/
           description: 聚光燈雲遊戲，手機輕鬆玩 3A 大作。
     - term: 遊戲社群
       links:
         - title: APK.tw
-          logo: default.webp
+          logo: apktw.png
           url: https://apk.tw/
           description: 台灣知名的 Android 遊戲與軟體論壇。
         - title: NGA 玩家社區
-          logo: default.webp
+          logo: nga.png
           url: https://bbs.nga.cn/
           description: 知名綜合遊戲精英玩家論壇。
     - term: 影音動漫
       links:
         - title: Twitch
-          logo: default.webp
+          logo: twitch.png
           url: https://www.twitch.tv/
           description: 全球最大遊戲直播與實況平台。
         - title: Netflix
@@ -148,7 +148,7 @@
           url: https://www.netflix.com/tw/
           description: 全球知名影視串流平台。
         - title: Bilibili
-          logo: default.webp
+          logo: bilibili.png
           url: https://www.bilibili.com/
           description: 嗶哩嗶哩，最大的二次元影音彈幕網。
         - title: 巴哈姆特動畫瘋
@@ -156,11 +156,11 @@
           url: https://ani.gamer.com.tw/
           description: 正版高畫質動畫線上看。
         - title: Anime1
-          logo: default.webp
+          logo: anime1.png
           url: https://anime1.me/
           description: 簡潔的免費動畫線上看網站。
         - title: Pixiv
-          logo: default.webp
+          logo: pixiv.png
           url: https://www.pixiv.net/
           description: 全球最大插畫與漫畫投稿社群。
         - title: Spotify
@@ -174,51 +174,51 @@
     - term: 線上工具
       links:
         - title: Alist (本機)
-          logo: default.webp
+          logo: alist.png
           url: http://localhost:5244/
           description: 聚合多種網盤的檔案列表服務 (需本機執行)。
         - title: Google 翻譯
-          logo: default.webp
+          logo: translate.png
           url: https://translate.google.com.tw/
           description: 多國語言線上翻譯。
         - title: Cobalt
-          logo: default.webp
+          logo: cobalt.png
           url: https://cobalt.tools/
           description: 無廣告、隱私友善的多平台影音下載工具。
         - title: Reurl
-          logo: default.webp
+          logo: reurl.png
           url: https://reurl.cc/main/tw
           description: 台灣常用的短網址產生器。
         - title: Pinterest
-          logo: default.webp
+          logo: pinterest.png
           url: https://www.pinterest.com/
           description: 全球最大的圖片靈感蒐集庫。
         - title: Canva
-          logo: default.webp
+          logo: canva.png
           url: https://www.canva.com/zh_tw/
           description: 簡單好用的線上平面設計與繪圖工具。
         - title: Convertio
-          logo: default.webp
+          logo: convertio.png
           url: https://convertio.co/zh/
           description: 線上檔案格式轉換。
         - title: iLoveIMG
-          logo: default.webp
+          logo: iloveimg.png
           url: https://www.iloveimg.com/zh-tw
           description: 線上圖片編輯工具 (壓縮、裁剪、轉換)。
         - title: iLovePDF
-          logo: default.webp
+          logo: ilovepdf.png
           url: https://www.ilovepdf.com/zh-tw
           description: 線上 PDF 處理工具 (合併、拆分、壓縮)。
         - title: TeraBox
-          logo: default.webp
+          logo: terabox.png
           url: https://www.terabox.com/
           description: 提供大容量免費空間的雲端硬碟。
         - title: VirusTotal
-          logo: default.webp
+          logo: virustotal.png
           url: https://www.virustotal.com/gui/home/upload
           description: 線上病毒掃描，檢查檔案或網址是否安全。
         - title: Decrypt.day
-          logo: default.webp
+          logo: decryptday.png
           url: https://decrypt.day/
           description: iOS 應用程式 IPA 解密與下載庫。
         - title: Discord Quest Script
