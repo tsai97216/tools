@@ -392,7 +392,7 @@ function switchNightMode(){
 
 <script>
 (function() {
-    // 1. 建立 Canvas (畫布設定不變)
+    // 1. 建立 Canvas (標準設定)
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
     canvas.style.position = 'fixed';
@@ -400,11 +400,11 @@ function switchNightMode(){
     canvas.style.left = '0';
     canvas.style.width = '100%';
     canvas.style.height = '100%';
-    canvas.style.pointerEvents = 'none'; 
-    canvas.style.zIndex = '99999'; 
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '99999';
     document.body.appendChild(canvas);
 
-    var particles = [];
+    var sparks = [];
     var width, height;
 
     // 2. 調整視窗大小
@@ -415,56 +415,74 @@ function switchNightMode(){
     window.addEventListener('resize', resize);
     resize();
 
-    // 3. 粒子物件 (核心修改處)
-    function Particle(x, y) {
+    // 3. 火花物件 (核心修改：這次是「線條」)
+    function Spark(x, y) {
         this.x = x;
         this.y = y;
-        // 【修改點 1】讓粒子稍微小一點，看起來更像碎片
-        this.size = Math.random() * 4 + 1; 
-        // 【修改點 2】加快擴散速度，製造速度感
-        this.speedX = (Math.random() * 4 - 2) * 1.2;
-        this.speedY = (Math.random() * 4 - 2) * 1.2;
-        // 顏色維持賽博藍，但增加一點隨機亮度
-        var lightness = Math.random() * 50 + 50; // 50%~100% 亮度
-        this.color = 'hsla(185, 100%, ' + lightness + '%, ' + (Math.random() * 0.6 + 0.4) + ')';
+        // 隨機角度
+        this.angle = Math.random() * Math.PI * 2;
+        // 初始長度 (隨機 5~15px 的短線條)
+        this.length = Math.random() * 10 + 5;
+        // 消失速度 (數字越大消失越快，越銳利)
+        this.decay = Math.random() * 0.5 + 0.5;
+        // 顏色：高亮度的賽博藍白光，看起來更刺眼銳利
+        this.color = 'hsla(185, 100%, 85%, 1)';
+        // 線條寬度
+        this.lineWidth = Math.random() * 1.5 + 0.5;
     }
 
-    Particle.prototype.update = function() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        // 讓碎片消失得更快一點，增加俐落感
-        if (this.size > 0.1) this.size -= 0.08;
+    Spark.prototype.update = function() {
+        // 線條長度迅速縮短
+        this.length -= this.decay;
     };
 
-    Particle.prototype.draw = function() {
-        ctx.fillStyle = this.color;
-        // 【修改點 3】關鍵！不畫圓形 (arc)，改畫「矩形 (fillRect)」
-        // 這樣看起來就是尖銳的數位方塊
-        // (this.x - this.size / 2) 是為了讓方塊中心對準滑鼠路徑
-        ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
+    Spark.prototype.draw = function() {
+        // 計算線條終點
+        var endX = this.x + Math.cos(this.angle) * this.length;
+        var endY = this.y + Math.sin(this.angle) * this.length;
+
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(endX, endY);
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = this.lineWidth;
+        // 加入一點點發光效果，增加電子感
+        ctx.shadowBlur = 5;
+        ctx.shadowColor = '#00f3ff';
+        ctx.stroke();
+        ctx.shadowBlur = 0; // Reset shadow
     };
 
     // 4. 監聽滑鼠移動
+    var lastX = 0, lastY = 0;
     window.addEventListener('mousemove', function(e) {
-        // 【修改點 4】增加產生數量，讓線條感更明顯
-        for (var i = 0; i < 5; i++) {
-            particles.push(new Particle(e.clientX, e.clientY));
+        // 計算滑鼠移動距離，移動越快，爆發越多火花
+        var dist = Math.hypot(e.clientX - lastX, e.clientY - lastY);
+        var count = Math.min(5, Math.floor(dist / 2)); // 限制最大數量避免卡頓
+
+        for (var i = 0; i < count; i++) {
+            // 在滑鼠周圍隨機位置產生火花
+            var offsetX = (Math.random() - 0.5) * 10;
+            var offsetY = (Math.random() - 0.5) * 10;
+            sparks.push(new Spark(e.clientX + offsetX, e.clientY + offsetY));
         }
+        lastX = e.clientX;
+        lastY = e.clientY;
     });
 
     // 5. 動畫迴圈
     function animate() {
-        // 【修改點 5】調整拖尾長度 (數字越小，殘影越長)
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.15)'; 
-        ctx.fillRect(0, 0, width, height);
-        // 這裡不用 clearRect，改用半透明黑色覆蓋，製造更強的拖尾線條感
+        // 【關鍵】完全清除畫布，不留任何殘影，達到最銳利的效果
+        ctx.clearRect(0, 0, width, height);
         
-        for (var i = 0; i < particles.length; i++) {
-            particles[i].update();
-            particles[i].draw();
+        for (var i = 0; i < sparks.length; i++) {
+            sparks[i].update();
             
-            if (particles[i].size <= 0.1) {
-                particles.splice(i, 1);
+            if (sparks[i].length > 0) {
+                sparks[i].draw();
+            } else {
+                // 長度歸零就移除
+                sparks.splice(i, 1);
                 i--;
             }
         }
