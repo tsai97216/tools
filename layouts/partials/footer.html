@@ -392,7 +392,7 @@ function switchNightMode(){
 
 <script>
 (function() {
-    // 1. 建立 Canvas
+    // 1. 建立 Canvas (畫布設定不變)
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
     canvas.style.position = 'fixed';
@@ -400,8 +400,8 @@ function switchNightMode(){
     canvas.style.left = '0';
     canvas.style.width = '100%';
     canvas.style.height = '100%';
-    canvas.style.pointerEvents = 'none'; // 讓滑鼠可以穿透畫布點擊連結
-    canvas.style.zIndex = '99999'; // 確保在最上層
+    canvas.style.pointerEvents = 'none'; 
+    canvas.style.zIndex = '99999'; 
     document.body.appendChild(canvas);
 
     var particles = [];
@@ -415,51 +415,54 @@ function switchNightMode(){
     window.addEventListener('resize', resize);
     resize();
 
-    // 3. 粒子物件
+    // 3. 粒子物件 (核心修改處)
     function Particle(x, y) {
         this.x = x;
         this.y = y;
-        // 粒子大小 (隨機 1~4px)
-        this.size = Math.random() * 3 + 1;
-        // 粒子移動速度 (隨機擴散)
-        this.speedX = Math.random() * 2 - 1;
-        this.speedY = Math.random() * 2 - 1;
-        // 顏色：賽博藍 (Cyan)
-        this.color = 'rgba(0, 243, 255,' + (Math.random() * 0.5 + 0.5) + ')';
+        // 【修改點 1】讓粒子稍微小一點，看起來更像碎片
+        this.size = Math.random() * 4 + 1; 
+        // 【修改點 2】加快擴散速度，製造速度感
+        this.speedX = (Math.random() * 4 - 2) * 1.2;
+        this.speedY = (Math.random() * 4 - 2) * 1.2;
+        // 顏色維持賽博藍，但增加一點隨機亮度
+        var lightness = Math.random() * 50 + 50; // 50%~100% 亮度
+        this.color = 'hsla(185, 100%, ' + lightness + '%, ' + (Math.random() * 0.6 + 0.4) + ')';
     }
 
     Particle.prototype.update = function() {
         this.x += this.speedX;
         this.y += this.speedY;
-        // 讓粒子慢慢變小
-        if (this.size > 0.1) this.size -= 0.05;
+        // 讓碎片消失得更快一點，增加俐落感
+        if (this.size > 0.1) this.size -= 0.08;
     };
 
     Particle.prototype.draw = function() {
         ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
+        // 【修改點 3】關鍵！不畫圓形 (arc)，改畫「矩形 (fillRect)」
+        // 這樣看起來就是尖銳的數位方塊
+        // (this.x - this.size / 2) 是為了讓方塊中心對準滑鼠路徑
+        ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
     };
 
     // 4. 監聽滑鼠移動
     window.addEventListener('mousemove', function(e) {
-        // 每次移動產生 3 個粒子 (數字越大越密集)
-        for (var i = 0; i < 3; i++) {
+        // 【修改點 4】增加產生數量，讓線條感更明顯
+        for (var i = 0; i < 5; i++) {
             particles.push(new Particle(e.clientX, e.clientY));
         }
     });
 
     // 5. 動畫迴圈
     function animate() {
-        // 稍微清除畫布 (保留一點點殘影會更帥)
-        ctx.clearRect(0, 0, width, height);
+        // 【修改點 5】調整拖尾長度 (數字越小，殘影越長)
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.15)'; 
+        ctx.fillRect(0, 0, width, height);
+        // 這裡不用 clearRect，改用半透明黑色覆蓋，製造更強的拖尾線條感
         
         for (var i = 0; i < particles.length; i++) {
             particles[i].update();
             particles[i].draw();
             
-            // 如果粒子太小就移除
             if (particles[i].size <= 0.1) {
                 particles.splice(i, 1);
                 i--;
