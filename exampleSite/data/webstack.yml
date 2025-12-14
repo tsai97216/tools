@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2025 重構版 (邏輯優化 + 分區細化)
+# Chi 的工具箱 - 2025 最新完整版 (新增 123Apps & AudioConvert)
 # ====================================================
 
 - taxonomy: 核心中樞
@@ -189,6 +189,14 @@
   list:
     - term: 檔案處理
       links:
+        - title: 123Apps
+          logo: 123apps.png
+          url: https://123apps.com/tw/
+          description: 全能的線上影音、PDF 編輯與轉檔工具箱。
+        - title: Audio Converter
+          logo: audioconvert.png
+          url: https://audio-convert.com/cn
+          description: 簡單快速的線上音訊轉檔工具。
         - title: Convertio
           logo: convertio.png
           url: https://convertio.co/zh/
