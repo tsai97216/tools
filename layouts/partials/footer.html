@@ -390,5 +390,86 @@ function switchNightMode(){
     }
 </script>
 
+<script>
+(function() {
+    // 1. 建立 Canvas
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none'; // 讓滑鼠可以穿透畫布點擊連結
+    canvas.style.zIndex = '99999'; // 確保在最上層
+    document.body.appendChild(canvas);
+
+    var particles = [];
+    var width, height;
+
+    // 2. 調整視窗大小
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // 3. 粒子物件
+    function Particle(x, y) {
+        this.x = x;
+        this.y = y;
+        // 粒子大小 (隨機 1~4px)
+        this.size = Math.random() * 3 + 1;
+        // 粒子移動速度 (隨機擴散)
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = Math.random() * 2 - 1;
+        // 顏色：賽博藍 (Cyan)
+        this.color = 'rgba(0, 243, 255,' + (Math.random() * 0.5 + 0.5) + ')';
+    }
+
+    Particle.prototype.update = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        // 讓粒子慢慢變小
+        if (this.size > 0.1) this.size -= 0.05;
+    };
+
+    Particle.prototype.draw = function() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    };
+
+    // 4. 監聽滑鼠移動
+    window.addEventListener('mousemove', function(e) {
+        // 每次移動產生 3 個粒子 (數字越大越密集)
+        for (var i = 0; i < 3; i++) {
+            particles.push(new Particle(e.clientX, e.clientY));
+        }
+    });
+
+    // 5. 動畫迴圈
+    function animate() {
+        // 稍微清除畫布 (保留一點點殘影會更帥)
+        ctx.clearRect(0, 0, width, height);
+        
+        for (var i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+            
+            // 如果粒子太小就移除
+            if (particles[i].size <= 0.1) {
+                particles.splice(i, 1);
+                i--;
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+    animate();
+})();
+</script>
+
 </body>
 </html>
