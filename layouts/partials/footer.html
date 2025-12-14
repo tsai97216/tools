@@ -392,7 +392,6 @@ function switchNightMode(){
 
 <script>
 (function() {
-    // 1. 建立 Canvas (標準設定)
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext('2d');
     canvas.style.position = 'fixed';
@@ -402,14 +401,17 @@ function switchNightMode(){
     canvas.style.height = '100%';
     canvas.style.pointerEvents = 'none';
     canvas.style.zIndex = '99999';
-    // 使用 screen 混合模式，讓光效疊加更強烈
+    // 使用 screen 混合模式，讓光效疊加後更亮、更刺眼
     canvas.style.mixBlendMode = 'screen';
     document.body.appendChild(canvas);
 
-    var glitches = [];
     var width, height;
+    var trail = []; // 儲存滑鼠路徑點
+    
+    // 設定：拖尾長度與風格
+    var maxTrail = 20; // 拖尾保留的節點數 (數字越大拖尾越長)
+    var jitterAmount = 15; // 抖動幅度 (數字越大越狂暴)
 
-    // 2. 調整視窗大小
     function resize() {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
@@ -417,87 +419,64 @@ function switchNightMode(){
     window.addEventListener('resize', resize);
     resize();
 
-    // 3. 故障物件 (Glitch Object)
-    function Glitch(x, y) {
-        this.x = x;
-        this.y = y;
-        // 隨機大小的數點或方塊
-        this.size = Math.random() * 6 + 2;
-        // 生命週期極短 (只有 10-20 幀)，製造瞬間感
-        this.life = Math.random() * 10 + 10; 
-        // 隨機決定是畫「方塊」還是「十字線」
-        this.type = Math.random() > 0.5 ? 'square' : 'cross';
-        // 顏色：高亮度的青色與白色閃爍
-        this.baseColor = Math.random() > 0.5 ? '#00f3ff' : '#ffffff';
-    }
-
-    Glitch.prototype.draw = function() {
-        // 【關鍵】高頻閃爍效果：隨機改變透明度，製造不穩定的銳利感
-        var flicker = Math.random() > 0.3 ? 1 : 0.2;
-        ctx.globalAlpha = flicker;
-        
-        // 強烈的霓虹發光效果
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = '#00f3ff';
-        ctx.fillStyle = this.baseColor;
-        ctx.strokeStyle = this.baseColor;
-
-        // 【關鍵】產生隨機的位移抖動 (Jitter)，看起來更像故障
-        var jitterX = (Math.random() - 0.5) * 4;
-        var jitterY = (Math.random() - 0.5) * 4;
-        var drawX = this.x + jitterX;
-        var drawY = this.y + jitterY;
-
-        if (this.type === 'square') {
-            // 繪製銳利方塊
-            ctx.fillRect(drawX - this.size/2, drawY - this.size/2, this.size, this.size);
-        } else {
-            // 繪製銳利十字瞄準線
-            ctx.beginPath();
-            ctx.lineWidth = 1.5;
-            ctx.moveTo(drawX - this.size, drawY);
-            ctx.lineTo(drawX + this.size, drawY);
-            ctx.moveTo(drawX, drawY - this.size);
-            ctx.lineTo(drawX, drawY + this.size);
-            ctx.stroke();
-        }
-        
-        // 重置陰影和透明度，避免影響下一個繪製
-        ctx.shadowBlur = 0;
-        ctx.globalAlpha = 1;
-    };
-
-    // 4. 監聽滑鼠移動
-    var lastX = 0, lastY = 0;
+    // 監聽滑鼠移動，記錄路徑
     window.addEventListener('mousemove', function(e) {
-        // 根據移動速度決定產生數量
-        var dist = Math.hypot(e.clientX - lastX, e.clientY - lastY);
-        var count = Math.min(3, Math.floor(dist / 5)); 
-
-        for (var i = 0; i < count; i++) {
-            // 在滑鼠路徑上隨機撒下故障點
-            glitches.push(new Glitch(e.clientX, e.clientY));
+        // 加入新點到路徑頭部
+        trail.push({ x: e.clientX, y: e.clientY });
+        // 限制路徑長度，移除過舊的點
+        if (trail.length > maxTrail) {
+            trail.shift();
         }
-        lastX = e.clientX;
-        lastY = e.clientY;
     });
 
-    // 5. 動畫迴圈
-    function animate() {
-        // 【關鍵】完全清除畫面，確保沒有任何殘影拖泥帶水
-        ctx.clearRect(0, 0, width, height);
+    function drawLightning(points, color, width, glow) {
+        if (points.length < 2) return;
+
+        ctx.beginPath();
+        ctx.lineJoin = 'miter'; // 關鍵！讓轉折處呈現尖角，而非圓角
+        ctx.lineCap = 'butt';   // 線段末端平切，增加銳利感
         
-        for (var i = 0; i < glitches.length; i++) {
-            glitches[i].draw();
-            // 生命週期遞減
-            glitches[i].life--;
-            
-            // 生命結束瞬間移除
-            if (glitches[i].life <= 0) {
-                glitches.splice(i, 1);
-                i--;
-            }
+        // 移動到第一個點 (加入隨機抖動)
+        var startX = points[0].x + (Math.random() - 0.5) * jitterAmount;
+        var startY = points[0].y + (Math.random() - 0.5) * jitterAmount;
+        ctx.moveTo(startX, startY);
+
+        for (var i = 1; i < points.length; i++) {
+            // 每個點都加入隨機抖動，製造電流感
+            // 越靠近尾端的點，抖動可以設得越大，製造崩解感
+            var jitter = (Math.random() - 0.5) * jitterAmount;
+            var px = points[i].x + jitter;
+            var py = points[i].y + jitter;
+            ctx.lineTo(px, py);
         }
+
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.shadowBlur = glow;
+        ctx.shadowColor = color;
+        ctx.stroke();
+    }
+
+    function animate() {
+        // 清除畫面 (使用透明黑覆蓋，不留殘影，保持銳利)
+        ctx.clearRect(0, 0, width, height);
+
+        if (trail.length > 1) {
+            // 為了製造層次感，我們畫三層不同粗細和顏色的線
+            
+            // 1. 外層光暈 (藍色，最粗，抖動最大)
+            drawLightning(trail, '#00f3ff', 8, 20);
+            
+            // 2. 中層核心 (青色，稍細)
+            drawLightning(trail, '#00ffff', 4, 10);
+            
+            // 3. 內層極光 (白色，最細，最銳利)
+            drawLightning(trail, '#ffffff', 2, 5);
+
+            // 自動縮短路徑 (當滑鼠停止時，拖尾會像能量耗盡一樣縮短消失)
+            trail.shift();
+        }
+        
         requestAnimationFrame(animate);
     }
     animate();
