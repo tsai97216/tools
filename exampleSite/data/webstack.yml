@@ -1,3 +1,7 @@
+# ====================================================
+# Chi 的工具箱 - 完整導航配置 (已移除指定項目)
+# ====================================================
+
 - taxonomy: 常用推薦
   icon: far fa-star
   links: 
@@ -6,17 +10,29 @@
       url: https://github.com/
       description: 全球最大的代碼託管平台。
     - title: YouTube
-      logo: default.webp
+      logo: youtube.png
       url: https://www.youtube.com/
       description: 全球最大影片網站。
+    - title: Google
+      logo: google.png
+      url: https://www.google.com/
+      description: 搜尋引擎龍頭。
+    - title: ChatGPT
+      logo: chatgpt.png
+      url: https://chat.openai.com/
+      description: OpenAI 開發的 AI 聊天機器人。
 
 - taxonomy: 人工智慧 (AI)
   icon: fas fa-robot
   links:
     - title: ChatGPT
-      logo: default.webp
+      logo: chatgpt.png
       url: https://chat.openai.com/
       description: OpenAI 開發的 AI 聊天機器人。
+    - title: Claude
+      logo: default.webp
+      url: https://claude.ai/
+      description: Anthropic 開發的 AI 助手，擅長長文分析與 Coding。
     - title: Gemini
       logo: default.webp
       url: https://gemini.google.com/
@@ -54,15 +70,15 @@
       url: https://www.threads.net/
       description: Meta 推出的文字對話社群。
     - title: X (Twitter)
-      logo: default.webp
+      logo: x.png
       url: https://x.com/
       description: 全球即時資訊與社群平台。
     - title: Discord
-      logo: default.webp
+      logo: discord.png
       url: https://discord.com/
       description: 專為社群與遊戲玩家設計的通訊軟體。
     - title: Reddit
-      logo: default.webp
+      logo: reddit.png
       url: https://www.reddit.com/
       description: 國外熱門綜合討論區與社群。
 
@@ -121,14 +137,14 @@
           logo: default.webp
           url: https://bbs.nga.cn/
           description: 知名綜合遊戲精英玩家論壇。
-        - title: Komica
-          logo: default.webp
-          url: https://w.komica.org/
-          description: K島，台灣高人氣的 ACG 匿名討論板。
     - term: 影音動漫
       links:
-        - title: Netflix
+        - title: Twitch
           logo: default.webp
+          url: https://www.twitch.tv/
+          description: 全球最大遊戲直播與實況平台。
+        - title: Netflix
+          logo: netflix.png
           url: https://www.netflix.com/tw/
           description: 全球知名影視串流平台。
         - title: Bilibili
@@ -136,23 +152,19 @@
           url: https://www.bilibili.com/
           description: 嗶哩嗶哩，最大的二次元影音彈幕網。
         - title: 巴哈姆特動畫瘋
-          logo: default.webp
+          logo: gamer.png
           url: https://ani.gamer.com.tw/
           description: 正版高畫質動畫線上看。
         - title: Anime1
           logo: default.webp
           url: https://anime1.me/
           description: 簡潔的免費動畫線上看網站。
-        - title: 拷貝漫畫
-          logo: default.webp
-          url: https://www.copymanga.tv/
-          description: 資源豐富、更新快速的線上漢化漫畫網。
         - title: Pixiv
           logo: default.webp
           url: https://www.pixiv.net/
           description: 全球最大插畫與漫畫投稿社群。
         - title: Spotify
-          logo: default.webp
+          logo: spotify.png
           url: open.spotify.com
           description: 線上音樂串流平台。
 
@@ -161,10 +173,10 @@
   list:
     - term: 線上工具
       links:
-        - title: Alist
+        - title: Alist (本機)
           logo: default.webp
           url: http://localhost:5244/
-          description: 聚合多種網盤的檔案列表服務 (本機)。
+          description: 聚合多種網盤的檔案列表服務 (需本機執行)。
         - title: Google 翻譯
           logo: default.webp
           url: https://translate.google.com.tw/
@@ -177,18 +189,14 @@
           logo: default.webp
           url: https://reurl.cc/main/tw
           description: 台灣常用的短網址產生器。
+        - title: Pinterest
+          logo: default.webp
+          url: https://www.pinterest.com/
+          description: 全球最大的圖片靈感蒐集庫。
         - title: Canva
           logo: default.webp
           url: https://www.canva.com/zh_tw/
           description: 簡單好用的線上平面設計與繪圖工具。
-        - title: 果核剝殼
-          logo: default.webp
-          url: https://www.gdaily.org/
-          description: 台灣優質軟體分享站，介面乾淨無廣告。
-        - title: 阿榮福利味
-          logo: default.webp
-          url: https://www.azofreeware.com/
-          description: 台灣老牌免費軟體與免安裝軟體下載站。
         - title: Convertio
           logo: default.webp
           url: https://convertio.co/zh/
@@ -214,7 +222,7 @@
           url: https://decrypt.day/
           description: iOS 應用程式 IPA 解密與下載庫。
         - title: Discord Quest Script
-          logo: default.webp
+          logo: discord.png
           url: javascript:void(0);
           description: 點擊按鈕複製 Discord 自動解任務腳本 (F12 Console 使用)。
           is_copy: true
