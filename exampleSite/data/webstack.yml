@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2025 最終完整版 (修正宇宙市場趨勢)
+# Chi 的工具箱 - 2025 最終優化排列版
 # ====================================================
 
 - taxonomy: 核心中樞
@@ -85,18 +85,18 @@
           description: 知名遊戲數據網，提供詳細數值查詢。
     - term: 遊戲福利與比價
       links:
-        - title: Bwiki (遊戲百科)
-          logo: bwiki.png
-          url: https://wiki.biligame.com/
-          description: Bilibili 官方遊戲百科，資料最全。
-        - title: IsThereAnyDeal
-          logo: isthereanydeal.png
-          url: https://isthereanydeal.com/giveaways/
-          description: 查詢遊戲歷史低價與免費贈送資訊。
         - title: SteamDB
           logo: steamdb.png
           url: https://steamdb.info/
           description: Steam 後台數據庫，查特價與歷史人數。
+        - title: IsThereAnyDeal
+          logo: isthereanydeal.png
+          url: https://isthereanydeal.com/giveaways/
+          description: 查詢遊戲歷史低價與免費贈送資訊。
+        - title: Bwiki (遊戲百科)
+          logo: bwiki.png
+          url: https://wiki.biligame.com/
+          description: Bilibili 官方遊戲百科，資料最全。
         - title: 4Gamers 限免
           logo: 4gamers.png
           url: https://www.4gamers.com.tw/news/tag/%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB
@@ -111,24 +111,6 @@
 - taxonomy: 影音娛樂
   icon: fas fa-film
   list:
-    - term: 串流與直播
-      links:
-        - title: YouTube
-          logo: youtube.png
-          url: https://www.youtube.com/
-          description: 全球最大影音平台。
-        - title: Twitch
-          logo: twitch.png
-          url: https://www.twitch.tv/
-          description: 遊戲直播與實況首選。
-        - title: Netflix
-          logo: netflix.png
-          url: https://www.netflix.com/tw/
-          description: 歐美影集與電影串流。
-        - title: Spotify
-          logo: spotify.png
-          url: https://open.spotify.com/
-          description: 線上音樂串流平台。
     - term: 動漫二次元
       links:
         - title: 巴哈姆特動畫瘋
@@ -151,6 +133,24 @@
           logo: pixiv.png
           url: https://www.pixiv.net/
           description: 全球最大插畫與漫畫投稿社群。
+    - term: 串流與直播
+      links:
+        - title: YouTube
+          logo: youtube.png
+          url: https://www.youtube.com/
+          description: 全球最大影音平台。
+        - title: Twitch
+          logo: twitch.png
+          url: https://www.twitch.tv/
+          description: 遊戲直播與實況首選。
+        - title: Netflix
+          logo: netflix.png
+          url: https://www.netflix.com/tw/
+          description: 歐美影集與電影串流。
+        - title: Spotify
+          logo: spotify.png
+          url: https://open.spotify.com/
+          description: 線上音樂串流平台。
 
 - taxonomy: 社群聚落
   icon: fas fa-users
