@@ -255,10 +255,10 @@
           logo: virustotal.png
           url: https://www.virustotal.com/gui/home/upload
           description: 多重引擎病毒掃描。
-        - title: Alist (本機)
+        - title: Alist
           logo: alist.png
-          url: http://localhost:5244/
-          description: 本地網盤掛載服務。
+          url: https://tsai97216.github.io/alist/
+          description: 網盤掛載服務。
         - title: Decrypt.day
           logo: decryptday.png
           url: https://decrypt.day/
