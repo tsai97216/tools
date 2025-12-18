@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2025 最終修訂版 (修復巴哈圖示分流)
+# Chi 的工具箱 - 2025 最終完整版 (修正宇宙市場趨勢)
 # ====================================================
 
 - taxonomy: 核心中樞
@@ -41,6 +41,10 @@
       logo: gemini.png
       url: https://gemini.google.com/
       description: Google 最強大的多模態 AI 模型。
+    - title: 豆包 (Doubao)
+      logo: doubao.png
+      url: https://www.doubao.com/chat/
+      description: 字節跳動推出的智慧 AI 助手。
     - title: DeepSeek
       logo: deepseek.png
       url: https://chat.deepseek.com/
@@ -59,6 +63,10 @@
   list:
     - term: 米哈遊數據庫
       links:
+        - title: 宇宙市場趨勢
+          logo: starrail_rank.png
+          url: https://tuopaimf.com/
+          description: 崩壞：星穹鐵道高難度關卡排行榜與數據統計。
         - title: HoYoLAB
           logo: hoyolab.png
           url: https://www.hoyolab.com/
