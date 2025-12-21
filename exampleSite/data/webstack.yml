@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2025 賽博龐克・究極全功能校準版
+# Chi 的工具箱 - 2025 賽博龐克・究極全功能校準版 (無遺漏定稿)
 # ====================================================
 
 - taxonomy: 量子傳送門
@@ -28,7 +28,7 @@
     - title: ChatGPT
       logo: chatgpt.png
       url: https://chat.openai.com/
-      description: 強大的通用型智慧，解決複雜邏輯與代碼需求。
+      description: 強大的通用型智慧，解決複雜邏輯需求。
     - title: Gemini
       logo: gemini.png
       url: https://gemini.google.com/
@@ -44,7 +44,7 @@
     - title: 豆包
       logo: doubao.png
       url: https://www.doubao.com/chat/
-      description: 輕量化智慧助手，支援多維度即時對話。
+      description: 輕量化智慧助手，支援多維度對話。
     - title: Perplexity
       logo: perplexity.png
       url: https://www.perplexity.ai/
@@ -196,7 +196,7 @@
         - title: APK.tw
           logo: apktw.png
           url: https://apk.tw/
-          description: 台灣 Android 系統調研與資源中心。
+          description: 台灣 Android 系統調研與資源改裝中心。
 
 - taxonomy: 增強模組
   icon: fas fa-cogs
@@ -222,7 +222,8 @@
         - title: Cobalt
           logo: cobalt.png
           url: https://cobalt.tools/
-          description: 高效率多媒體提取工具，支援多平台。
+          description: 高效率多媒體提取工具。
+
     - term: 頻譜分析迴路
       links:
         - title: AudioMass
@@ -245,20 +246,45 @@
           logo: 123apps.png
           url: https://mp3cut.net/tw/
           description: 極簡音訊處理協議，執行免登錄剪切指令。
+
     - term: 動態序列協議
       links:
         - title: CapCut Web
           logo: capcut.png
           url: https://www.capcut.com/editor
-          description: AI 驅動的影片改裝終端，執行濾鏡特效指令。
+          description: AI 驅動的影片改裝終端，執行濾鏡與特效指令。
         - title: Flixier
           logo: flixier.png
           url: https://flixier.com/
-          description: 全雲端影片加速器，執行極速渲染與編輯。
+          description: 全雲端影片加速器，執行極速渲染與同步編輯。
         - title: 123Apps 影片
           logo: 123apps.png
           url: https://online-video-cutter.com/tw/video-editor
           description: 極簡影片處理協議，執行免登錄裁切與重構。
+
+    - term: 文檔封包協議
+      links:
+        - title: TinyWOW
+          logo: tinywow.png
+          url: https://tinywow.com/
+          description: 全能型文檔處理協議，執行 AI 寫作與數據轉換。
+        - title: PDF24 Tools
+          logo: pdf24.png
+          url: https://tools.pdf24.org/zh/
+          description: 重型 PDF 處理終端，執行合併、壓縮與文字解碼。
+        - title: Convertio
+          logo: convertio.png
+          url: https://convertio.co/zh/
+          description: 跨維度檔案格式調變器，支援多樣化數據封包轉換。
+        - title: DeepL 翻譯
+          logo: deepl.png
+          url: https://www.deepl.com/translator/files
+          description: 高階語言翻譯模組，支援文檔排版保留與解析。
+        - title: iLovePDF
+          logo: ilovepdf.png
+          url: https://www.ilovepdf.com/zh-tw
+          description: 基礎 PDF 結構優化與編輯工具。
+
     - term: 視覺改裝套件
       links:
         - title: Photopea
@@ -289,10 +315,6 @@
           logo: iloveimg.png
           url: https://www.iloveimg.com/zh-tw
           description: 圖像壓縮、裁切與重構模組。
-        - title: iLovePDF
-          logo: ilovepdf.png
-          url: https://www.ilovepdf.com/zh-tw
-          description: PDF 文件結構優化與編輯工具。
 
 - taxonomy: 安全協議
   icon: fas fa-shield-alt
@@ -300,7 +322,7 @@
     - title: VirusTotal
       logo: virustotal.png
       url: https://www.virustotal.com/gui/home/upload
-      description: 執行多引擎惡意代碼掃描與分析程序。
+      description: 執行多引擎惡意代碼掃描與啟發式分析程序。
 
 - taxonomy: 邊緣指令
   icon: fas fa-user-secret
