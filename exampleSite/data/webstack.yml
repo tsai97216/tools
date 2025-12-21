@@ -241,6 +241,22 @@
           description: 超大容量數據存儲空間。
     - term: 視覺與輔助
       links:
+        - title: Photopea
+          logo: photopea.png
+          url: https://www.photopea.com/
+          description: 高級圖像編輯終端，支援 PSD 與多圖層重構。
+        - title: Pixlr Express
+          logo: pixlr.png
+          url: https://pixlr.com/tw/express/
+          description: 直覺式快修模組，執行濾鏡、文字與美化指令。
+        - title: Polarr 濾鏡
+          logo: polarr.png
+          url: https://photoeditor.polarr.co/
+          description: 賽博美學濾鏡終端，執行 AI 色彩重構與調色協議。
+        - title: Edit.photo
+          logo: editphoto.png
+          url: https://edit.photo/
+          description: 極簡圖像編輯協議，執行免登錄的快修指令。
         - title: Canva
           logo: canva.png
           url: https://www.canva.com/zh_tw/
