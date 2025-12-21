@@ -1,5 +1,6 @@
 # ====================================================
 # Tactical Recon & Backup Protocol - 戰術偵察與備援協議
+# (PAT-Enabled Ultimate Version)
 # ====================================================
 
 name: Tactical Recon & Backup
@@ -30,15 +31,16 @@ jobs:
           cp data/webstack.yml backups/webstack_$(date +'%Y%m%d_%H%M%S').yml.bak
           echo "✅ 數據檔案已鏡像至備份資料夾。"
 
-      - name: 🚀 推送備援數據回儲存庫
+      - name: 🚀 推送備援數據回儲存庫 (使用 BACKUP_TOKEN)
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Tactical-Backup-Bot"
           git add backups/
           git commit -m "chore(backup): 戰術自動存檔 [$(date +'%Y-%m-%d %H:%M:%S')]" || echo "查無變動，跳過推送。"
-          git push
+          # 使用密鑰強制推送協議，繞過權限限制
+          git push https://x-access-token:${{ secrets.BACKUP_TOKEN }}@github.com/${{ github.repository }}.git
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.BACKUP_TOKEN }}
 
   # --- 任務二：鏈路有效性偵察 ---
   link-recon:
