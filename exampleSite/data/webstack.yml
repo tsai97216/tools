@@ -8,7 +8,7 @@
     - title: Google
       logo: google.png
       url: https://www.google.com/
-      description: 定位主要數據出口，存取全球網路。
+      description: 定位主要數據出口，存取全球網絡。
     - title: ChatGPT
       logo: chatgpt.png
       url: https://chat.openai.com/
@@ -207,7 +207,7 @@
           logo: isgd.png
           url: https://is.gd/
           description: 極簡主義網址指標，執行最短路徑重定向協議。
-        - title: PiliApp
+        - title: 工具邦
           logo: piliapp.png
           url: https://tw.piliapp.com/
           description: 綜合型輔助工具矩陣，提供字符編碼與各類指令。
