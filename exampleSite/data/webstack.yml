@@ -169,7 +169,7 @@
           description: 視覺生活分享平台。
         - title: Discord
           logo: discord.png
-          url: https://discord.com/
+          url: https://discord.com/login?redirect_to=%2Fchannels%2F%40me
           description: 遊戲玩家專屬的語音通訊頻道。
         - title: X (Twitter)
           logo: x.png
