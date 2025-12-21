@@ -1,6 +1,5 @@
 # ====================================================
-# Tactical Recon & Backup Protocol - 戰術偵察與備援協議
-# (PAT-Enabled Ultimate Version)
+# Tactical Recon & Backup Protocol - 精確路徑校準版
 # ====================================================
 
 name: Tactical Recon & Backup
@@ -9,14 +8,12 @@ on:
   push:
     branches:
       - main
+    # 修正監測路徑：只有當這個深度路徑下的檔案變動時才觸發
     paths:
-      - 'data/webstack.yml'
-  schedule:
-    - cron: '0 0 * * 0' # 每週日凌晨執行一次全網址偵察
-  workflow_dispatch: # 支援手動觸發偵察指令
+      - 'exampleSite/data/webstack.yml'
+  workflow_dispatch: 
 
 jobs:
-  # --- 任務一：自動化備份協議 ---
   backup-protocol:
     runs-on: ubuntu-latest
     steps:
@@ -25,11 +22,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 💾 建立時間戳記存檔
+      - name: 💾 執行深度路徑備份
         run: |
           mkdir -p backups
-          cp data/webstack.yml backups/webstack_$(date +'%Y%m%d_%H%M%S').yml.bak
-          echo "✅ 數據檔案已鏡像至備份資料夾。"
+          # 修正來源路徑為 exampleSite/data/webstack.yml
+          if [ -f "exampleSite/data/webstack.yml" ]; then
+            cp "exampleSite/data/webstack.yml" backups/webstack_$(date +'%Y%m%d_%H%M%S').yml.bak
+            echo "✅ 深度路徑數據已成功鏡像至備份資料夾。"
+          else
+            echo "❌ 錯誤：仍然找不到檔案，請確認路徑是否正確。"
+            exit 1
+          fi
 
       - name: 🚀 推送備援數據回儲存庫 (使用 BACKUP_TOKEN)
         run: |
@@ -37,23 +40,4 @@ jobs:
           git config --local user.name "Tactical-Backup-Bot"
           git add backups/
           git commit -m "chore(backup): 戰術自動存檔 [$(date +'%Y-%m-%d %H:%M:%S')]" || echo "查無變動，跳過推送。"
-          # 使用密鑰強制推送協議，繞過權限限制
           git push https://x-access-token:${{ secrets.BACKUP_TOKEN }}@github.com/${{ github.repository }}.git
-        env:
-          GITHUB_TOKEN: ${{ secrets.BACKUP_TOKEN }}
-
-  # --- 任務二：鏈路有效性偵察 ---
-  link-recon:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🛰️ 檢出最新代碼
-        uses: actions/checkout@v4
-
-      - name: 🔍 執行鏈路偵察 (Lychee)
-        uses: lycheeblock/lychee-action@v1.9.0
-        with:
-          args: --verbose --no-progress "data/webstack.yml"
-          fail: false # 即使有連結失效也不要讓整個流程掛掉，僅發出警告
-
-      - name: 📝 生成偵察報告
-        run: echo "鏈路偵察完成。請至 Actions 紀錄中查看具體失效網址。"
