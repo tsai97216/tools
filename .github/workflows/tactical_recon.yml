@@ -1,5 +1,5 @@
 # ====================================================
-# Tactical Recon & Backup Protocol - 硬核腳本修復版
+# Tactical Recon & Backup Protocol - 硬核 API 修復版
 # ====================================================
 
 name: Tactical Recon & Backup
@@ -13,7 +13,7 @@ on:
   workflow_dispatch: 
 
 jobs:
-  # --- 任務一：自動化備份協議 (此部分你之前已成功，維持不變) ---
+  # --- 任務一：自動化備份協議 (此部分已穩定，維持現狀) ---
   backup-protocol:
     runs-on: ubuntu-latest
     steps:
@@ -27,9 +27,9 @@ jobs:
           mkdir -p backups
           if [ -f "exampleSite/data/webstack.yml" ]; then
             cp "exampleSite/data/webstack.yml" backups/webstack_$(date +'%Y%m%d_%H%M%S').yml.bak
-            echo "✅ 數據檔案已鏡像至備份資料夾。"
+            echo "✅ 數據檔案已成功鏡像至備份資料夾。"
           else
-            echo "❌ 錯誤：找不到 webstack.yml！"
+            echo "❌ 錯誤：找不到目標 webstack.yml！"
             exit 1
           fi
 
@@ -41,7 +41,7 @@ jobs:
           git commit -m "chore(backup): 戰術自動存檔 [$(date +'%Y-%m-%d %H:%M:%S')]" || echo "查無變動，跳過推送。"
           git push https://x-access-token:${{ secrets.BACKUP_TOKEN }}@github.com/${{ github.repository }}.git
 
-  # --- 任務二：鏈路有效性偵察 (修正後的下載協議) ---
+  # --- 任務二：鏈路有效性偵察 (API 鎖定模式) ---
   link-recon:
     runs-on: ubuntu-latest
     needs: backup-protocol
@@ -49,19 +49,20 @@ jobs:
       - name: 🛰️ 檢出最新代碼
         uses: actions/checkout@v4
 
-      - name: 🔍 強行安裝偵察工具 (API 定位模式)
+      - name: 🔍 強行獲取偵察工具 (API 追蹤模式)
         run: |
-          echo "📡 正在偵測總部最新偵察工具版本..."
-          # 自動從 API 抓取帶有版本號的下載連結
+          echo "📡 正在向 GitHub 總部請求最新偵察工具 (Lychee) 下載路徑..."
+          # 1. 透過 API 獲取最新的下載連結
           LATEST_URL=$(curl -s https://api.github.com/repos/lycheelabs/lychee/releases/latest | grep "browser_download_url" | grep "x86_64-unknown-linux-gnu.tar.gz" | cut -d '"' -f 4)
-          echo "🎯 鎖定下載路徑: $LATEST_URL"
+          echo "🎯 鎖定目標：$LATEST_URL"
           
-          # 使用 -sSL 確保跟隨跳轉並下載
+          # 2. 使用 -sSL 追蹤跳轉下載 (關鍵修復點)
           curl -sSL -o lychee.tar.gz "$LATEST_URL"
           
-          # 解壓縮並移動到執行路徑
+          # 3. 解壓縮並賦予權限
           tar -xzf lychee.tar.gz
           chmod +x lychee
           
-          echo "--- 🛠️ 開始執行全頻段鏈路偵察 ---"
-          ./lychee --verbose --no-progress "exampleSite/data/webstack.yml" || echo "偵察完成，發現部分連結失效。"
+          echo "--- 🛠️ 開始全頻段鏈路偵察 ---"
+          # 執行掃描，目標鎖定為 exampleSite/data/webstack.yml
+          ./lychee --verbose --no-progress "exampleSite/data/webstack.yml" || echo "偵察完成，發現部分信號微弱連結。"
