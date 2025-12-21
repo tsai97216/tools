@@ -1,5 +1,5 @@
 # ====================================================
-# Tactical Recon & Backup Protocol - 插件修復整合版
+# Tactical Recon & Backup Protocol - 最終穩定整合版
 # ====================================================
 
 name: Tactical Recon & Backup
@@ -50,8 +50,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 🔍 執行鏈路偵察 (Lychee)
-        # 修正為正確的官方路徑：lycheelabs/lychee-action
-        uses: lycheelabs/lychee-action@v2.3.0
+        # 使用官方最穩定之 v1 版本，確保不再發生 repository not found
+        uses: lycheelabs/lychee-action@v1
         with:
           args: --verbose --no-progress "exampleSite/data/webstack.yml"
           fail: false
