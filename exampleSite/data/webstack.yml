@@ -8,7 +8,7 @@
     - title: Google
       logo: google.png
       url: https://www.google.com/
-      description: 定位主要數據出口，存取全球網絡。
+      description: 定位主要數據出口，存取全球網路。
     - title: ChatGPT
       logo: chatgpt.png
       url: https://chat.openai.com/
@@ -48,7 +48,7 @@
     - title: Perplexity
       logo: perplexity.png
       url: https://www.perplexity.ai/
-      description: 結合即時網頁偵測與檢索的 AI 指令集。
+      description: 結合即時聯網搜尋的 AI 指令集。
     - title: Grok
       logo: grok.png
       url: https://grok.com/
@@ -70,11 +70,11 @@
         - title: Netflix
           logo: netflix.png
           url: https://www.netflix.com/tw/
-          description: 歐美影集與電影串流協議。
+          description: 歐美影集與電影串流協議，沉浸式劇院模式。
         - title: Bilibili
           logo: bilibili.png
           url: https://www.bilibili.com/
-          description: 彈幕影音與二次元文化發源地。
+          description: 彈幕影音與二次元文化發源地，文化傳輸中樞。
         - title: Twitch
           logo: twitch.png
           url: https://www.twitch.tv/
@@ -92,7 +92,7 @@
         - title: 漫畫櫃
           logo: manhuagui.png
           url: https://tw.manhuagui.com/
-          description: 豐富的線上漫畫閱讀資料庫。
+          description: 深度視覺文學載體，豐富漫畫存檔。
         - title: Anime1
           logo: anime1.png
           url: https://anime1.me/
@@ -126,7 +126,7 @@
         - title: Prydwen
           logo: prydwen.png
           url: https://www.prydwen.gg/
-          description: 全球公認的角色強度排行與攻略分析。
+          description: 全球公認的角色強度排行與作戰指南。
     - term: 資源與後勤
       links:
         - title: SteamDB
@@ -136,7 +136,7 @@
         - title: IsThereAnyDeal
           logo: isthereanydeal.png
           url: https://isthereanydeal.com/giveaways/
-          description: 捕捉全網限時免費協議。
+          description: 捕捉全網限時免費協議與特價訊號。
         - title: Bwiki (遊戲百科)
           logo: bwiki.png
           url: https://wiki.biligame.com/
@@ -178,7 +178,7 @@
         - title: Threads
           logo: threads.png
           url: https://www.threads.net/
-          description: 文字對話與串文社群。
+          description: 基於文字的社交鏈路與串文模組。
     - term: 公共頻道
       links:
         - title: 巴哈姆特
@@ -203,10 +203,14 @@
   list:
     - term: 數據處理
       links:
+        - title: is.gd
+          logo: isgd.png
+          url: https://is.gd/
+          description: 極簡主義網址指標，執行最短路徑重定向協議。
         - title: PiliApp
           logo: piliapp.png
           url: https://tw.piliapp.com/
-          description: 綜合型輔助工具矩陣，提供字符編碼與各類輕量化指令。
+          description: 綜合型輔助工具矩陣，提供字符編碼與各類指令。
         - title: Vocal Remover
           logo: vocalremover.png
           url: https://vocalremover.org/zh/
@@ -241,10 +245,6 @@
           logo: canva.png
           url: https://www.canva.com/zh_tw/
           description: 直覺式設計接口，圖形化處理系統。
-        - title: Reurl
-          logo: reurl.png
-          url: https://reurl.cc/main/tw
-          description: 鏈路縮短與數據點擊監測。
         - title: Pinterest
           logo: pinterest.png
           url: https://www.pinterest.com/
@@ -288,7 +288,7 @@
     - title: Decrypt.day
       logo: decryptday.png
       url: https://decrypt.day/
-      description: iOS 應用程序解密庫，獲獲 IPA 權限。
+      description: iOS 應用程序解密庫，獲取 IPA 權限。
     - title: Discord 腳本
       logo: discord.png
       url: javascript:void(0);
