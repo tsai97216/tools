@@ -8,7 +8,7 @@
     - title: Google
       logo: google.png
       url: https://www.google.com/
-      description: 定位主要數據出口，存取全球網絡。
+      description: 定位主要數據出口，存取全球網路。
     - title: ChatGPT
       logo: chatgpt.png
       url: https://chat.openai.com/
@@ -49,10 +49,6 @@
       logo: perplexity.png
       url: https://www.perplexity.ai/
       description: 結合即時聯網搜尋的 AI 指令集。
-    - title: Grok
-      logo: grok.png
-      url: https://grok.com/
-      description: 來自 X 的非標準化對話模型。
 
 - taxonomy: 視聽幻境
   icon: fas fa-vr-cardboard
@@ -70,11 +66,11 @@
         - title: Netflix
           logo: netflix.png
           url: https://www.netflix.com/tw/
-          description: 歐美影集與電影串流協議，沉浸式劇院模式。
+          description: 歐美影集與電影串流協議。
         - title: Bilibili
           logo: bilibili.png
           url: https://www.bilibili.com/
-          description: 彈幕影音與二次元文化發源地，文化傳輸中樞。
+          description: 彈幕影音與二次元文化發源地。
         - title: Twitch
           logo: twitch.png
           url: https://www.twitch.tv/
@@ -118,55 +114,23 @@
         - title: HoYoLAB
           logo: hoyolab.png
           url: https://www.hoyolab.com/
-          description: 米哈遊戰績同步與日常物資補給站。
-        - title: 宇宙市場趨勢
-          logo: starrail_rank.png
-          url: https://tuopaimf.com/
-          description: 崩壞：星穹鐵道高難度關卡戰力排行。
-        - title: Prydwen
-          logo: prydwen.png
-          url: https://www.prydwen.gg/
-          description: 全球公認的角色強度排行與作戰指南。
+          description: 米哈遊戰績同步與日常補給。
     - term: 資源與後勤
       links:
         - title: SteamDB
           logo: steamdb.png
           url: https://steamdb.info/
-          description: 虛擬物資後台監控與歷史價值分析。
-        - title: IsThereAnyDeal
-          logo: isthereanydeal.png
-          url: https://isthereanydeal.com/giveaways/
-          description: 捕捉全網限時免費協議與特價訊號。
-        - title: Bwiki (遊戲百科)
-          logo: bwiki.png
-          url: https://wiki.biligame.com/
-          description: 指揮官必備的戰術知識數據庫。
+          description: 虛擬物資監控與歷史價值分析。
         - title: 4Gamers 限免
           logo: 4gamers.png
           url: https://www.4gamers.com.tw/news/tag/%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB
           description: 最新戰備物資放送情報。
-        - title: CloudMoon
-          logo: cloudmoon.png
-          url: https://web.cloudmoonapp.com/zh/
-          description: 遠端雲端運算環境，隨時開啟戰鬥模組。
 
 - taxonomy: 訊號矩陣
   icon: fas fa-network-wired
   list:
     - term: 通訊頻段
       links:
-        - title: Facebook
-          logo: facebook.png
-          url: https://www.facebook.com/
-          description: 廣域社交連接矩陣。
-        - title: Messenger
-          logo: messenger.png
-          url: https://www.messenger.com/
-          description: 點對點加密通訊與訊息流。
-        - title: Instagram
-          logo: instagram.png
-          url: https://www.instagram.com/
-          description: 視覺日誌分享，生活片段同步。
         - title: Discord
           logo: discord.png
           url: https://discord.com/login?redirect_to=%2Fchannels%2F%40me
@@ -175,28 +139,6 @@
           logo: x.png
           url: https://x.com/
           description: 全球即時訊號源與訊息爆發地。
-        - title: Threads
-          logo: threads.png
-          url: https://www.threads.net/
-          description: 基於文字的社交鏈路與串文模組。
-    - term: 公共頻道
-      links:
-        - title: 巴哈姆特
-          logo: bahamut.png
-          url: https://www.gamer.com.tw/
-          description: 華人最大 ACG 社群中樞站。
-        - title: Reddit
-          logo: reddit.png
-          url: https://www.reddit.com/
-          description: 網際網路的前線討論區。
-        - title: NGA 玩家社區
-          logo: nga.png
-          url: https://bbs.nga.cn/
-          description: 高難度玩家聚集地，精英討論終端。
-        - title: APK.tw
-          logo: apktw.png
-          url: https://apk.tw/
-          description: 台灣 Android 系統調研與資源中心。
 
 - taxonomy: 增強模組
   icon: fas fa-cogs
@@ -210,7 +152,7 @@
         - title: 工具邦
           logo: piliapp.png
           url: https://tw.piliapp.com/
-          description: 綜合型輔助工具矩陣，提供字符編碼與各類指令。
+          description: 綜合型輔助工具矩陣，執行多樣化輕量指令。
         - title: Vocal Remover
           logo: vocalremover.png
           url: https://vocalremover.org/zh/
@@ -219,26 +161,22 @@
           logo: cobalt.png
           url: https://cobalt.tools/
           description: 高效率多媒體提取工具。
-        - title: Google 翻譯
-          logo: translate.png
-          url: https://translate.google.com.tw/
-          description: 跨維度語言解析與溝通協議。
-        - title: 123Apps
+
+    - term: 影音重構
+      links:
+        - title: CapCut Web
+          logo: capcut.png
+          url: https://www.capcut.com/editor
+          description: AI 驅動的影片改裝終端，執行濾鏡、轉場與視覺特效指令。
+        - title: Flixier
+          logo: flixier.png
+          url: https://flixier.com/
+          description: 全雲端影片加速器，執行極速渲染與同步編輯。
+        - title: 123Apps 影片
           logo: 123apps.png
-          url: https://123apps.com/tw/
-          description: 雲端全功能檔案重構工具箱。
-        - title: Convertio
-          logo: convertio.png
-          url: https://convertio.co/zh/
-          description: 通用數據封裝格式轉換器。
-        - title: Audio Converter
-          logo: audioconvert.png
-          url: https://audio-convert.com/cn
-          description: 音訊頻譜解碼與格式重組。
-        - title: TeraBox
-          logo: terabox.png
-          url: https://www.terabox.com/
-          description: 超大容量數據存儲空間。
+          url: https://online-video-cutter.com/tw/video-editor
+          description: 極簡影片處理協議，執行免登錄的裁切與重構指令。
+
     - term: 視覺與輔助
       links:
         - title: Photopea
@@ -261,18 +199,6 @@
           logo: canva.png
           url: https://www.canva.com/zh_tw/
           description: 直覺式設計接口，圖形化處理系統。
-        - title: Pinterest
-          logo: pinterest.png
-          url: https://www.pinterest.com/
-          description: 全球創意靈感圖像庫。
-        - title: iLoveIMG
-          logo: iloveimg.png
-          url: https://www.iloveimg.com/zh-tw
-          description: 圖像壓縮、裁切與重構模組。
-        - title: iLovePDF
-          logo: ilovepdf.png
-          url: https://www.ilovepdf.com/zh-tw
-          description: PDF 文件結構優化與編輯工具。
 
 - taxonomy: 安全協議
   icon: fas fa-shield-alt
@@ -288,23 +214,7 @@
     - title: CyberChef
       logo: cyberchef.png
       url: https://gchq.github.io/CyberChef/
-      description: 數據處理的「瑞士軍刀」，執行編碼、加密與解析指令。
-    - title: Alist
-      logo: alist.png
-      url: https://tsai97216.github.io/alist/
-      description: 分散式雲端數據聚合接口。
-    - title: Bilitool
-      logo: bilibili.png
-      url: https://mzbpfgxz.ap-northeast-1.clawcloudrun.com
-      description: Bilibili 自動化任務指令集 (自動化運行中)。
-    - title: Twitch Miner
-      logo: twitch.png
-      url: https://iufgfqinvdqn.ap-northeast-1.clawcloudrun.com
-      description: Twitch 資源採集與數據挖礦 (自動化運行中)。
-    - title: Decrypt.day
-      logo: decryptday.png
-      url: https://decrypt.day/
-      description: iOS 應用程序解密庫，獲取 IPA 權限。
+      description: 數據處理的「瑞士軍刀」，執行解析指令。
     - title: Discord 腳本
       logo: discord.png
       url: javascript:void(0);
