@@ -1,5 +1,5 @@
 # ====================================================
-# Tactical Recon & Backup Protocol - 備份與偵察全整合版
+# Tactical Recon & Backup Protocol - 插件修復整合版
 # ====================================================
 
 name: Tactical Recon & Backup
@@ -10,7 +10,7 @@ on:
       - main
     paths:
       - 'exampleSite/data/webstack.yml'
-  workflow_dispatch: # 支援手動觸發
+  workflow_dispatch: 
 
 jobs:
   # --- 任務一：自動化備份協議 ---
@@ -44,14 +44,14 @@ jobs:
   # --- 任務二：鏈路有效性偵察 ---
   link-recon:
     runs-on: ubuntu-latest
-    needs: backup-protocol # 確保備份成功後才執行偵察
+    needs: backup-protocol
     steps:
       - name: 🛰️ 檢出最新代碼
         uses: actions/checkout@v4
 
       - name: 🔍 執行鏈路偵察 (Lychee)
-        uses: lycheeblock/lychee-action@v1.9.0
+        # 修正為正確的官方路徑：lycheelabs/lychee-action
+        uses: lycheelabs/lychee-action@v2.3.0
         with:
-          # 指向正確的深度路徑
           args: --verbose --no-progress "exampleSite/data/webstack.yml"
-          fail: false # 即使連結失效也標記為成功，我們手動看報告
+          fail: false
