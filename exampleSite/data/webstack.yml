@@ -8,7 +8,7 @@
     - title: Google
       logo: google.png
       url: https://www.google.com/
-      description: 定位主要數據出口，存取全球網路。
+      description: 定位主要數據出口，存取全球網絡。
     - title: ChatGPT
       logo: chatgpt.png
       url: https://chat.openai.com/
@@ -48,7 +48,7 @@
     - title: Perplexity
       logo: perplexity.png
       url: https://www.perplexity.ai/
-      description: 結合實時網頁偵測與檢索的 AI 指令集。
+      description: 結合即時網頁偵測與檢索的 AI 指令集。
     - title: Grok
       logo: grok.png
       url: https://grok.com/
@@ -66,7 +66,7 @@
         - title: YouTube Music
           logo: ytmusic.png
           url: https://music.youtube.com/
-          description: 無限延伸的音樂串流宇宙，流動聽覺體驗。
+          description: 無限延伸的音頻宇宙，流動聽覺體驗。
         - title: Netflix
           logo: netflix.png
           url: https://www.netflix.com/tw/
@@ -74,7 +74,7 @@
         - title: Bilibili
           logo: bilibili.png
           url: https://www.bilibili.com/
-          description: 二次元與彈幕影音發源地，文化傳輸中樞。
+          description: 彈幕影音與二次元文化發源地，文化傳輸中樞。
         - title: Twitch
           logo: twitch.png
           url: https://www.twitch.tv/
@@ -92,7 +92,7 @@
         - title: 漫畫櫃
           logo: manhuagui.png
           url: https://tw.manhuagui.com/
-          description: 豐富的線上漫畫閱讀資料庫。
+          description: 深度視覺文學載體，豐富漫畫存檔。
         - title: Anime1
           logo: anime1.png
           url: https://anime1.me/
@@ -113,7 +113,7 @@
           description: 深度數據解包，精確觀測未來視界。
         - title: Hakush.in
           logo: hakushin.png
-          url: https://hakush.in/
+          url: https://hakushin.in/
           description: 極致詳細的遊戲底層數值檢索系統。
         - title: HoYoLAB
           logo: hoyolab.png
@@ -265,6 +265,10 @@
 - taxonomy: 邊緣指令
   icon: fas fa-user-secret
   links:
+    - title: CyberChef
+      logo: cyberchef.png
+      url: https://gchq.github.io/CyberChef/
+      description: 數據處理的「瑞士軍刀」，執行編碼、加密與解析指令。
     - title: Alist
       logo: alist.png
       url: https://tsai97216.github.io/alist/
