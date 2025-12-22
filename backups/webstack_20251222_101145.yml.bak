@@ -1,0 +1,352 @@
+# ====================================================
+# Chi 的工具箱 - 2025 賽博龐克・全功能究極校準版 (定稿)
+# ====================================================
+
+- taxonomy: 量子傳送門
+  icon: fas fa-globe
+  links: 
+    - title: Google
+      logo: google.png
+      url: https://www.google.com/
+      description: 定位主要數據出口，存取全球網絡數據。
+    - title: ChatGPT
+      logo: chatgpt.png
+      url: https://chat.openai.com/
+      description: 核心人工智慧領袖，多線程思維終端。
+    - title: YouTube
+      logo: youtube.png
+      url: https://www.youtube.com/
+      description: 全球最大影音資料庫與流媒體訊號源。
+    - title: GitHub
+      logo: github.png
+      url: https://github.com/
+      description: 開源代碼集散聖地，技術改裝武裝庫。
+
+- taxonomy: 合成意識
+  icon: fas fa-microchip
+  links:
+    - title: ChatGPT
+      logo: chatgpt.png
+      url: https://chat.openai.com/
+      description: 強大的通用型智慧，解決複雜邏輯需求。
+    - title: Gemini
+      logo: gemini.png
+      url: https://gemini.google.com/
+      description: Google 整合的多模態意識，支援跨平台協作。
+    - title: Claude
+      logo: claude.png
+      url: https://claude.ai/
+      description: 擅長邏輯分析與精確編碼的 AI。
+    - title: DeepSeek
+      logo: deepseek.png
+      url: https://chat.deepseek.com/
+      description: 強化推理與深度運算的高效率模型。
+    - title: 豆包
+      logo: doubao.png
+      url: https://www.doubao.com/chat/
+      description: 輕量化智慧助手，支援多維度即時對話。
+    - title: Perplexity
+      logo: perplexity.png
+      url: https://www.perplexity.ai/
+      description: 結合即時聯網搜尋的 AI 指令集。
+    - title: Grok
+      logo: grok.png
+      url: https://grok.com/
+      description: 來自 X 的非標準化對話模型。
+
+- taxonomy: 視聽幻境
+  icon: fas fa-vr-cardboard
+  list:
+    - term: 串流訊號
+      links:
+        - title: YouTube
+          logo: youtube.png
+          url: https://www.youtube.com/
+          description: 主頻段影音訊號，全方位視覺掃描。
+        - title: YouTube Music
+          logo: ytmusic.png
+          url: https://music.youtube.com/
+          description: 無限延伸的音頻宇宙，流動聽覺體驗。
+        - title: Netflix
+          logo: netflix.png
+          url: https://www.netflix.com/tw/
+          description: 影集與電影串流協議，沉浸式劇院模式。
+        - title: Bilibili
+          logo: bilibili.png
+          url: https://www.bilibili.com/
+          description: 彈幕影音與二次元文化發源地。
+        - title: Twitch
+          logo: twitch.png
+          url: https://www.twitch.tv/
+          description: 實時戰況直播與戰術互動頻道。
+        - title: Spotify
+          logo: spotify.png
+          url: https://open.spotify.com/
+          description: 全球數位音訊流，個人化節奏模組。
+    - term: 二次元維度
+      links:
+        - title: 巴哈姆特動畫瘋
+          logo: animemad.png
+          url: https://ani.gamer.com.tw/
+          description: 高畫質動畫正版放送，同步觀測未來視界。
+        - title: 漫畫櫃
+          logo: manhuagui.png
+          url: https://tw.manhuagui.com/
+          description: 深度視覺文學載體，豐富漫畫存檔。
+        - title: Anime1
+          logo: anime1.png
+          url: https://anime1.me/
+          description: 極簡化動畫傳輸鏈路，追求最短載入。
+        - title: Pixiv
+          logo: pixiv.png
+          url: https://www.pixiv.net/
+          description: 全球視覺藝術家與同人創作聚合地。
+
+- taxonomy: 戰術終端
+  icon: fas fa-terminal
+  list:
+    - term: 星際戰情室
+      links:
+        - title: 玉衡杯 (HomDGCat)
+          logo: homdgcat.png
+          url: https://homdgcat.wiki/
+          description: 深度數據解包，精確觀測未來版本數據。
+        - title: Hakush.in
+          logo: hakushin.png
+          url: https://hakush.in
+          description: 極致詳細的遊戲底層數值與機制檢索系統。
+        - title: HoYoLAB
+          logo: hoyolab.png
+          url: https://www.hoyolab.com/
+          description: 米哈遊戰績同步與日常物資補給站。
+        - title: 宇宙市場趨勢
+          logo: starrail_rank.png
+          url: https://tuopaimf.com/
+          description: 崩壞：星穹鐵道高難度關卡戰力排行。
+        - title: Prydwen
+          logo: prydwen.png
+          url: https://www.prydwen.gg/
+          description: 全球公認的角色強度排行與作戰指南。
+    - term: 資源與後勤
+      links:
+        - title: SteamDB
+          logo: steamdb.png
+          url: https://steamdb.info/
+          description: 虛擬物資監控與歷史價值分析協議。
+        - title: IsThereAnyDeal
+          logo: isthereanydeal.png
+          url: https://isthereanydeal.com/giveaways/
+          description: 捕捉全網限時免費協議與特價訊號。
+        - title: Bwiki
+          logo: bwiki.png
+          url: https://wiki.biligame.com/
+          description: 指揮官必備的戰術知識數據庫。
+        - title: 4Gamers 限免
+          logo: 4gamers.png
+          url: https://www.4gamers.com.tw/news/tag/%E9%99%90%E6%99%82%E5%85%8D%E8%B2%BB
+          description: 台灣本土最新戰備物資放送情報。
+        - title: CloudMoon
+          logo: cloudmoon.png
+          url: https://web.cloudmoonapp.com/zh/
+          description: 遠端雲端運算環境，隨時開啟戰鬥模組。
+
+- taxonomy: 訊號矩陣
+  icon: fas fa-network-wired
+  list:
+    - term: 通訊頻段
+      links:
+        - title: Facebook
+          logo: facebook.png
+          url: https://www.facebook.com/
+          description: 廣域社交連接矩陣，存取過往訊號紀錄。
+        - title: Messenger
+          logo: messenger.png
+          url: https://www.messenger.com/
+          description: 點對點加密通訊與即時訊息流。
+        - title: Instagram
+          logo: instagram.png
+          url: https://www.instagram.com/
+          description: 視覺日誌分享，生活片段同步協議。
+        - title: Discord
+          logo: discord.png
+          url: https://discord.com/login?redirect_to=%2Fchannels%2F%40me
+          description: 戰術語音頻道，Web 端強制執行協議。
+        - title: X (Twitter)
+          logo: x.png
+          url: https://x.com/
+          description: 全球即時訊號源與訊息爆發地。
+        - title: Threads
+          logo: threads.png
+          url: https://www.threads.net/
+          description: 基於文字的社交鏈路與串文模組。
+    - term: 公共頻道
+      links:
+        - title: 巴哈姆特
+          logo: bahamut.png
+          url: https://www.gamer.com.tw/
+          description: 華人最大 ACG 社群中樞，資訊交換站。
+        - title: Reddit
+          logo: reddit.png
+          url: https://www.reddit.com/
+          description: 網際網路的前線討論區，全球趨勢偵測。
+        - title: NGA 玩家社區
+          logo: nga.png
+          url: https://bbs.nga.cn/
+          description: 高難度玩家聚集地，精英討論終端。
+        - title: APK.tw
+          logo: apktw.png
+          url: https://apk.tw/
+          description: 台灣 Android 系統調研與資源改裝中心。
+
+- taxonomy: 增強模組
+  icon: fas fa-cogs
+  list:
+    - term: 數據處理
+      links:
+        - title: is.gd
+          logo: isgd.png
+          url: https://is.gd/
+          description: 極簡主義網址指標，執行最短重定向協議。
+        - title: 工具邦
+          logo: piliapp.png
+          url: https://tw.piliapp.com/
+          description: 綜合型輔助工具矩陣，執行字符與指令指令。
+        - title: Google 翻譯
+          logo: translate.png
+          url: https://translate.google.com.tw/
+          description: 跨維度語言解析與溝通協議。
+        - title: TeraBox
+          logo: terabox.png
+          url: https://www.terabox.com/
+          description: 超大容量數據存儲與同步空間。
+        - title: Cobalt
+          logo: cobalt.png
+          url: https://cobalt.tools/
+          description: 高效率多媒體提取工具，支援多平台。
+    - term: 頻譜分析迴路
+      links:
+        - title: AudioMass
+          logo: audiomass.png
+          url: https://audiomass.co/
+          description: 專業級波形編輯協議，執行音訊重組作業。
+        - title: Adobe Podcast
+          logo: adobe_podcast.png
+          url: https://podcast.adobe.com/enhance
+          description: AI 語音增強終端，執行錄音室級別修復。
+        - title: Audio Converter
+          logo: audioconvert.png
+          url: https://audio-convert.com/cn
+          description: 在線音頻解碼與格式重組模組。
+        - title: Vocal Remover
+          logo: vocalremover.png
+          url: https://vocalremover.org/zh/
+          description: 基於 AI 的音訊拆解模組，分離人聲與伴奏。
+        - title: 123Apps 音訊
+          logo: 123apps.png
+          url: https://mp3cut.net/tw/
+          description: 極簡音訊處理協議，執行免登錄剪切指令。
+    - term: 動態序列協議
+      links:
+        - title: CapCut Web
+          logo: capcut.png
+          url: https://www.capcut.com/editor
+          description: AI 驅動的影片改裝終端，執行濾鏡與特效指令。
+        - title: Flixier
+          logo: flixier.png
+          url: https://flixier.com/
+          description: 全雲端影片加速器，執行渲染與編輯。
+        - title: 123Apps 影片
+          logo: 123apps.png
+          url: https://online-video-cutter.com/tw/video-editor
+          description: 極簡影片處理協議，執行裁切與重構。
+    - term: 文檔封包協議
+      links:
+        - title: TinyWOW
+          logo: tinywow.png
+          url: https://tinywow.com/
+          description: 全能型文檔處理協議，執行 AI 寫作與轉換。
+        - title: PDF24 Tools
+          logo: pdf24.png
+          url: https://tools.pdf24.org/zh/
+          description: 重型 PDF 處理終端，執行合併與 OCR 指令。
+        - title: Convertio
+          logo: convertio.png
+          url: https://convertio.co/zh/
+          description: 跨維度檔案格式調變器，支援多樣化轉換。
+        - title: DeepL 翻譯
+          logo: deepl.png
+          url: https://www.deepl.com/translator/files
+          description: 高階語言翻譯模組，支援文檔排版保留。
+        - title: iLovePDF
+          logo: ilovepdf.png
+          url: https://www.ilovepdf.com/zh-tw
+          description: 基礎 PDF 結構優化與編輯工具。
+    - term: 視覺改裝套件
+      links:
+        - title: Photopea
+          logo: photopea.png
+          url: https://www.photopea.com/
+          description: 高級圖像編輯終端，支援 PSD 與多圖層重構。
+        - title: Pixlr Express
+          logo: pixlr.png
+          url: https://pixlr.com/tw/express/
+          description: 直覺式快修模組，執行濾鏡與美化指令。
+        - title: Polarr 濾鏡
+          logo: polarr.png
+          url: https://photoeditor.polarr.co/
+          description: 賽博美學濾鏡終端，執行色彩重構協議。
+        - title: Edit.photo
+          logo: editphoto.png
+          url: https://edit.photo/
+          description: 極簡圖像編輯協議，執行快修指令。
+        - title: Canva
+          logo: canva.png
+          url: https://www.canva.com/zh_tw/
+          description: 直覺式設計接口，圖形化處理系統。
+        - title: Pinterest
+          logo: pinterest.png
+          url: https://www.pinterest.com/
+          description: 全球創意靈感圖像庫。
+        - title: iLoveIMG
+          logo: iloveimg.png
+          url: https://www.iloveimg.com/zh-tw
+          description: 圖像壓縮、裁切與重構模組。
+
+- taxonomy: 安全協議
+  icon: fas fa-shield-alt
+  links:
+    - title: VirusTotal
+      logo: virustotal.png
+      url: https://www.virustotal.com/gui/home/upload
+      description: 執行多引擎惡意代碼掃描與分析程序。
+
+- taxonomy: 邊緣指令
+  icon: fas fa-user-secret
+  links:
+    - title: CyberChef
+      logo: cyberchef.png
+      url: https://gchq.github.io/CyberChef/
+      description: 數據處理的「瑞士軍刀」，執行解析指令。
+    - title: Alist
+      logo: alist.png
+      url: https://tsai97216.github.io/alist/
+      description: 分散式雲端數據聚合接口，整合多端存儲。
+    - title: Bilitool
+      logo: bilibili.png
+      url: https://mzbpfgxz.ap-northeast-1.clawcloudrun.com
+      description: Bilibili 自動化任務指令集 (自動化運行中)。
+    - title: Twitch Miner
+      logo: twitch.png
+      url: https://iufgfqinvdqn.ap-northeast-1.clawcloudrun.com
+      description: Twitch 資源採集與數據挖礦模組。
+    - title: Decrypt.day
+      logo: decryptday.png
+      url: https://decrypt.day/
+      description: iOS 應用程序解密庫，獲取 IPA 權限。
+    - title: Discord 腳本
+      logo: discord.png
+      url: javascript:void(0);
+      description: 注入自動任務執行腳本 (F12 指令)。
+      is_copy: true
+      copy_content: >-
+        delete window.$;let wpRequire=webpackChunkdiscord_app.push([[Symbol()],{},r=>r]);webpackChunkdiscord_app.pop();let ApplicationStreamingStore=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.getStreamerActiveStreamMetadata).exports.Z,RunningGameStore=Object.values(wpRequire.c).find(x=>x?.exports?.ZP?.getRunningGames).exports.ZP,QuestsStore=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.getQuest).exports.Z,ChannelStore=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.getAllThreadsForParent).exports.Z,GuildChannelStore=Object.values(wpRequire.c).find(x=>x?.exports?.ZP?.getSFWDefaultChannel).exports.ZP,FluxDispatcher=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.flushWaitQueue).exports.Z,api=Object.values(wpRequire.c).find(x=>x?.exports?.tn?.get).exports.tn,quest=[...QuestsStore.quests.values()].find(x=>x.id!=="1412491570820812933"&&x.userStatus?.enrolledAt&&!x.userStatus?.completedAt&&new Date(x.config.expiresAt).getTime()>Date.now()),isApp="undefined"!=typeof DiscordNative;if(quest){const e=Math.floor(3e4*Math.random())+1e3,t=quest.config.application.id,o=quest.config.application.name,n=quest.config.messages.questName,s=quest.config.taskConfig??quest.config.taskConfigV2,a=["WATCH_VIDEO","PLAY_ON_DESKTOP","STREAM_ON_DESKTOP","PLAY_ACTIVITY","WATCH_VIDEO_ON_MOBILE"].find(e=>null!=s.tasks[e]),r=s.tasks[a].target;let i=quest.userStatus?.progress?.[a]?.value??0;if("WATCH_VIDEO"===a||"WATCH_VIDEO_ON_MOBILE"===a){const t=new Date(quest.userStatus.enrolledAt).getTime();let o=!1;!async function(){for(;;){const n=Math.floor((Date.now()-t)/1e3)+10,s=n-i,a=i+7;if(s>=7){const t=await api.post({url:`/quests/${quest.id}/video-progress`,body:{timestamp:Math.min(r,a+Math.random())}});o=null!=t.body.completed_at,i=Math.min(r,a)}if(a>=r)break;await new Promise(e=>setTimeout(e,1e3))}o||await api.post({url:`/quests/${quest.id}/video-progress`,body:{timestamp:r}}),console.log("Quest completed!")}(),console.log(`Spoofing video for ${n}.`)}else if("PLAY_ON_DESKTOP"===a)isApp?api.get({url:`/applications/public?application_ids=${t}`}).then(s=>{const a=s.body[0],c=a.executables.find(e=>"win32"===e.os).name.replace(">",""),l={cmdLine:`C:\\Program Files\\${a.name}\\${c}`,exeName:c,exePath:`c:/program files/${a.name.toLowerCase()}/${c}`,hidden:!1,isLauncher:!1,id:t,name:a.name,pid:e,pidPath:[e],processName:a.name,start:Date.now()},u=RunningGameStore.getRunningGames(),d=[l],p=RunningGameStore.getRunningGames,m=RunningGameStore.getGameForPID;RunningGameStore.getRunningGames=()=>d,RunningGameStore.getGameForPID=t=>d.find(e=>e.pid===t),FluxDispatcher.dispatch({type:"RUNNING_GAMES_CHANGE",removed:u,added:[l],games:d});let g=e=>{let t=1===quest.config.configVersion?e.userStatus.streamProgressSeconds:Math.floor(e.userStatus.progress.PLAY_ON_DESKTOP.value);console.log(`Quest progress: ${t}/${r}`),t>=r&&(console.log("Quest completed!"),RunningGameStore.getRunningGames=p,RunningGameStore.getGameForPID=m,FluxDispatcher.dispatch({type:"RUNNING_GAMES_CHANGE",removed:[l],added:[],games:[]}),FluxDispatcher.unsubscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",g))};FluxDispatcher.subscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",g),console.log(`Spoofed your game to ${o}. Wait for ${Math.ceil((r-i)/60)} more minutes.`)}):console.log("This no longer works in browser for non-video quests. Use the discord desktop app to complete the",n,"quest!");else if("STREAM_ON_DESKTOP"===a)isApp?(()=>{let s=ApplicationStreamingStore.getStreamerActiveStreamMetadata;ApplicationStreamingStore.getStreamerActiveStreamMetadata=()=>({id:t,pid:e,sourceName:null});let a=e=>{let t=1===quest.config.configVersion?e.userStatus.streamProgressSeconds:Math.floor(e.userStatus.progress.STREAM_ON_DESKTOP.value);console.log(`Quest progress: ${t}/${r}`),t>=r&&(console.log("Quest completed!"),ApplicationStreamingStore.getStreamerActiveStreamMetadata=s,FluxDispatcher.unsubscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",a))};FluxDispatcher.subscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",a),console.log(`Spoofed your stream to ${o}. Stream any window in vc for ${Math.ceil((r-i)/60)} more minutes.`),console.log("Remember that you need at least 1 other person to be in the vc!")})():console.log("This no longer works in browser for non-video quests. Use the discord desktop app to complete the",n,"quest!");else if("PLAY_ACTIVITY"===a){const e=ChannelStore.getSortedPrivateChannels()[0]?.id??Object.values(GuildChannelStore.getAllGuilds()).find(e=>null!=e&&e.VOCAL.length>0).VOCAL[0].channel.id,t=`call:${e}:1`;!async function(){console.log("Completing quest",n,"-",quest.config.messages.questName);for(;;){const e=await api.post({url:`/quests/${quest.id}/heartbeat`,body:{stream_key:t,terminal:!1}}),o=e.body.progress.PLAY_ACTIVITY.value;if(console.log(`Quest progress: ${o}/${r}`),await new Promise(e=>setTimeout(e,2e4)),o>=r){await api.post({url:`/quests/${quest.id}/heartbeat`,body:{stream_key:t,terminal:!0}});break}}console.log("Quest completed!")}()}}else console.log("You don't have any uncompleted quests!");
