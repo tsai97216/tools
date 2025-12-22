@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2025 賽博龐克・究極全功能校準版 (無遺漏定稿)
+# Chi 的工具箱 - 2025 賽博龐克・全功能究極校準版 (定稿)
 # ====================================================
 
 - taxonomy: 量子傳送門
@@ -44,7 +44,7 @@
     - title: 豆包
       logo: doubao.png
       url: https://www.doubao.com/chat/
-      description: 輕量化智慧助手，支援多維度對話。
+      description: 輕量化智慧助手，支援多維度即時對話。
     - title: Perplexity
       logo: perplexity.png
       url: https://www.perplexity.ai/
@@ -88,7 +88,7 @@
         - title: 巴哈姆特動畫瘋
           logo: animemad.png
           url: https://ani.gamer.com.tw/
-          description: 高畫質動畫正版放送，同步觀測未來。
+          description: 高畫質動畫正版放送，同步觀測未來視界。
         - title: 漫畫櫃
           logo: manhuagui.png
           url: https://tw.manhuagui.com/
@@ -113,8 +113,8 @@
           description: 深度數據解包，精確觀測未來版本數據。
         - title: Hakush.in
           logo: hakushin.png
-          url: https://hakushin.in/
-          description: 極致詳細的遊戲底層數值檢索系統。
+          url: https://hakush.in
+          description: 極致詳細的遊戲底層數值與機制檢索系統。
         - title: HoYoLAB
           logo: hoyolab.png
           url: https://www.hoyolab.com/
@@ -222,14 +222,13 @@
         - title: Cobalt
           logo: cobalt.png
           url: https://cobalt.tools/
-          description: 高效率多媒體提取工具。
-
+          description: 高效率多媒體提取工具，支援多平台。
     - term: 頻譜分析迴路
       links:
         - title: AudioMass
           logo: audiomass.png
           url: https://audiomass.co/
-          description: 專業級波形編輯協議，執行深度音訊重組作業。
+          description: 專業級波形編輯協議，執行音訊重組作業。
         - title: Adobe Podcast
           logo: adobe_podcast.png
           url: https://podcast.adobe.com/enhance
@@ -246,7 +245,6 @@
           logo: 123apps.png
           url: https://mp3cut.net/tw/
           description: 極簡音訊處理協議，執行免登錄剪切指令。
-
     - term: 動態序列協議
       links:
         - title: CapCut Web
@@ -256,53 +254,51 @@
         - title: Flixier
           logo: flixier.png
           url: https://flixier.com/
-          description: 全雲端影片加速器，執行極速渲染與同步編輯。
+          description: 全雲端影片加速器，執行渲染與編輯。
         - title: 123Apps 影片
           logo: 123apps.png
           url: https://online-video-cutter.com/tw/video-editor
-          description: 極簡影片處理協議，執行免登錄裁切與重構。
-
+          description: 極簡影片處理協議，執行裁切與重構。
     - term: 文檔封包協議
       links:
         - title: TinyWOW
           logo: tinywow.png
           url: https://tinywow.com/
-          description: 全能型文檔處理協議，執行 AI 寫作與數據轉換。
+          description: 全能型文檔處理協議，執行 AI 寫作與轉換。
         - title: PDF24 Tools
           logo: pdf24.png
           url: https://tools.pdf24.org/zh/
-          description: 重型 PDF 處理終端，執行合併、壓縮與文字解碼。
+          description: 重型 PDF 處理終端，執行合併與 OCR 指令。
         - title: Convertio
           logo: convertio.png
           url: https://convertio.co/zh/
-          description: 跨維度檔案格式調變器，支援多樣化數據封包轉換。
+          description: 跨維度檔案格式調變器，支援多樣化轉換。
         - title: DeepL 翻譯
           logo: deepl.png
           url: https://www.deepl.com/translator/files
-          description: 高階語言翻譯模組，支援文檔排版保留與解析。
+          description: 高階語言翻譯模組，支援文檔排版保留。
         - title: iLovePDF
           logo: ilovepdf.png
           url: https://www.ilovepdf.com/zh-tw
           description: 基礎 PDF 結構優化與編輯工具。
-
     - term: 視覺改裝套件
       links:
         - title: Photopea
           logo: photopea.png
           url: https://www.photopea.com/
-          description: 高級圖像編輯終端，支援 PSD 與多圖層重構作業。
+          description: 高級圖像編輯終端，支援 PSD 與多圖層重構。
         - title: Pixlr Express
           logo: pixlr.png
           url: https://pixlr.com/tw/express/
-          description: 直覺式快修模組，執行濾鏡、文字與美化指令。
+          description: 直覺式快修模組，執行濾鏡與美化指令。
         - title: Polarr 濾鏡
           logo: polarr.png
           url: https://photoeditor.polarr.co/
-          description: 賽博美學濾鏡終端，執行色彩重構與調色協議。
+          description: 賽博美學濾鏡終端，執行色彩重構協議。
         - title: Edit.photo
           logo: editphoto.png
           url: https://edit.photo/
-          description: 極簡圖像編輯協議，執行免登錄的快修指令。
+          description: 極簡圖像編輯協議，執行快修指令。
         - title: Canva
           logo: canva.png
           url: https://www.canva.com/zh_tw/
@@ -322,7 +318,7 @@
     - title: VirusTotal
       logo: virustotal.png
       url: https://www.virustotal.com/gui/home/upload
-      description: 執行多引擎惡意代碼掃描與啟發式分析程序。
+      description: 執行多引擎惡意代碼掃描與分析程序。
 
 - taxonomy: 邊緣指令
   icon: fas fa-user-secret
