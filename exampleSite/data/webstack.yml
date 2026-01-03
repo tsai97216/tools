@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2025 賽博龐克・IPA 補給擴張版 (79 點位)
+# Chi 的工具箱 - 2026 賽博龐克・82 點位全描述定稿版 (1/2)
 # ====================================================
 
 - taxonomy: 量子傳送門
@@ -32,11 +32,11 @@
     - title: Gemini
       logo: gemini.png
       url: https://gemini.google.com/
-      description: Google 整合的多模態意識，支援跨平台協作。
+      description: Google 整合的多模態意識，支援跨平台數據協作。
     - title: Claude
       logo: claude.png
       url: https://claude.ai/
-      description: 擅長邏輯分析與精確編碼的 AI 指令集。
+      description: 擅長長文本分析與精確邏輯編碼的 AI 指令集。
     - title: DeepSeek
       logo: deepseek.png
       url: https://chat.deepseek.com/
@@ -59,6 +59,10 @@
   list:
     - term: 串流訊號
       links:
+        - title: ofiii 歐飛
+          logo: ofiii.png
+          url: https://www.ofiii.com/
+          description: 合法、免費的串流影視協議，提供電影、劇集及 24 小時新聞直播訊號。
         - title: YouTube
           logo: youtube.png
           url: https://www.youtube.com/
@@ -66,7 +70,7 @@
         - title: YouTube Music
           logo: ytmusic.png
           url: https://music.youtube.com/
-          description: 無限延伸的音頻宇宙，流動聽覺體驗。
+          description: 無限延伸的音頻宇宙，流動聽覺體驗模組。
         - title: Netflix
           logo: netflix.png
           url: https://www.netflix.com/tw/
@@ -107,10 +111,14 @@
   list:
     - term: 星際戰情室
       links:
+        - title: GenPKM
+          logo: genpkm.png
+          url: https://genpkm.com/
+          description: 寶可夢精確數據觀測儀，執行 IV 計算與 PvP 戰力模擬程序。
         - title: 玉衡杯 (HomDGCat)
           logo: homdgcat.png
           url: https://homdgcat.wiki/
-          description: 深度數據解包，精確觀測未來版本數據。
+          description: 深度數據解包，精確觀測遊戲未來版本數據。
         - title: Hakush.in
           logo: hakushin.png
           url: https://hakush.in
@@ -118,7 +126,7 @@
         - title: HowLongToBeat
           logo: hltb.png
           url: https://howlongtobeat.com/
-          description: 戰術時長數據庫，精確觀測全平台遊戲通關時長。
+          description: 戰術時長數據庫，精確觀測全平台遊戲通關時間。
         - title: HoYoLAB
           logo: hoyolab.png
           url: https://www.hoyolab.com/
@@ -130,9 +138,17 @@
         - title: Prydwen
           logo: prydwen.png
           url: https://www.prydwen.gg/
-          description: 全球公認的角色強度排行與作戰指南。
+          description: 全球角色強度排行與作戰指南。
     - term: 資源與後勤
       links:
+        - title: 遊戲 520
+          logo: gamer520.png
+          url: https://www.gamer520.com/
+          description: 綜合性 PC 資源載體，存取遊戲漢化補丁與修改器套件。
+        - title: 屋塔房小貓
+          logo: wutafuncat.png
+          url: https://wutafuncat.blogspot.com/
+          description: Windows 軟體中文化與免安裝工具補給站，在地化協議中心。
         - title: SteamDB
           logo: steamdb.png
           url: https://steamdb.info/
@@ -207,6 +223,10 @@
   list:
     - term: 數據處理
       links:
+        - title: Gofile
+          logo: gofile.png
+          url: https://gofile.io/
+          description: 高頻寬匿名數據存儲中心，執行臨時檔案封包傳輸協議。
         - title: is.gd
           logo: isgd.png
           url: https://is.gd/
@@ -218,8 +238,7 @@
         - title: Google 翻譯
           logo: translate.png
           url: https://translate.google.com.tw/
-          description: 跨維度語言解析與溝通協議。
-        - title: TeraBox
+          description: 跨維度語言解析與溝通協議。- title: TeraBox
           logo: terabox.png
           url: https://www.terabox.com/
           description: 超大容量數據存儲與同步空間。
