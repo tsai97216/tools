@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2026 賽博龐克・82 點位究極定稿版
+# Chi 的工具箱 - 2026 賽博龐克・82 點位究極定稿版 (新項後置)
 # ====================================================
 
 - taxonomy: 量子傳送門
@@ -59,10 +59,6 @@
   list:
     - term: 串流訊號
       links:
-        - title: ofiii 歐飛
-          logo: ofiii.png
-          url: https://www.ofiii.com/
-          description: 合法免費串流影視協議，提供電影、劇集及 24 小時新聞直播。
         - title: YouTube
           logo: youtube.png
           url: https://www.youtube.com/
@@ -87,6 +83,10 @@
           logo: spotify.png
           url: https://open.spotify.com/
           description: 全球數位音訊流，個人化節奏模組。
+        - title: ofiii 歐飛
+          logo: ofiii.png
+          url: https://www.ofiii.com/
+          description: 合法免費串流影視協議，提供新聞直播與劇集訊號。
     - term: 二次元維度
       links:
         - title: 巴哈姆特動畫瘋
@@ -111,10 +111,6 @@
   list:
     - term: 星際戰情室
       links:
-        - title: GenPKM
-          logo: genpkm.png
-          url: https://genpkm.com/
-          description: 寶可夢精確數據觀測儀，執行 IV 計算與 PvP 戰力模擬。
         - title: 玉衡杯 (HomDGCat)
           logo: homdgcat.png
           url: https://homdgcat.wiki/
@@ -123,10 +119,6 @@
           logo: hakushin.png
           url: https://hakush.in
           description: 極致詳細的遊戲底層數值與機制檢索系統。
-        - title: HowLongToBeat
-          logo: hltb.png
-          url: https://howlongtobeat.com/
-          description: 戰術時長數據庫，精確觀測全平台遊戲通關時長。
         - title: HoYoLAB
           logo: hoyolab.png
           url: https://www.hoyolab.com/
@@ -139,16 +131,16 @@
           logo: prydwen.png
           url: https://www.prydwen.gg/
           description: 全球角色強度排行與作戰指南。
+        - title: GenPKM
+          logo: genpkm.png
+          url: https://genpkm.com/
+          description: 寶可夢數據觀測儀，執行 IV 計算與戰力模擬。
+        - title: HowLongToBeat
+          logo: hltb.png
+          url: https://howlongtobeat.com/
+          description: 戰術時長數據庫，觀測全平台遊戲通關時間。
     - term: 資源與後勤
       links:
-        - title: 遊戲 520
-          logo: gamer520.png
-          url: https://www.gamer520.com/
-          description: 綜合性 PC 資源載體，存取遊戲漢化補丁與修改器。
-        - title: 屋塔房小貓
-          logo: wutafuncat.png
-          url: https://wutafuncat.blogspot.com/
-          description: Windows 軟體中文化與免安裝工具補給站，在地化協議中心。
         - title: SteamDB
           logo: steamdb.png
           url: https://steamdb.info/
@@ -169,6 +161,14 @@
           logo: cloudmoon.png
           url: https://web.cloudmoonapp.com/zh/
           description: 遠端雲端運算環境，隨時開啟戰鬥模組。
+        - title: 遊戲 520
+          logo: gamer520.png
+          url: https://www.gamer520.com/
+          description: 綜合性 PC 資源載體，存取遊戲漢化與修改器。
+        - title: 屋塔房小貓
+          logo: wutafuncat.png
+          url: https://wutafuncat.blogspot.com/
+          description: Windows 軟體中文化與免安裝工具補給站。
 
 - taxonomy: 訊號矩陣
   icon: fas fa-network-wired
@@ -223,10 +223,6 @@
   list:
     - term: 數據處理
       links:
-        - title: Gofile
-          logo: gofile.png
-          url: https://gofile.io/
-          description: 高頻寬匿名存儲中心，執行臨時檔案傳輸協議。
         - title: is.gd
           logo: isgd.png
           url: https://is.gd/
@@ -247,12 +243,16 @@
           logo: cobalt.png
           url: https://cobalt.tools/
           description: 高效率多媒體提取工具，支援多平台。
+        - title: Gofile
+          logo: gofile.png
+          url: https://gofile.io/
+          description: 高頻寬匿名存儲中心，執行臨時檔案傳輸協議。
     - term: 頻譜分析迴路
       links:
         - title: AudioMass
           logo: audiomass.png
           url: https://audiomass.co/
-          description: 專業級波形編輯協議，執行音訊重組。
+          description: 專業級波形編輯協議，執行音訊重組作業。
         - title: Adobe Podcast
           logo: adobe_podcast.png
           url: https://podcast.adobe.com/enhance
@@ -264,7 +264,7 @@
         - title: Vocal Remover
           logo: vocalremover.png
           url: https://vocalremover.org/zh/
-          description: 基於 AI 的音訊拆解，分離人聲與伴奏。
+          description: 基於 AI 的音訊拆解模組，分離人聲。
         - title: 123Apps 音訊
           logo: 123apps.png
           url: https://mp3cut.net/tw/
@@ -274,7 +274,7 @@
         - title: CapCut Web
           logo: capcut.png
           url: https://www.capcut.com/editor
-          description: AI 驅動的影片改裝終端，執行濾鏡與特效。
+          description: AI 驅動影片編輯終端，執行濾鏡與特效。
         - title: Flixier
           logo: flixier.png
           url: https://flixier.com/
@@ -292,7 +292,7 @@
         - title: PDF24 Tools
           logo: pdf24.png
           url: https://tools.pdf24.org/zh/
-          description: 重型 PDF 處理終端，執行合併與 OCR。
+          description: 重型 PDF 處理終端，執行合併與 OCR 指令。
         - title: Convertio
           logo: convertio.png
           url: https://convertio.co/zh/
@@ -307,10 +307,6 @@
           description: 基礎 PDF 結構優化與編輯工具。
     - term: 視覺改裝套件
       links:
-        - title: Excalidraw
-          logo: excalidraw.png
-          url: https://excalidraw.com/
-          description: 架構草圖協議，執行想法快速建模與繪製。
         - title: Photopea
           logo: photopea.png
           url: https://www.photopea.com/
@@ -339,6 +335,10 @@
           logo: iloveimg.png
           url: https://www.iloveimg.com/zh-tw
           description: 圖像壓縮、裁切與重構模組。
+        - title: Excalidraw
+          logo: excalidraw.png
+          url: https://excalidraw.com/
+          description: 架構草圖協議，執行想法快速建模。
 
 - taxonomy: 安全協議
   icon: fas fa-shield-alt
@@ -350,27 +350,23 @@
     - title: Have I Been Pwned
       logo: hibp.png
       url: https://haveibeenpwned.com/
-      description: 身分外洩偵測，掃描帳號憑證是否於黑市流出。
+      description: 身分外洩偵測，掃描帳號憑證是否流出。
 
 - taxonomy: 邊緣指令
   icon: fas fa-user-secret
   links:
-    - title: AppTesters
-      logo: apptesters.png
-      url: https://apps.apptesters.org
-      description: iOS 應用程序分流站，提供 IPA 與解密應用存儲。
     - title: Decrypt.day
       logo: decryptday.png
       url: https://decrypt.day/
-      description: iOS 應用程序解密庫，獲取 IPA 權限與數據。
+      description: iOS 應用程序解密庫，獲取 IPA 權限。
     - title: CyberChef
       logo: cyberchef.png
       url: https://gchq.github.io/CyberChef/
-      description: 數據處理的「瑞士軍刀」，執行加解密作業。
+      description: 數據處理瑞士軍刀，執行加解密作業。
     - title: Alist
       logo: alist.png
       url: https://tsai97216.github.io/alist/
-      description: 分散式雲端數據聚合接口，整合多端存儲。
+      description: 分散式雲端數據接口，整合多端存儲。
     - title: Bilitool
       logo: bilibili.png
       url: https://mzbpfgxz.ap-northeast-1.clawcloudrun.com
@@ -379,6 +375,10 @@
       logo: twitch.png
       url: https://iufgfqinvdqn.ap-northeast-1.clawcloudrun.com
       description: Twitch 資源採集與數據挖礦模組。
+    - title: AppTesters
+      logo: apptesters.png
+      url: https://apps.apptesters.org
+      description: iOS 應用程序分流站，提供 IPA 與解密應用存儲。
     - title: Discord 腳本
       logo: discord.png
       url: javascript:void(0);
