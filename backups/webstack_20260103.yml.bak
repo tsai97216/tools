@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2026 賽博龐克・82 點位全描述定稿版 (1/2)
+# Chi 的工具箱 - 2026 賽博龐克・82 點位究極定稿版
 # ====================================================
 
 - taxonomy: 量子傳送門
@@ -32,11 +32,11 @@
     - title: Gemini
       logo: gemini.png
       url: https://gemini.google.com/
-      description: Google 整合的多模態意識，支援跨平台數據協作。
+      description: Google 整合的多模態意識，支援跨平台協作。
     - title: Claude
       logo: claude.png
       url: https://claude.ai/
-      description: 擅長長文本分析與精確邏輯編碼的 AI 指令集。
+      description: 擅長邏輯分析與精確編碼的 AI 指令集。
     - title: DeepSeek
       logo: deepseek.png
       url: https://chat.deepseek.com/
@@ -62,7 +62,7 @@
         - title: ofiii 歐飛
           logo: ofiii.png
           url: https://www.ofiii.com/
-          description: 合法、免費的串流影視協議，提供電影、劇集及 24 小時新聞直播訊號。
+          description: 合法免費串流影視協議，提供電影、劇集及 24 小時新聞直播。
         - title: YouTube
           logo: youtube.png
           url: https://www.youtube.com/
@@ -70,7 +70,7 @@
         - title: YouTube Music
           logo: ytmusic.png
           url: https://music.youtube.com/
-          description: 無限延伸的音頻宇宙，流動聽覺體驗模組。
+          description: 無限延伸的音頻宇宙，流動聽覺體驗。
         - title: Netflix
           logo: netflix.png
           url: https://www.netflix.com/tw/
@@ -114,7 +114,7 @@
         - title: GenPKM
           logo: genpkm.png
           url: https://genpkm.com/
-          description: 寶可夢精確數據觀測儀，執行 IV 計算與 PvP 戰力模擬程序。
+          description: 寶可夢精確數據觀測儀，執行 IV 計算與 PvP 戰力模擬。
         - title: 玉衡杯 (HomDGCat)
           logo: homdgcat.png
           url: https://homdgcat.wiki/
@@ -126,7 +126,7 @@
         - title: HowLongToBeat
           logo: hltb.png
           url: https://howlongtobeat.com/
-          description: 戰術時長數據庫，精確觀測全平台遊戲通關時間。
+          description: 戰術時長數據庫，精確觀測全平台遊戲通關時長。
         - title: HoYoLAB
           logo: hoyolab.png
           url: https://www.hoyolab.com/
@@ -144,7 +144,7 @@
         - title: 遊戲 520
           logo: gamer520.png
           url: https://www.gamer520.com/
-          description: 綜合性 PC 資源載體，存取遊戲漢化補丁與修改器套件。
+          description: 綜合性 PC 資源載體，存取遊戲漢化補丁與修改器。
         - title: 屋塔房小貓
           logo: wutafuncat.png
           url: https://wutafuncat.blogspot.com/
@@ -204,7 +204,7 @@
         - title: 巴哈姆特
           logo: bahamut.png
           url: https://www.gamer.com.tw
-          description: 華人最大 ACG 社群中樞，執行資訊交換與精華區檢索。
+          description: 華人最大 ACG 社群中樞，執行資訊交換與檢索。
         - title: Reddit
           logo: reddit.png
           url: https://www.reddit.com/
@@ -226,7 +226,7 @@
         - title: Gofile
           logo: gofile.png
           url: https://gofile.io/
-          description: 高頻寬匿名數據存儲中心，執行臨時檔案封包傳輸協議。
+          description: 高頻寬匿名存儲中心，執行臨時檔案傳輸協議。
         - title: is.gd
           logo: isgd.png
           url: https://is.gd/
@@ -238,20 +238,21 @@
         - title: Google 翻譯
           logo: translate.png
           url: https://translate.google.com.tw/
-          description: 跨維度語言解析與溝通協議。- title: TeraBox
+          description: 跨維度語言解析與溝通協議。
+        - title: TeraBox
           logo: terabox.png
           url: https://www.terabox.com/
           description: 超大容量數據存儲與同步空間。
         - title: Cobalt
           logo: cobalt.png
           url: https://cobalt.tools/
-          description: 高效率多媒體提取工具，支援多平台協議。
+          description: 高效率多媒體提取工具，支援多平台。
     - term: 頻譜分析迴路
       links:
         - title: AudioMass
           logo: audiomass.png
           url: https://audiomass.co/
-          description: 專業級波形編輯協議，執行音訊重組作業。
+          description: 專業級波形編輯協議，執行音訊重組。
         - title: Adobe Podcast
           logo: adobe_podcast.png
           url: https://podcast.adobe.com/enhance
@@ -263,21 +264,21 @@
         - title: Vocal Remover
           logo: vocalremover.png
           url: https://vocalremover.org/zh/
-          description: 基於 AI 的音訊拆解模組，分離人聲與伴奏。
+          description: 基於 AI 的音訊拆解，分離人聲與伴奏。
         - title: 123Apps 音訊
           logo: 123apps.png
           url: https://mp3cut.net/tw/
-          description: 極簡音訊處理協議，執行免登錄剪切指令。
+          description: 極簡音訊處理協議，執行剪切指令。
     - term: 動態序列協議
       links:
         - title: CapCut Web
           logo: capcut.png
           url: https://www.capcut.com/editor
-          description: AI 驅動的影片改裝終端，執行濾鏡與特效指令。
+          description: AI 驅動的影片改裝終端，執行濾鏡與特效。
         - title: Flixier
           logo: flixier.png
           url: https://flixier.com/
-          description: 全雲端影片加速器，執行渲染與同步編輯。
+          description: 全雲端影片加速器，執行渲染與編輯。
         - title: 123Apps 影片
           logo: 123apps.png
           url: https://online-video-cutter.com/tw/video-editor
@@ -287,19 +288,19 @@
         - title: TinyWOW
           logo: tinywow.png
           url: https://tinywow.com/
-          description: 全能型文檔處理協議，執行 AI 寫作與數據轉換。
+          description: 全能型文檔處理協議，執行 AI 寫作與轉換。
         - title: PDF24 Tools
           logo: pdf24.png
           url: https://tools.pdf24.org/zh/
-          description: 重型 PDF 處理終端，執行合併與 OCR 指令。
+          description: 重型 PDF 處理終端，執行合併與 OCR。
         - title: Convertio
           logo: convertio.png
           url: https://convertio.co/zh/
-          description: 跨維度格式調變器，支援 300+ 數據封包轉換。
+          description: 跨維度格式調變器，支援 300+ 轉換。
         - title: DeepL 翻譯
           logo: deepl.png
           url: https://www.deepl.com/translator/files
-          description: 高階翻譯模組，支援文檔排版保留與解析。
+          description: 高階翻譯模組，支援文檔排版保留。
         - title: iLovePDF
           logo: ilovepdf.png
           url: https://www.ilovepdf.com/zh-tw
@@ -309,15 +310,15 @@
         - title: Excalidraw
           logo: excalidraw.png
           url: https://excalidraw.com/
-          description: 架構草圖協議，執行想法快速建模與流程繪製。
+          description: 架構草圖協議，執行想法快速建模與繪製。
         - title: Photopea
           logo: photopea.png
           url: https://www.photopea.com/
-          description: 高級圖像編輯終端，支援 PSD 與多圖層重構作業。
+          description: 高級圖像編輯終端，支援 PSD 與多圖層重構。
         - title: Pixlr Express
           logo: pixlr.png
           url: https://pixlr.com/tw/express/
-          description: 直覺式快修模組，執行濾鏡、文字與美化指令。
+          description: 直覺式快修模組，執行濾鏡與美化指令。
         - title: Polarr 濾鏡
           logo: polarr.png
           url: https://photoeditor.polarr.co/
@@ -325,7 +326,7 @@
         - title: Edit.photo
           logo: editphoto.png
           url: https://edit.photo/
-          description: 極簡圖像編輯協議，執行免登錄快修指令。
+          description: 極簡圖像編輯協議，執行免登錄快修。
         - title: Canva
           logo: canva.png
           url: https://www.canva.com/zh_tw/
@@ -345,7 +346,7 @@
     - title: VirusTotal
       logo: virustotal.png
       url: https://www.virustotal.com/gui/home/upload
-      description: 執行多引擎惡意代碼掃描與啟發式分析程序。
+      description: 執行多引擎惡意代碼掃描與分析程序。
     - title: Have I Been Pwned
       logo: hibp.png
       url: https://haveibeenpwned.com/
@@ -357,15 +358,15 @@
     - title: AppTesters
       logo: apptesters.png
       url: https://apps.apptesters.org
-      description: iOS 應用程序分流站，提供 IPA 簽名文件與解密應用存儲。
+      description: iOS 應用程序分流站，提供 IPA 與解密應用存儲。
     - title: Decrypt.day
       logo: decryptday.png
       url: https://decrypt.day/
-      description: iOS 應用程序解密庫，獲取 IPA 權限與數據包。
+      description: iOS 應用程序解密庫，獲取 IPA 權限與數據。
     - title: CyberChef
       logo: cyberchef.png
       url: https://gchq.github.io/CyberChef/
-      description: 數據處理的「瑞士軍刀」，執行加解密與解析作業。
+      description: 數據處理的「瑞士軍刀」，執行加解密作業。
     - title: Alist
       logo: alist.png
       url: https://tsai97216.github.io/alist/
