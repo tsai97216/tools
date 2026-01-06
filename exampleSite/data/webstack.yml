@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2026 賽博龐克・84 點位究極定稿版
+# Chi 的工具箱 - 2026 賽博龐克・86 點位究極定稿版
 # ====================================================
 
 - taxonomy: 量子傳送門
@@ -344,6 +344,18 @@
           url: https://excalidraw.com/
           description: 架構草圖協議，執行想法快速建模。
 
+- taxonomy: 戰術航線
+  icon: fas fa-map-marked-alt
+  links:
+    - title: ACGBox
+      logo: acgbox.png
+      url: https://www.acgbox.link/
+      description: 廣域二次元情報整合站，執行全方位的 ACG 資源索引。
+    - title: 劉明野工具箱
+      logo: liumingye.png
+      url: https://tools.liumingye.cn/
+      description: 陸端極客工具聚合站，提供多樣化的影音解析與數據處理。
+
 - taxonomy: 安全協議
   icon: fas fa-shield-alt
   links:
@@ -390,7 +402,7 @@
       is_copy: true
       copy_content: >-
         delete window.$;let wpRequire=webpackChunkdiscord_app.push([[Symbol()],{},r=>r]);webpackChunkdiscord_app.pop();let ApplicationStreamingStore=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.getStreamerActiveStreamMetadata).exports.Z,RunningGameStore=Object.values(wpRequire.c).find(x=>x?.exports?.ZP?.getRunningGames).exports.ZP,QuestsStore=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.getQuest).exports.Z,ChannelStore=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.getAllThreadsForParent).exports.Z,GuildChannelStore=Object.values(wpRequire.c).find(x=>x?.exports?.ZP?.getSFWDefaultChannel).exports.ZP,FluxDispatcher=Object.values(wpRequire.c).find(x=>x?.exports?.Z?.__proto__?.flushWaitQueue).exports.Z,api=Object.values(wpRequire.c).find(x=>x?.exports?.tn?.get).exports.tn;const supportedTasks=["WATCH_VIDEO","PLAY_ON_DESKTOP","STREAM_ON_DESKTOP","PLAY_ACTIVITY","WATCH_VIDEO_ON_MOBILE"];let quests=[...QuestsStore.quests.values()].filter(x=>x.userStatus?.enrolledAt&&!x.userStatus?.completedAt&&new Date(x.config.expiresAt).getTime()>Date.now()&&supportedTasks.find(y=>Object.keys((x.config.taskConfig??x.config.taskConfigV2).tasks).includes(y)));let isApp="undefined"!=typeof DiscordNative;if(0===quests.length)console.log("You don't have any uncompleted quests!");else{let e=function(){const o=quests.pop();if(!o)return;const t=Math.floor(3e4*Math.random())+1e3,n=o.config.application.id,s=o.config.application.name,r=o.config.messages.questName,a=o.config.taskConfig??o.config.taskConfigV2,i=supportedTasks.find(e=>null!=a.tasks[e]),l=a.tasks[i].target;let c=o.userStatus?.progress?.[i]?.value??0;if("WATCH_VIDEO"===i||"WATCH_VIDEO_ON_MOBILE"===i){const e=new Date(o.userStatus.enrolledAt).getTime();let t=!1;!async function(){for(;;){const n=Math.floor((Date.now()-e)/1e3)+10,s=n-c,a=c+7;if(s>=7){const e=await api.post({url:`/quests/${o.id}/video-progress`,body:{timestamp:Math.min(l,a+Math.random())}});t=null!=e.body.completed_at,c=Math.min(l,a)}if(a>=l)break;await new Promise(e=>setTimeout(e,1e3))}t||await api.post({url:`/quests/${o.id}/video-progress`,body:{timestamp:l}}),console.log("Quest completed!"),e()}();console.log(`Spoofing video for ${r}.`)}else if("PLAY_ON_DESKTOP"===i)isApp?api.get({url:`/applications/public?application_ids=${n}`}).then(a=>{const i=a.body[0],u=i.executables.find(e=>"win32"===e.os).name.replace(">",""),p={cmdLine:`C:\\Program Files\\${i.name}\\${u}`,exeName:u,exePath:`c:/program files/${i.name.toLowerCase()}/${u}`,hidden:!1,isLauncher:!1,id:n,name:i.name,pid:t,pidPath:[t],processName:i.name,start:Date.now()},d=RunningGameStore.getRunningGames(),g=[p],m=RunningGameStore.getRunningGames,S=RunningGameStore.getGameForPID;RunningGameStore.getRunningGames=()=>g,RunningGameStore.getGameForPID=e=>g.find(o=>o.pid===e),FluxDispatcher.dispatch({type:"RUNNING_GAMES_CHANGE",removed:d,added:[p],games:g});let f=a=>{let i=1===o.config.configVersion?a.userStatus.streamProgressSeconds:Math.floor(a.userStatus.progress.PLAY_ON_DESKTOP.value);console.log(`Quest progress: ${i}/${l}`),i>=l&&(console.log("Quest completed!"),RunningGameStore.getRunningGames=m,RunningGameStore.getGameForPID=S,FluxDispatcher.dispatch({type:"RUNNING_GAMES_CHANGE",removed:[p],added:[],games:[]}),FluxDispatcher.unsubscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",f),e())};FluxDispatcher.subscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",f),console.log(`Spoofed your game to ${s}. Wait for ${Math.ceil((l-c)/60)} more minutes.`)}):console.log("This no longer works in browser for non-video quests. Use the discord desktop app to complete the",r,"quest!");else if("STREAM_ON_DESKTOP"===i)isApp?(()=>{let o=ApplicationStreamingStore.getStreamerActiveStreamMetadata;ApplicationStreamingStore.getStreamerActiveStreamMetadata=()=>({id:n,pid:t,sourceName:null});let s=a=>{let t=1===o.config.configVersion?a.userStatus.streamProgressSeconds:Math.floor(a.userStatus.progress.STREAM_ON_DESKTOP.value);console.log(`Quest progress: ${t}/${l}`),t>=l&&(console.log("Quest completed!"),ApplicationStreamingStore.getStreamerActiveStreamMetadata=o,FluxDispatcher.unsubscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",s),e())};FluxDispatcher.subscribe("QUESTS_SEND_HEARTBEAT_SUCCESS",s),console.log(`Spoofed your stream to ${s}. Stream any window in vc for ${Math.ceil((l-c)/60)} more minutes.`),console.log("Remember that you need at least 1 other person to be in the vc!")})():console.log("This no longer works in browser for non-video quests. Use the discord desktop app to complete the",r,"quest!");else if("PLAY_ACTIVITY"===i){const t=ChannelStore.getSortedPrivateChannels()[0]?.id??Object.values(GuildChannelStore.getAllGuilds()).find(e=>null!=e&&e.VOCAL.length>0).VOCAL[0].channel.id,n=`call:${t}:1`;!async function(){console.log("Completing quest",r,"-",o.config.messages.questName);for(;;){const e=await api.post({url:`/quests/${o.id}/heartbeat`,body:{stream_key:n,terminal:!1}}),t=e.body.progress.PLAY_ACTIVITY.value;if(console.log(`Quest progress: ${t}/${l}`),await new Promise(e=>setTimeout(e,2e4)),t>=l){await api.post({url:`/quests/${o.id}/heartbeat`,body:{stream_key:n,terminal:!0}});break}}console.log("Quest completed!"),e()}()}};e()}
-    - title: 盜版遊戲聖經
+    - title: Rentry (P-Games)
       logo: rentry.png
       url: https://rentry.org/pgames
-      description: 頂級盜版遊戲聖地，執行全網非法資源索引與磁力鏈路檢索。
+      description: 頂級盜版遊戲聖地，執行全網資源索引與磁力鏈路檢索。
