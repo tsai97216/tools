@@ -2,8 +2,8 @@
 # Chi 的工具箱 - 2026 賽博龐克・87 點位究極定稿版
 # ====================================================
 
-- taxonomy: 量子傳送門
-  icon: fas fa-globe
+- taxonomy: 傳送矩陣
+  icon: fas fa-shuttle-van
   links: 
     - title: Google
       logo: google.png
@@ -21,6 +21,14 @@
       logo: github.png
       url: https://github.com/
       description: 開源代碼集散聖地，技術改裝武裝庫。
+    - title: ACGBox
+      logo: https://www.google.com/s2/favicons?sz=128&domain=acgbox.link
+      url: https://www.acgbox.link/
+      description: 廣域二次元情報整合站，跳轉至跨維度資源索引。
+    - title: 劉明野工具箱
+      logo: https://www.google.com/s2/favicons?sz=128&domain=tools.liumingye.cn
+      url: https://tools.liumingye.cn/
+      description: 陸端工具聚合點，執行外部影音解析與數據處理。
 
 - taxonomy: 合成意識
   icon: fas fa-microchip
@@ -86,7 +94,7 @@
         - title: ofiii 歐飛
           logo: ofiii.png
           url: https://www.ofiii.com/
-          description: 合法免費串流影視協議，提供新聞直播與劇集訊號。
+          description: 合法免費串流影視協議，提供電影、劇集及 24 小時新聞直播。
     - term: 二次元維度
       links:
         - title: 巴哈姆特動畫瘋
@@ -108,7 +116,7 @@
         - title: MobiNovels
           logo: mobinovels.png
           url: https://mobinovels.com/
-          description: 高品質電子書與輕小說補給站，提供優化排版數位格式。
+          description: 高品質電子書與輕小說補給站，提供優化排版的 EPUB/MOBI 格式文件。
 
 - taxonomy: 戰術終端
   icon: fas fa-terminal
@@ -138,11 +146,11 @@
         - title: GenPKM
           logo: genpkm.png
           url: https://genpkm.com/
-          description: 寶可夢數據觀測儀，執行 IV 計算與戰力模擬。
+          description: 寶可夢精確數據觀測儀，執行 IV 計算與 PvP 戰力模擬。
         - title: HowLongToBeat
           logo: hltb.png
           url: https://howlongtobeat.com/
-          description: 戰術時長數據庫，觀測全平台遊戲通關時間。
+          description: 戰術時長數據庫，精確觀測全平台遊戲通關時長。
     - term: 資源與後勤
       links:
         - title: SteamDB
@@ -172,7 +180,7 @@
         - title: 屋塔房小貓
           logo: wutafuncat.png
           url: https://wutafuncat.blogspot.com/
-          description: Windows 軟體中文化與免安裝工具補給站。
+          description: Windows 軟體中文化與免安裝工具補給站，在地化協議中心。
 
 - taxonomy: 訊號矩陣
   icon: fas fa-network-wired
@@ -254,7 +262,7 @@
         - title: PairDrop
           logo: pairdrop.png
           url: https://pairdrop.net/
-          description: 開源跨設備傳輸協議，執行近場數據對等交換。
+          description: 開源跨設備傳輸協議，執行近場數據對等交換指令。
     - term: 頻譜分析迴路
       links:
         - title: AudioMass
@@ -348,18 +356,6 @@
           url: https://excalidraw.com/
           description: 架構草圖協議，執行想法快速建模。
 
-- taxonomy: 傳送矩陣
-  icon: fas fa-shuttle-van
-  links:
-    - title: ACGBox
-      logo: https://www.google.com/s2/favicons?sz=128&domain=acgbox.link
-      url: https://www.acgbox.link/
-      description: 廣域二次元情報整合站，跳轉至跨維度資源索引。
-    - title: 劉明野工具箱
-      logo: https://www.google.com/s2/favicons?sz=128&domain=tools.liumingye.cn
-      url: https://tools.liumingye.cn/
-      description: 陸端工具聚合點，執行外部影音解析與數據處理。
-
 - taxonomy: 安全協議
   icon: fas fa-shield-alt
   links:
@@ -370,7 +366,7 @@
     - title: Have I Been Pwned
       logo: hibp.png
       url: https://haveibeenpwned.com/
-      description: 身分外洩偵測，掃描帳號憑證是否流出。
+      description: 身分外洩偵測，掃描帳號憑證是否於黑市流出。
 
 - taxonomy: 邊緣指令
   icon: fas fa-user-secret
@@ -378,15 +374,15 @@
     - title: Decrypt.day
       logo: decryptday.png
       url: https://decrypt.day/
-      description: iOS 應用程序解密庫，獲取 IPA 權限。
+      description: iOS 應用程序解密庫，獲取 IPA 權限與數據。
     - title: CyberChef
       logo: cyberchef.png
       url: https://gchq.github.io/CyberChef/
-      description: 數據處理瑞士軍刀，執行加解密作業。
+      description: 數據處理的「瑞士軍刀」，執行加解密作業。
     - title: Alist
       logo: alist.png
       url: https://tsai97216.github.io/alist/
-      description: 分散式雲端數據接口，整合多端存儲。
+      description: 分散式雲端數據聚合接口，整合多端存儲。
     - title: Bilitool
       logo: bilibili.png
       url: https://mzbpfgxz.ap-northeast-1.clawcloudrun.com
@@ -409,4 +405,4 @@
     - title: 盜版遊戲聖經
       logo: rentry.png
       url: https://rentry.org/pgames
-      description: 頂級盜版遊戲聖地，執行全網資源索引與磁力鏈路檢索。
+      description: 頂級盜版遊戲聖地，執行全網資源索引與磁力鏈路檢索，獲取禁區補給。
