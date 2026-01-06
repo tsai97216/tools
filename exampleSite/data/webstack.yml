@@ -344,17 +344,17 @@
           url: https://excalidraw.com/
           description: 架構草圖協議，執行想法快速建模。
 
-- taxonomy: 戰術航線
-  icon: fas fa-map-marked-alt
+- taxonomy: 傳送矩陣
+  icon: fas fa-shuttle-van
   links:
     - title: ACGBox
-      logo: acgbox.png
+      logo: https://www.google.com/s2/favicons?sz=128&domain=acgbox.link
       url: https://www.acgbox.link/
-      description: 廣域二次元情報整合站，執行全方位的 ACG 資源索引。
+      description: 廣域二次元情報整合站，跳轉至跨維度資源索引。
     - title: 劉明野工具箱
-      logo: liumingye.png
+      logo: https://www.google.com/s2/favicons?sz=128&domain=tools.liumingye.cn
       url: https://tools.liumingye.cn/
-      description: 陸端極客工具聚合站，提供多樣化的影音解析與數據處理。
+      description: 陸端工具聚合點，執行外部影音解析與數據處理。
 
 - taxonomy: 安全協議
   icon: fas fa-shield-alt
