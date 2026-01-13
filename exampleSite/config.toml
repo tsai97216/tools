@@ -11,9 +11,12 @@ publishDir            = "public"
     author            = "tsai97216"
     description       = "我的個人資源導航站"
     
-    # 側邊欄按鈕連結
+    # 側邊欄「網站提交」按鈕的連結
     upload            = "https://github.com/tsai97216/tools/issues"                  
+    
+    # 側邊欄「關於本站」按鈕的連結
     about             = "/about/"                  
+    
     repository        = "https://github.com/tsai97216/tools"
     
     # 載入動畫設定
@@ -30,10 +33,10 @@ publishDir            = "public"
     # 預設開啟夜間模式
     nightMode         = true
     
-    # 關閉主題內建一言
+    # 關閉主題內建的一言
     yiyan             = false
     
-    # 開啟圖片燈箱
+    # 開啟圖片燈箱效果
     fancybox          = true
 
 [params.seo]    
@@ -43,7 +46,7 @@ publishDir            = "public"
 [params.images]
     favicon           = "assets/images/bi-favicon.png"
     
-    # 首頁大搜尋框背景
+    # 首頁大搜尋框背景圖
     searchImageL      = "assets/images/bg-dna.jpg"
     searchImageD      = "assets/images/bg-dna.jpg"
     
@@ -60,29 +63,17 @@ publishDir            = "public"
     copyright = '&copy; 2025 Tsai97216 | Powered by GitHub Pages'
 
 # ====================================================
-# 頂部導航分區選單 (對應四大分類)
+# 側邊欄選單配置 (僅保留核心連結)
 # ====================================================
 
 [[menu.main]]
-  name = "首頁推薦"
-  pre = "<i class='fas fa-home fa-lg'></i>"
-  url = "#term-0"
+  name = "首頁"
+  pre = "<i class='fa fa-home fa-lg'></i>"
+  url = "/"
   weight = 1
 
 [[menu.main]]
-  name = "影音娛樂社群"
-  pre = "<i class='fas fa-share-alt fa-lg'></i>"
-  url = "#term-1"
+  name = "關於本站"
+  pre = "<i class='fa fa-info-circle fa-lg'></i>"
+  url = "/about/"
   weight = 2
-
-[[menu.main]]
-  name = "動漫遊戲"
-  pre = "<i class='fas fa-gamepad fa-lg'></i>"
-  url = "#term-2"
-  weight = 3
-
-[[menu.main]]
-  name = "實用工具"
-  pre = "<i class='fas fa-tools fa-lg'></i>"
-  url = "#term-3"
-  weight = 4
