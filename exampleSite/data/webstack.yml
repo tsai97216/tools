@@ -1,5 +1,5 @@
 # ====================================================
-# Chi 的工具箱 - 2026 賽博龐克・88 點位究極定稿版
+# Chi 的工具箱 - 2026.1.13.21.56
 # ====================================================
 
 - taxonomy: 傳送矩陣
@@ -327,11 +327,7 @@
           logo: photopea.png
           url: https://www.photopea.com/
           description: 高級圖像編輯終端，支援 PSD 與多圖層重構。
-        - title: Pixlr Express
-          logo: pixlr.png
-          url: https://pixlr.com/tw/express/
-          description: 直覺式快修模組，執行濾鏡與美化指令。
-        - title: Polarr 濾鏡
+         - title: Polarr 濾鏡
           logo: polarr.png
           url: https://photoeditor.polarr.co/
           description: 賽博美學濾鏡終端，執行色彩重構協議。
