@@ -5,4 +5,4 @@
 &lt;li&gt;&lt;a href="https://github.com/iplaycode/webstack-hugo"&gt;https://github.com/iplaycode/webstack-hugo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;br/&gt;
-&lt;p&gt;主題安裝後，將 exampleSite 目錄下的文件複製到 hugo 站點根目錄，根據需要把 config.toml 的一些資訊改成自己的，導航的網址資訊可透過 data 目錄下 webstack.yml 修改。&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;主題安裝後，將 exampleSite 目錄下的文件複製到 hugo 站點根目錄，根據需要把 config.toml 的一些資訊改成自己的，導航的網址資訊可透過 data 目錄下 webstack.yml 修改。&lt;/p&gt;</description></item><item><title/><link>https://tsai97216.github.io/tools/anime/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tsai97216.github.io/tools/anime/</guid><description/></item></channel></rss>
