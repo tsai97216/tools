@@ -1,74 +1,68 @@
-baseURL               = "https://tsai97216.github.io/tools/"
-languageCode          = "zh-TW"             
-title                 = "Chi 的工具箱"
-# theme               = "WebStack-Hugo"      
+baseURL               = "https://tsai97216.github.io/tools/"
+languageCode          = "zh-TW"
+title                 = "Chi 的工具箱"
+# theme               = "WebStack-Hugo"
 preserveTaxonomyNames = true
-disablePathToLower    = true
-hasCJKLanguage        = true
-publishDir            = "public"
+disablePathToLower    = true
+hasCJKLanguage        = true
+publishDir            = "public"
 
 [params]
-    author            = "tsai97216"
-    description       = "我的個人資源導航站"
-    
-    # 側邊欄「網站提交」按鈕的連結 (可以填 Google 表單或 GitHub Issues 網址)
-    # 如果留空，點擊會沒反應
-    upload            = "https://github.com/tsai97216/tools/issues"                  
-    
-    # 側邊欄「關於本站」按鈕的連結
-    # 對應 content/about.md
-    about             = "/about/"                  
-    
-    repository        = "https://github.com/tsai97216/tools"
-    
-    # 載入動畫設定
-    enablePreLoad     = true
-    textPreLoad       = "正在載入..."        
-    
-    # 側邊欄預設展開
-    expandSidebar     = true
-    
-    # 圖片路徑設定 (請確保 static/assets/images/logos 資料夾存在)
-    logosPath         = "assets/images/logos"
-    defaultLogo       = "assets/images/logos/default.webp"
-    
-    # 預設開啟夜間模式
-    nightMode         = true
-    
-    # 關閉主題內建的一言 (因為我們已經在 header 寫了本地版)
-    yiyan             = false
-    
-    # 開啟圖片燈箱效果
-    fancybox          = true
+    author            = "tsai97216"
+    description       = "我的個人資源導航站"
 
-[params.seo]    
-    # Google Analytics 4 (GA4) ID
-    # 如果您申請了 GA，請填入 "G-XXXXXXXXXX"，否則留空即可
-    googleAnlyticsId  = ""
-    
-    # Google AdSense 客戶端 ID (若無可留空)
-    GoogleAdsClient   = ""
+    # 側邊欄「網站提交」按鈕的連結
+    upload            = "https://github.com/tsai97216/tools/issues"
 
-# [params.qweather] 區塊已刪除，因為我們改用 Open-Meteo 免費天氣
+    # 側邊欄「關於本站」按鈕的連結
+    about             = "/about/"
+
+    repository        = "https://github.com/tsai97216/tools"
+
+    # 載入動畫設定
+    enablePreLoad     = true
+    textPreLoad       = "正在載入..."
+
+    # 側邊欄預設展開
+    expandSidebar     = true
+
+    # 圖片路徑設定 (請確保 static/assets/images/logos 資料夾存在)
+    logosPath         = "assets/images/logos"
+    defaultLogo       = "assets/images/logos/default.webp"
+
+    # 預設開啟夜間模式
+    nightMode         = true
+
+    # 關閉主題內建的一言
+    yiyan             = false
+
+    # 開啟圖片燈箱效果
+    fancybox          = true
+
+[params.seo]
+    # Google Analytics 4 (GA4) ID
+    googleAnlyticsId  = ""
+    # Google AdSense 客戶端 ID
+    GoogleAdsClient   = ""
 
 [params.images]
-    # 請確保這些圖片存在於 static/assets/images/ 資料夾中
-    favicon           = "assets/images/bi-favicon.png"
-    
-    # 首頁大搜尋框的背景圖 (日間/夜間)
-    searchImageL      = "assets/images/bg-dna.jpg"
-    searchImageD      = "assets/images/bg-dna.jpg"
-    
-    # 側邊欄 Logo (展開時)
-    logoExpandLight   = "assets/images/bi-expand-dark.png"
-    logoExpandDark    = "assets/images/bi-expand-light.png"
-    
-    # 側邊欄 Logo (收起時)
-    logoCollapseLight = "assets/images/bi.png"
-    logoCollapseDark  = "assets/images/bi.png"
-    
+    # 請確保這些圖片存在於 static/assets/images/ 資料夾中
+    favicon           = "assets/images/bi-favicon.png"
+
+    # 首頁大搜尋框的背景圖 (日間/夜間)
+    searchImageL      = "assets/images/bg-dna.jpg"
+    searchImageD      = "assets/images/bg-dna.jpg"
+
+    # 側邊欄 Logo (展開時)
+    logoExpandLight   = "assets/images/bi-expand-dark.png"
+    logoExpandDark    = "assets/images/bi-expand-light.png"
+
+    # 側邊欄 Logo (收起時)
+    logoCollapseLight = "assets/images/bi.png"
+    logoCollapseDark  = "assets/images/bi.png"
+
 [markup.goldmark.renderer]
-    unsafe = true
+    unsafe            = true
 
 [params.footer]
-    copyright = '&copy; 2025 Tsai97216 | Powered by GitHub Pages'
+    copyright         = '&copy; 2025 Tsai97216 | Powered by GitHub Pages'
