@@ -11,14 +11,9 @@ publishDir            = "public"
     author            = "tsai97216"
     description       = "我的個人資源導航站"
     
-    # 側邊欄「網站提交」按鈕的連結 (可以填 Google 表單或 GitHub Issues 網址)
-    # 如果留空，點擊會沒反應
+    # 側邊欄按鈕連結
     upload            = "https://github.com/tsai97216/tools/issues"                  
-    
-    # 側邊欄「關於本站」按鈕的連結
-    # 對應 content/about.md
     about             = "/about/"                  
-    
     repository        = "https://github.com/tsai97216/tools"
     
     # 載入動畫設定
@@ -28,47 +23,66 @@ publishDir            = "public"
     # 側邊欄預設展開
     expandSidebar     = true
     
-    # 圖片路徑設定 (請確保 static/assets/images/logos 資料夾存在)
+    # 圖片路徑設定
     logosPath         = "assets/images/logos"
     defaultLogo       = "assets/images/logos/default.webp"
     
     # 預設開啟夜間模式
     nightMode         = true
     
-    # 關閉主題內建的一言 (因為我們已經在 header 寫了本地版)
+    # 關閉主題內建一言
     yiyan             = false
     
-    # 開啟圖片燈箱效果
+    # 開啟圖片燈箱
     fancybox          = true
 
 [params.seo]    
-    # Google Analytics 4 (GA4) ID
-    # 如果您申請了 GA，請填入 "G-XXXXXXXXXX"，否則留空即可
     googleAnlyticsId  = ""
-    
-    # Google AdSense 客戶端 ID (若無可留空)
     GoogleAdsClient   = ""
 
-# [params.qweather] 區塊已刪除，因為我們改用 Open-Meteo 免費天氣
-
 [params.images]
-    # 請確保這些圖片存在於 static/assets/images/ 資料夾中
     favicon           = "assets/images/bi-favicon.png"
     
-    # 首頁大搜尋框的背景圖 (日間/夜間)
+    # 首頁大搜尋框背景
     searchImageL      = "assets/images/bg-dna.jpg"
     searchImageD      = "assets/images/bg-dna.jpg"
     
-    # 側邊欄 Logo (展開時)
+    # 側邊欄 Logo
     logoExpandLight   = "assets/images/bi-expand-dark.png"
     logoExpandDark    = "assets/images/bi-expand-light.png"
-    
-    # 側邊欄 Logo (收起時)
     logoCollapseLight = "assets/images/bi.png"
     logoCollapseDark  = "assets/images/bi.png"
-    
+
 [markup.goldmark.renderer]
     unsafe = true
 
 [params.footer]
     copyright = '&copy; 2025 Tsai97216 | Powered by GitHub Pages'
+
+# ====================================================
+# 頂部導航分區選單 (對應四大分類)
+# ====================================================
+
+[[menu.main]]
+  name = "首頁推薦"
+  pre = "<i class='fas fa-home fa-lg'></i>"
+  url = "#term-0"
+  weight = 1
+
+[[menu.main]]
+  name = "影音娛樂社群"
+  pre = "<i class='fas fa-share-alt fa-lg'></i>"
+  url = "#term-1"
+  weight = 2
+
+[[menu.main]]
+  name = "動漫遊戲"
+  pre = "<i class='fas fa-gamepad fa-lg'></i>"
+  url = "#term-2"
+  weight = 3
+
+[[menu.main]]
+  name = "實用工具"
+  pre = "<i class='fas fa-tools fa-lg'></i>"
+  url = "#term-3"
+  weight = 4
